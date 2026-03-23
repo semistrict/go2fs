@@ -231,6 +231,39 @@ E2FS_OUT := $(OUTDIR)/e2fs_$(GOOS)_$(GOARCH).go
 generate: $(GO_OBJS)
 	$(CCGO) -ignore-link-errors --package-name e2fs -o $(E2FS_OUT) $(GO_OBJS)
 
+# Generate for a different platform using Docker.
+# Usage: make add-target TARGET_OS=linux TARGET_ARCH=amd64
+#
+# Requires Docker with multi-platform support (buildx).
+# The generated e2fs_<os>_<arch>.go is written to internal/e2fs/.
+.PHONY: add-target
+add-target:
+ifndef TARGET_OS
+	$(error TARGET_OS is required, e.g. make add-target TARGET_OS=linux TARGET_ARCH=amd64)
+endif
+ifndef TARGET_ARCH
+	$(error TARGET_ARCH is required, e.g. make add-target TARGET_OS=linux TARGET_ARCH=amd64)
+endif
+	@echo "Generating for $(TARGET_OS)/$(TARGET_ARCH) via Docker..."
+	@mkdir -p /tmp/go2fs-gen
+	docker run --rm --platform $(TARGET_OS)/$(TARGET_ARCH) \
+		-v "$(CURDIR):/src:ro" \
+		-v "/tmp/go2fs-gen:/out" \
+		-w /build golang:$(shell go env GOVERSION | sed 's/^go//') bash -c ' \
+		cp -a /src/. /build/ && \
+		go install modernc.org/ccgo/v4@latest 2>/dev/null && \
+		cd third_party/e2fsprogs && \
+		git clean -fdx 2>/dev/null; git checkout -- . 2>/dev/null; \
+		./configure --disable-nls --disable-defrag --disable-fuse2fs \
+			--disable-debugfs --disable-imager --disable-resizer \
+			--disable-e2initrd-helper --disable-uuidd --disable-fsck --disable-tls 2>/dev/null && \
+		cd ../.. && \
+		make clean generate 2>/dev/null && \
+		cp internal/e2fs/e2fs_$$(go env GOOS)_$$(go env GOARCH).go /out/'
+	cp /tmp/go2fs-gen/e2fs_$(TARGET_OS)_$(TARGET_ARCH).go $(OUTDIR)/
+	@echo "Generated $(OUTDIR)/e2fs_$(TARGET_OS)_$(TARGET_ARCH).go"
+	@head -3 $(OUTDIR)/e2fs_$(TARGET_OS)_$(TARGET_ARCH).go
+
 clean:
 	find $(OUTDIR) -name '*.o.go' -delete 2>/dev/null
 	find $(OUTDIR) -type d -empty -delete 2>/dev/null; true
