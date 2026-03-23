@@ -1,0 +1,4 @@
+[submodule "third_party/e2fsprogs"]
+	path = third_party/e2fsprogs
+	url = git@github.com:semistrict/e2fsprogs.git
+	branch = go2fs

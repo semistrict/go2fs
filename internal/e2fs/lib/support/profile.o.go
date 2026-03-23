@@ -1,0 +1,4890 @@
+// Code generated for darwin/arm64 by 'ccgo -c -ignore-unsupported-alignment -DHAVE_CONFIG_H -D__attribute__(x)= -Ithird_party/e2fsprogs/lib -Ithird_party/e2fsprogs/lib/ext2fs -Ithird_party/e2fsprogs/lib/blkid -Ithird_party/e2fsprogs/lib/e2p -Ithird_party/e2fsprogs/lib/et -Ithird_party/e2fsprogs/lib/support -Ithird_party/e2fsprogs/lib/uuid -Ithird_party/e2fsprogs/include -Ithird_party/e2fsprogs/misc -Ithird_party/e2fsprogs -o internal/e2fs/lib/support/profile.o.go third_party/e2fsprogs/lib/support/profile.c', DO NOT EDIT.
+
+//go:build ignore
+// +build ignore
+
+package __ccgo_object_file_v1
+
+const mvACCESSX_MAX_DESCRIPTORS = 100
+const mvBADSIG = "SIG_ERR"
+const mvBIG_ENDIAN = "__DARWIN_BIG_ENDIAN"
+const mvBUFSIZ = 1024
+const mvBUS_ADRALN = 1
+const mvBUS_ADRERR = 2
+const mvBUS_NOOP = 0
+const mvBUS_OBJERR = 3
+const mvBYTE_ORDER = "__DARWIN_BYTE_ORDER"
+const mvCLD_CONTINUED = 6
+const mvCLD_DUMPED = 3
+const mvCLD_EXITED = 1
+const mvCLD_KILLED = 2
+const mvCLD_NOOP = 0
+const mvCLD_STOPPED = 5
+const mvCLD_TRAPPED = 4
+const mvCLOCK_MONOTONIC = "_CLOCK_MONOTONIC"
+const mvCLOCK_MONOTONIC_RAW = "_CLOCK_MONOTONIC_RAW"
+const mvCLOCK_MONOTONIC_RAW_APPROX = "_CLOCK_MONOTONIC_RAW_APPROX"
+const mvCLOCK_PROCESS_CPUTIME_ID = "_CLOCK_PROCESS_CPUTIME_ID"
+const mvCLOCK_REALTIME = "_CLOCK_REALTIME"
+const mvCLOCK_THREAD_CPUTIME_ID = "_CLOCK_THREAD_CPUTIME_ID"
+const mvCLOCK_UPTIME_RAW = "_CLOCK_UPTIME_RAW"
+const mvCLOCK_UPTIME_RAW_APPROX = "_CLOCK_UPTIME_RAW_APPROX"
+const mvCONFIG_BUILD_FINDFS = 1
+const mvCONFIG_MMP = 1
+const mvCONFIG_TDB = 1
+const mvCONFIG_TESTIO_DEBUG = 1
+const mvCPUMON_MAKE_FATAL = 0x1000
+const mvDIRBLKSIZ = 1024
+const mvDTF_HIDEW = 0x0001
+const mvDTF_NODUP = 0x0002
+const mvDTF_REWIND = 0x0004
+const mvDT_BLK = 6
+const mvDT_CHR = 2
+const mvDT_DIR = 4
+const mvDT_FIFO = 1
+const mvDT_LNK = 10
+const mvDT_REG = 8
+const mvDT_SOCK = 12
+const mvDT_UNKNOWN = 0
+const mvDT_WHT = 14
+const mvE2BIG = 7
+const mvEACCES = 13
+const mvEADDRINUSE = 48
+const mvEADDRNOTAVAIL = 49
+const mvEAFNOSUPPORT = 47
+const mvEAGAIN = 35
+const mvEALREADY = 37
+const mvEAUTH = 80
+const mvEBADARCH = 86
+const mvEBADEXEC = 85
+const mvEBADF = 9
+const mvEBADMACHO = 88
+const mvEBADMSG = 94
+const mvEBADRPC = 72
+const mvEBUSY = 16
+const mvECANCELED = 89
+const mvECHILD = 10
+const mvECONNABORTED = 53
+const mvECONNREFUSED = 61
+const mvECONNRESET = 54
+const mvEDEADLK = 11
+const mvEDESTADDRREQ = 39
+const mvEDEVERR = 83
+const mvEDOM = 33
+const mvEDQUOT = 69
+const mvEEXIST = 17
+const mvEFAULT = 14
+const mvEFBIG = 27
+const mvEFTYPE = 79
+const mvEF_IS_PURGEABLE = 0x00000008
+const mvEF_IS_SPARSE = 0x00000010
+const mvEF_IS_SYNC_ROOT = 0x00000004
+const mvEF_IS_SYNTHETIC = 0x00000020
+const mvEF_MAY_SHARE_BLOCKS = 0x00000001
+const mvEF_NO_XATTRS = 0x00000002
+const mvEF_SHARES_ALL_BLOCKS = 0x00000040
+const mvEHOSTDOWN = 64
+const mvEHOSTUNREACH = 65
+const mvEIDRM = 90
+const mvEILSEQ = 92
+const mvEINPROGRESS = 36
+const mvEINTR = 4
+const mvEINVAL = 22
+const mvEIO = 5
+const mvEISCONN = 56
+const mvEISDIR = 21
+const mvELAST = 107
+const mvELOOP = 62
+const mvEMFILE = 24
+const mvEMLINK = 31
+const mvEMSGSIZE = 40
+const mvEMULTIHOP = 95
+const mvENABLE_BMAP_STATS = 1
+const mvENAMETOOLONG = 63
+const mvENEEDAUTH = 81
+const mvENETDOWN = 50
+const mvENETRESET = 52
+const mvENETUNREACH = 51
+const mvENFILE = 23
+const mvENOATTR = 93
+const mvENOBUFS = 55
+const mvENODATA = 96
+const mvENODEV = 19
+const mvENOENT = 2
+const mvENOEXEC = 8
+const mvENOLCK = 77
+const mvENOLINK = 97
+const mvENOMEM = 12
+const mvENOMSG = 91
+const mvENOPOLICY = 103
+const mvENOPROTOOPT = 42
+const mvENOSPC = 28
+const mvENOSR = 98
+const mvENOSTR = 99
+const mvENOSYS = 78
+const mvENOTBLK = 15
+const mvENOTCAPABLE = 107
+const mvENOTCONN = 57
+const mvENOTDIR = 20
+const mvENOTEMPTY = 66
+const mvENOTRECOVERABLE = 104
+const mvENOTSOCK = 38
+const mvENOTSUP = 45
+const mvENOTTY = 25
+const mvENXIO = 6
+const mvEOPNOTSUPP = 102
+const mvEOVERFLOW = 84
+const mvEOWNERDEAD = 105
+const mvEPERM = 1
+const mvEPFNOSUPPORT = 46
+const mvEPIPE = 32
+const mvEPROCLIM = 67
+const mvEPROCUNAVAIL = 76
+const mvEPROGMISMATCH = 75
+const mvEPROGUNAVAIL = 74
+const mvEPROTO = 100
+const mvEPROTONOSUPPORT = 43
+const mvEPROTOTYPE = 41
+const mvEPWROFF = 82
+const mvEQFULL = 106
+const mvERANGE = 34
+const mvEREMOTE = 71
+const mvEROFS = 30
+const mvERPCMISMATCH = 73
+const mvESHLIBVERS = 87
+const mvESHUTDOWN = 58
+const mvESOCKTNOSUPPORT = 44
+const mvESPIPE = 29
+const mvESRCH = 3
+const mvESTALE = 70
+const mvETIME = 101
+const mvETIMEDOUT = 60
+const mvETOOMANYREFS = 59
+const mvETXTBSY = 26
+const mvEUSERS = 68
+const mvEWOULDBLOCK = "EAGAIN"
+const mvEXDEV = 18
+const mvEXIT_FAILURE = 1
+const mvEXIT_SUCCESS = 0
+const mvFD_SETSIZE = "__DARWIN_FD_SETSIZE"
+const mvFILENAME_MAX = 1024
+const mvFOOTPRINT_INTERVAL_RESET = 0x1
+const mvFOPEN_MAX = 20
+const mvFPE_FLTDIV = 1
+const mvFPE_FLTINV = 5
+const mvFPE_FLTOVF = 2
+const mvFPE_FLTRES = 4
+const mvFPE_FLTSUB = 6
+const mvFPE_FLTUND = 3
+const mvFPE_INTDIV = 7
+const mvFPE_INTOVF = 8
+const mvFPE_NOOP = 0
+const mvF_LOCK = 1
+const mvF_OK = 0
+const mvF_TEST = 3
+const mvF_TLOCK = 2
+const mvF_ULOCK = 0
+const mvHAVE_BACKTRACE = 1
+const mvHAVE_BSD_QSORT_R = 1
+const mvHAVE_CFLOCALECOPYPREFERREDLANGUAGES = 1
+const mvHAVE_CFPREFERENCESCOPYAPPVALUE = 1
+const mvHAVE_CHFLAGS = 1
+const mvHAVE_CONFIG_H = 1
+const mvHAVE_DIRENT_H = 1
+const mvHAVE_DLOPEN = 1
+const mvHAVE_ERRNO_H = 1
+const mvHAVE_EXECINFO_H = 1
+const mvHAVE_FCHOWN = 1
+const mvHAVE_FCNTL = 1
+const mvHAVE_FDATASYNC = 1
+const mvHAVE_FSTAT64 = 1
+const mvHAVE_FSYNC = 1
+const mvHAVE_FUTIMES = 1
+const mvHAVE_GETCWD = 1
+const mvHAVE_GETDTABLESIZE = 1
+const mvHAVE_GETENTROPY = 1
+const mvHAVE_GETHOSTNAME = 1
+const mvHAVE_GETMNTINFO = 1
+const mvHAVE_GETOPT_H = 1
+const mvHAVE_GETPWUID_R = 1
+const mvHAVE_GETRLIMIT = 1
+const mvHAVE_GETRUSAGE = 1
+const mvHAVE_INTPTR_T = 1
+const mvHAVE_INTTYPES_H = 1
+const mvHAVE_JRAND48 = 1
+const mvHAVE_MBSTOWCS = 1
+const mvHAVE_MMAP = 1
+const mvHAVE_MOUNT_NODEV = 1
+const mvHAVE_MOUNT_NOSUID = 1
+const mvHAVE_MSYNC = 1
+const mvHAVE_NANOSLEEP = 1
+const mvHAVE_NETINET_IN_H = 1
+const mvHAVE_NET_IF_DL_H = 1
+const mvHAVE_NET_IF_H = 1
+const mvHAVE_OPTRESET = 1
+const mvHAVE_PATHCONF = 1
+const mvHAVE_PATHS_H = 1
+const mvHAVE_POSIX_MEMALIGN = 1
+const mvHAVE_PREAD = 1
+const mvHAVE_PTHREAD = 1
+const mvHAVE_PTHREAD_H = 1
+const mvHAVE_PTHREAD_PRIO_INHERIT = 1
+const mvHAVE_PWRITE = 1
+const mvHAVE_QSORT_R = 1
+const mvHAVE_RECLEN_DIRENT = 1
+const mvHAVE_SA_LEN = 1
+const mvHAVE_SEMAPHORE_H = 1
+const mvHAVE_SETJMP_H = 1
+const mvHAVE_SIGNAL_H = 1
+const mvHAVE_SNPRINTF = 1
+const mvHAVE_SRANDOM = 1
+const mvHAVE_STAT_FLAGS = 1
+const mvHAVE_STDARG_H = 1
+const mvHAVE_STDINT_H = 1
+const mvHAVE_STDIO_H = 1
+const mvHAVE_STDLIB_H = 1
+const mvHAVE_STPCPY = 1
+const mvHAVE_STRCASECMP = 1
+const mvHAVE_STRDUP = 1
+const mvHAVE_STRINGS_H = 1
+const mvHAVE_STRING_H = 1
+const mvHAVE_STRNLEN = 1
+const mvHAVE_STRPTIME = 1
+const mvHAVE_STRTOULL = 1
+const mvHAVE_SYSCONF = 1
+const mvHAVE_SYS_ACL_H = 1
+const mvHAVE_SYS_DISK_H = 1
+const mvHAVE_SYS_FILE_H = 1
+const mvHAVE_SYS_IOCTL_H = 1
+const mvHAVE_SYS_MMAN_H = 1
+const mvHAVE_SYS_MOUNT_H = 1
+const mvHAVE_SYS_RANDOM_H = 1
+const mvHAVE_SYS_RESOURCE_H = 1
+const mvHAVE_SYS_SELECT_H = 1
+const mvHAVE_SYS_SOCKET_H = 1
+const mvHAVE_SYS_SOCKIO_H = 1
+const mvHAVE_SYS_STAT_H = 1
+const mvHAVE_SYS_SYSCALL_H = 1
+const mvHAVE_SYS_TIME_H = 1
+const mvHAVE_SYS_TYPES_H = 1
+const mvHAVE_SYS_UN_H = 1
+const mvHAVE_SYS_WAIT_H = 1
+const mvHAVE_SYS_XATTR_H = 1
+const mvHAVE_TERMIOS_H = 1
+const mvHAVE_TYPE_SSIZE_T = 1
+const mvHAVE_UNISTD_H = 1
+const mvHAVE_USLEEP = 1
+const mvHAVE_UTIME = 1
+const mvHAVE_UTIMES = 1
+const mvHAVE_UTIME_H = 1
+const mvHAVE_VALLOC = 1
+const mvHAVE_VPRINTF = 1
+const mvHAVE_WCHAR_H = 1
+const mvILL_BADSTK = 8
+const mvILL_COPROC = 7
+const mvILL_ILLADR = 5
+const mvILL_ILLOPC = 1
+const mvILL_ILLOPN = 4
+const mvILL_ILLTRP = 2
+const mvILL_NOOP = 0
+const mvILL_PRVOPC = 3
+const mvILL_PRVREG = 6
+const mvINTMAX_MAX = "__INTMAX_MAX__"
+const mvINTPTR_MAX = "__INTPTR_MAX__"
+const mvINT_FAST16_MAX = "__INT_LEAST16_MAX"
+const mvINT_FAST16_MIN = "__INT_LEAST16_MIN"
+const mvINT_FAST32_MAX = "__INT_LEAST32_MAX"
+const mvINT_FAST32_MIN = "__INT_LEAST32_MIN"
+const mvINT_FAST64_MAX = "__INT_LEAST64_MAX"
+const mvINT_FAST64_MIN = "__INT_LEAST64_MIN"
+const mvINT_FAST8_MAX = "__INT_LEAST8_MAX"
+const mvINT_FAST8_MIN = "__INT_LEAST8_MIN"
+const mvINT_LEAST16_MAX = "__INT_LEAST16_MAX"
+const mvINT_LEAST16_MIN = "__INT_LEAST16_MIN"
+const mvINT_LEAST32_MAX = "__INT_LEAST32_MAX"
+const mvINT_LEAST32_MIN = "__INT_LEAST32_MIN"
+const mvINT_LEAST64_MAX = "__INT_LEAST64_MAX"
+const mvINT_LEAST64_MIN = "__INT_LEAST64_MIN"
+const mvINT_LEAST8_MAX = "__INT_LEAST8_MAX"
+const mvINT_LEAST8_MIN = "__INT_LEAST8_MIN"
+const mvIOPOL_APPLICATION = "IOPOL_STANDARD"
+const mvIOPOL_ATIME_UPDATES_DEFAULT = 0
+const mvIOPOL_ATIME_UPDATES_OFF = 1
+const mvIOPOL_DEFAULT = 0
+const mvIOPOL_IMPORTANT = 1
+const mvIOPOL_MATERIALIZE_DATALESS_FILES_DEFAULT = 0
+const mvIOPOL_MATERIALIZE_DATALESS_FILES_OFF = 1
+const mvIOPOL_MATERIALIZE_DATALESS_FILES_ON = 2
+const mvIOPOL_NORMAL = "IOPOL_IMPORTANT"
+const mvIOPOL_PASSIVE = 2
+const mvIOPOL_SCOPE_DARWIN_BG = 2
+const mvIOPOL_SCOPE_PROCESS = 0
+const mvIOPOL_SCOPE_THREAD = 1
+const mvIOPOL_STANDARD = 5
+const mvIOPOL_THROTTLE = 3
+const mvIOPOL_TYPE_DISK = 0
+const mvIOPOL_TYPE_VFS_ALLOW_LOW_SPACE_WRITES = 9
+const mvIOPOL_TYPE_VFS_ATIME_UPDATES = 2
+const mvIOPOL_TYPE_VFS_DISALLOW_RW_FOR_O_EVTONLY = 10
+const mvIOPOL_TYPE_VFS_ENTITLED_RESERVE_ACCESS = 14
+const mvIOPOL_TYPE_VFS_IGNORE_CONTENT_PROTECTION = 6
+const mvIOPOL_TYPE_VFS_IGNORE_PERMISSIONS = 7
+const mvIOPOL_TYPE_VFS_MATERIALIZE_DATALESS_FILES = 3
+const mvIOPOL_TYPE_VFS_SKIP_MTIME_UPDATE = 8
+const mvIOPOL_TYPE_VFS_STATFS_NO_DATA_VOLUME = 4
+const mvIOPOL_TYPE_VFS_TRIGGER_RESOLVE = 5
+const mvIOPOL_UTILITY = 4
+const mvIOPOL_VFS_ALLOW_LOW_SPACE_WRITES_OFF = 0
+const mvIOPOL_VFS_ALLOW_LOW_SPACE_WRITES_ON = 1
+const mvIOPOL_VFS_CONTENT_PROTECTION_DEFAULT = 0
+const mvIOPOL_VFS_CONTENT_PROTECTION_IGNORE = 1
+const mvIOPOL_VFS_DISALLOW_RW_FOR_O_EVTONLY_DEFAULT = 0
+const mvIOPOL_VFS_DISALLOW_RW_FOR_O_EVTONLY_ON = 1
+const mvIOPOL_VFS_ENTITLED_RESERVE_ACCESS_OFF = 0
+const mvIOPOL_VFS_ENTITLED_RESERVE_ACCESS_ON = 1
+const mvIOPOL_VFS_IGNORE_PERMISSIONS_OFF = 0
+const mvIOPOL_VFS_IGNORE_PERMISSIONS_ON = 1
+const mvIOPOL_VFS_NOCACHE_WRITE_FS_BLKSIZE_DEFAULT = 0
+const mvIOPOL_VFS_NOCACHE_WRITE_FS_BLKSIZE_ON = 1
+const mvIOPOL_VFS_SKIP_MTIME_UPDATE_IGNORE = 2
+const mvIOPOL_VFS_SKIP_MTIME_UPDATE_OFF = 0
+const mvIOPOL_VFS_SKIP_MTIME_UPDATE_ON = 1
+const mvIOPOL_VFS_STATFS_FORCE_NO_DATA_VOLUME = 1
+const mvIOPOL_VFS_STATFS_NO_DATA_VOLUME_DEFAULT = 0
+const mvIOPOL_VFS_TRIGGER_RESOLVE_DEFAULT = 0
+const mvIOPOL_VFS_TRIGGER_RESOLVE_OFF = 1
+const mvLITTLE_ENDIAN = "__DARWIN_LITTLE_ENDIAN"
+const mvLOCALEDIR = "/usr/local/share/locale"
+const mvL_INCR = "SEEK_CUR"
+const mvL_SET = "SEEK_SET"
+const mvL_XTND = "SEEK_END"
+const mvL_ctermid = 1024
+const mvL_tmpnam = 1024
+const mvMAC_OS_VERSION_11_0 = "__MAC_11_0"
+const mvMAC_OS_VERSION_11_1 = "__MAC_11_1"
+const mvMAC_OS_VERSION_11_3 = "__MAC_11_3"
+const mvMAC_OS_VERSION_11_4 = "__MAC_11_4"
+const mvMAC_OS_VERSION_11_5 = "__MAC_11_5"
+const mvMAC_OS_VERSION_11_6 = "__MAC_11_6"
+const mvMAC_OS_VERSION_12_0 = "__MAC_12_0"
+const mvMAC_OS_VERSION_12_1 = "__MAC_12_1"
+const mvMAC_OS_VERSION_12_2 = "__MAC_12_2"
+const mvMAC_OS_VERSION_12_3 = "__MAC_12_3"
+const mvMAC_OS_VERSION_12_4 = "__MAC_12_4"
+const mvMAC_OS_VERSION_12_5 = "__MAC_12_5"
+const mvMAC_OS_VERSION_12_6 = "__MAC_12_6"
+const mvMAC_OS_VERSION_12_7 = "__MAC_12_7"
+const mvMAC_OS_VERSION_13_0 = "__MAC_13_0"
+const mvMAC_OS_VERSION_13_1 = "__MAC_13_1"
+const mvMAC_OS_VERSION_13_2 = "__MAC_13_2"
+const mvMAC_OS_VERSION_13_3 = "__MAC_13_3"
+const mvMAC_OS_VERSION_13_4 = "__MAC_13_4"
+const mvMAC_OS_VERSION_13_5 = "__MAC_13_5"
+const mvMAC_OS_VERSION_13_6 = "__MAC_13_6"
+const mvMAC_OS_VERSION_13_7 = "__MAC_13_7"
+const mvMAC_OS_VERSION_14_0 = "__MAC_14_0"
+const mvMAC_OS_VERSION_14_1 = "__MAC_14_1"
+const mvMAC_OS_VERSION_14_2 = "__MAC_14_2"
+const mvMAC_OS_VERSION_14_3 = "__MAC_14_3"
+const mvMAC_OS_VERSION_14_4 = "__MAC_14_4"
+const mvMAC_OS_VERSION_14_5 = "__MAC_14_5"
+const mvMAC_OS_VERSION_14_6 = "__MAC_14_6"
+const mvMAC_OS_VERSION_14_7 = "__MAC_14_7"
+const mvMAC_OS_VERSION_15_0 = "__MAC_15_0"
+const mvMAC_OS_VERSION_15_1 = "__MAC_15_1"
+const mvMAC_OS_VERSION_15_2 = "__MAC_15_2"
+const mvMAC_OS_VERSION_15_3 = "__MAC_15_3"
+const mvMAC_OS_VERSION_15_4 = "__MAC_15_4"
+const mvMAC_OS_VERSION_15_5 = "__MAC_15_5"
+const mvMAC_OS_VERSION_15_6 = "__MAC_15_6"
+const mvMAC_OS_VERSION_16_0 = "__MAC_16_0"
+const mvMAC_OS_VERSION_26_0 = "__MAC_26_0"
+const mvMAC_OS_X_VERSION_10_0 = "__MAC_10_0"
+const mvMAC_OS_X_VERSION_10_1 = "__MAC_10_1"
+const mvMAC_OS_X_VERSION_10_10 = "__MAC_10_10"
+const mvMAC_OS_X_VERSION_10_10_2 = "__MAC_10_10_2"
+const mvMAC_OS_X_VERSION_10_10_3 = "__MAC_10_10_3"
+const mvMAC_OS_X_VERSION_10_11 = "__MAC_10_11"
+const mvMAC_OS_X_VERSION_10_11_2 = "__MAC_10_11_2"
+const mvMAC_OS_X_VERSION_10_11_3 = "__MAC_10_11_3"
+const mvMAC_OS_X_VERSION_10_11_4 = "__MAC_10_11_4"
+const mvMAC_OS_X_VERSION_10_12 = "__MAC_10_12"
+const mvMAC_OS_X_VERSION_10_12_1 = "__MAC_10_12_1"
+const mvMAC_OS_X_VERSION_10_12_2 = "__MAC_10_12_2"
+const mvMAC_OS_X_VERSION_10_12_4 = "__MAC_10_12_4"
+const mvMAC_OS_X_VERSION_10_13 = "__MAC_10_13"
+const mvMAC_OS_X_VERSION_10_13_1 = "__MAC_10_13_1"
+const mvMAC_OS_X_VERSION_10_13_2 = "__MAC_10_13_2"
+const mvMAC_OS_X_VERSION_10_13_4 = "__MAC_10_13_4"
+const mvMAC_OS_X_VERSION_10_14 = "__MAC_10_14"
+const mvMAC_OS_X_VERSION_10_14_1 = "__MAC_10_14_1"
+const mvMAC_OS_X_VERSION_10_14_4 = "__MAC_10_14_4"
+const mvMAC_OS_X_VERSION_10_14_5 = "__MAC_10_14_5"
+const mvMAC_OS_X_VERSION_10_14_6 = "__MAC_10_14_6"
+const mvMAC_OS_X_VERSION_10_15 = "__MAC_10_15"
+const mvMAC_OS_X_VERSION_10_15_1 = "__MAC_10_15_1"
+const mvMAC_OS_X_VERSION_10_15_4 = "__MAC_10_15_4"
+const mvMAC_OS_X_VERSION_10_16 = "__MAC_10_16"
+const mvMAC_OS_X_VERSION_10_2 = "__MAC_10_2"
+const mvMAC_OS_X_VERSION_10_3 = "__MAC_10_3"
+const mvMAC_OS_X_VERSION_10_4 = "__MAC_10_4"
+const mvMAC_OS_X_VERSION_10_5 = "__MAC_10_5"
+const mvMAC_OS_X_VERSION_10_6 = "__MAC_10_6"
+const mvMAC_OS_X_VERSION_10_7 = "__MAC_10_7"
+const mvMAC_OS_X_VERSION_10_8 = "__MAC_10_8"
+const mvMAC_OS_X_VERSION_10_9 = "__MAC_10_9"
+const mvMAXNAMLEN = "__DARWIN_MAXNAMLEN"
+const mvMB_CUR_MAX = "__mb_cur_max"
+const mvMB_LEN_MAX = 1
+const mvMINSIGSTKSZ = 32768
+const mvNBBY = "__DARWIN_NBBY"
+const mvNFDBITS = "__DARWIN_NFDBITS"
+const mvNSIG = "__DARWIN_NSIG"
+const mvPACKAGE = "e2fsprogs"
+const mvPACKAGE_BUGREPORT = ""
+const mvPACKAGE_NAME = ""
+const mvPACKAGE_STRING = ""
+const mvPACKAGE_TARNAME = ""
+const mvPACKAGE_URL = ""
+const mvPACKAGE_VERSION = ""
+const mvPDP_ENDIAN = "__DARWIN_PDP_ENDIAN"
+const mvPOLL_ERR = 4
+const mvPOLL_HUP = 6
+const mvPOLL_IN = 1
+const mvPOLL_MSG = 3
+const mvPOLL_OUT = 2
+const mvPOLL_PRI = 5
+const mvPRIO_DARWIN_BG = 0x1000
+const mvPRIO_DARWIN_NONUI = 0x1001
+const mvPRIO_DARWIN_PROCESS = 4
+const mvPRIO_DARWIN_THREAD = 3
+const mvPRIO_MAX = 20
+const mvPRIO_PGRP = 1
+const mvPRIO_PROCESS = 0
+const mvPRIO_USER = 2
+const mvPROFILE_FILE_DIRTY = 0x0002
+const mvPROFILE_FILE_NO_RELOAD = 4
+const mvPROFILE_FILE_RW = 0x0001
+const mvPROFILE_ITER_FINAL_SEEN = 256
+const mvPROFILE_ITER_LIST_SECTION = 1
+const mvPROFILE_ITER_RELATIONS_ONLY = 4
+const mvPROFILE_ITER_SECTIONS_ONLY = 2
+const mvPTRDIFF_MAX = "__PTRDIFF_MAX__"
+const mvP_tmpdir = "/var/tmp/"
+const mvRAND_MAX = 0x7fffffff
+const mvRENAME_EXCL = 0x00000004
+const mvRENAME_NOFOLLOW_ANY = 0x00000010
+const mvRENAME_RESERVED1 = 0x00000008
+const mvRENAME_RESOLVE_BENEATH = 0x00000020
+const mvRENAME_SECLUDE = 0x00000001
+const mvRENAME_SWAP = 0x00000002
+const mvRLIMIT_AS = 5
+const mvRLIMIT_CORE = 4
+const mvRLIMIT_CPU = 0
+const mvRLIMIT_CPU_USAGE_MONITOR = 0x2
+const mvRLIMIT_DATA = 2
+const mvRLIMIT_FOOTPRINT_INTERVAL = 0x4
+const mvRLIMIT_FSIZE = 1
+const mvRLIMIT_MEMLOCK = 6
+const mvRLIMIT_NOFILE = 8
+const mvRLIMIT_NPROC = 7
+const mvRLIMIT_RSS = "RLIMIT_AS"
+const mvRLIMIT_STACK = 3
+const mvRLIMIT_THREAD_CPULIMITS = 0x3
+const mvRLIMIT_WAKEUPS_MONITOR = 0x1
+const mvRLIM_NLIMITS = 9
+const mvRLIM_SAVED_CUR = "RLIM_INFINITY"
+const mvRLIM_SAVED_MAX = "RLIM_INFINITY"
+const mvROOT_SYSCONFDIR = "/usr/local/etc"
+const mvRUSAGE_INFO_CURRENT = "RUSAGE_INFO_V6"
+const mvRUSAGE_INFO_V0 = 0
+const mvRUSAGE_INFO_V1 = 1
+const mvRUSAGE_INFO_V2 = 2
+const mvRUSAGE_INFO_V3 = 3
+const mvRUSAGE_INFO_V4 = 4
+const mvRUSAGE_INFO_V5 = 5
+const mvRUSAGE_INFO_V6 = 6
+const mvRUSAGE_SELF = 0
+const mvRU_PROC_RUNS_RESLIDE = 0x00000001
+const mvSA_64REGSET = 0x0200
+const mvSA_NOCLDSTOP = 0x0008
+const mvSA_NOCLDWAIT = 0x0020
+const mvSA_NODEFER = 0x0010
+const mvSA_ONSTACK = 0x0001
+const mvSA_RESETHAND = 0x0004
+const mvSA_RESTART = 0x0002
+const mvSA_SIGINFO = 0x0040
+const mvSA_USERTRAMP = 0x0100
+const mvSEEK_CUR = 1
+const mvSEEK_DATA = 4
+const mvSEEK_END = 2
+const mvSEEK_HOLE = 3
+const mvSEEK_SET = 0
+const mvSEGV_ACCERR = 2
+const mvSEGV_MAPERR = 1
+const mvSEGV_NOOP = 0
+const mvSF_APPEND = 0x00040000
+const mvSF_ARCHIVED = 0x00010000
+const mvSF_DATALESS = 0x40000000
+const mvSF_FIRMLINK = 0x00800000
+const mvSF_IMMUTABLE = 0x00020000
+const mvSF_NOUNLINK = 0x00100000
+const mvSF_RESTRICTED = 0x00080000
+const mvSF_SETTABLE = 0x3fff0000
+const mvSF_SUPPORTED = 0x009f0000
+const mvSF_SYNTHETIC = 0xc0000000
+const mvSIGABRT = 6
+const mvSIGALRM = 14
+const mvSIGBUS = 10
+const mvSIGCHLD = 20
+const mvSIGCONT = 19
+const mvSIGEMT = 7
+const mvSIGEV_KEVENT = 4
+const mvSIGEV_NONE = 0
+const mvSIGEV_SIGNAL = 1
+const mvSIGEV_THREAD = 3
+const mvSIGFPE = 8
+const mvSIGHUP = 1
+const mvSIGILL = 4
+const mvSIGINFO = 29
+const mvSIGINT = 2
+const mvSIGIO = 23
+const mvSIGIOT = "SIGABRT"
+const mvSIGKILL = 9
+const mvSIGPIPE = 13
+const mvSIGPROF = 27
+const mvSIGQUIT = 3
+const mvSIGSEGV = 11
+const mvSIGSTKSZ = 131072
+const mvSIGSTOP = 17
+const mvSIGSYS = 12
+const mvSIGTERM = 15
+const mvSIGTRAP = 5
+const mvSIGTSTP = 18
+const mvSIGTTIN = 21
+const mvSIGTTOU = 22
+const mvSIGURG = 16
+const mvSIGUSR1 = 30
+const mvSIGUSR2 = 31
+const mvSIGVTALRM = 26
+const mvSIGWINCH = 28
+const mvSIGXCPU = 24
+const mvSIGXFSZ = 25
+const mvSIG_BLOCK = 1
+const mvSIG_SETMASK = 3
+const mvSIG_UNBLOCK = 2
+const mvSIZEOF_INT = 4
+const mvSIZEOF_LONG = 8
+const mvSIZEOF_LONG_LONG = 8
+const mvSIZEOF_OFF_T = 8
+const mvSIZEOF_SHORT = 2
+const mvSIZEOF_TIME_T = 8
+const mvSIZEOF_VOID_P = 8
+const mvSIZE_MAX = "__SIZE_MAX__"
+const mvSI_ASYNCIO = 0x10004
+const mvSI_MESGQ = 0x10005
+const mvSI_QUEUE = 0x10002
+const mvSI_TIMER = 0x10003
+const mvSI_USER = 0x10001
+const mvSS_DISABLE = 0x0004
+const mvSS_ONSTACK = 0x0001
+const mvSTATE_GET_OBRACE = 2
+const mvSTATE_INIT_COMMENT = 0
+const mvSTATE_STD_LINE = 1
+const mvSTDC_HEADERS = 1
+const mvSTDERR_FILENO = 2
+const mvSTDIN_FILENO = 0
+const mvSTDOUT_FILENO = 1
+const mvSV_INTERRUPT = "SA_RESTART"
+const mvSV_NOCLDSTOP = "SA_NOCLDSTOP"
+const mvSV_NODEFER = "SA_NODEFER"
+const mvSV_ONSTACK = "SA_ONSTACK"
+const mvSV_RESETHAND = "SA_RESETHAND"
+const mvSV_SIGINFO = "SA_SIGINFO"
+const mvSYNC_VOLUME_FULLSYNC = 0x01
+const mvSYNC_VOLUME_WAIT = 0x02
+const mvS_BLKSIZE = 512
+const mvS_IEXEC = "S_IXUSR"
+const mvS_IFBLK = 0060000
+const mvS_IFCHR = 0020000
+const mvS_IFDIR = 0040000
+const mvS_IFIFO = 0010000
+const mvS_IFLNK = 0120000
+const mvS_IFMT = 61440
+const mvS_IFREG = 32768
+const mvS_IFSOCK = 0140000
+const mvS_IFWHT = 0160000
+const mvS_IREAD = "S_IRUSR"
+const mvS_IRGRP = 0000040
+const mvS_IROTH = 0000004
+const mvS_IRUSR = 0000400
+const mvS_IRWXG = 0000070
+const mvS_IRWXO = 0000007
+const mvS_IRWXU = 0000700
+const mvS_ISGID = 0002000
+const mvS_ISTXT = "S_ISVTX"
+const mvS_ISUID = 0004000
+const mvS_ISVTX = 0001000
+const mvS_IWGRP = 0000020
+const mvS_IWOTH = 0000002
+const mvS_IWRITE = "S_IWUSR"
+const mvS_IWUSR = 0000200
+const mvS_IXGRP = 0000010
+const mvS_IXOTH = 0000001
+const mvS_IXUSR = 0000100
+const mvTARGET_IPHONE_SIMULATOR = 0
+const mvTARGET_OS_ARROW = 1
+const mvTARGET_OS_BRIDGE = 0
+const mvTARGET_OS_DRIVERKIT = 0
+const mvTARGET_OS_EMBEDDED = 0
+const mvTARGET_OS_IOS = 0
+const mvTARGET_OS_IOSMAC = 0
+const mvTARGET_OS_IPHONE = 0
+const mvTARGET_OS_LINUX = 0
+const mvTARGET_OS_MAC = 1
+const mvTARGET_OS_MACCATALYST = 0
+const mvTARGET_OS_NANO = 0
+const mvTARGET_OS_OSX = 1
+const mvTARGET_OS_SIMULATOR = 0
+const mvTARGET_OS_TV = 0
+const mvTARGET_OS_UIKITFORMAC = 0
+const mvTARGET_OS_UNIX = 0
+const mvTARGET_OS_VISION = 0
+const mvTARGET_OS_WATCH = 0
+const mvTARGET_OS_WIN32 = 0
+const mvTARGET_OS_WINDOWS = 0
+const mvTARGET_OS_XR = 0
+const mvTIME_UTC = 1
+const mvTMP_MAX = 308915776
+const mvTRAP_BRKPT = 1
+const mvTRAP_TRACE = 2
+const mvUF_APPEND = 0x00000004
+const mvUF_COMPRESSED = 0x00000020
+const mvUF_DATAVAULT = 0x00000080
+const mvUF_HIDDEN = 0x00008000
+const mvUF_IMMUTABLE = 0x00000002
+const mvUF_NODUMP = 0x00000001
+const mvUF_OPAQUE = 0x00000008
+const mvUF_SETTABLE = 0x0000ffff
+const mvUF_TRACKED = 0x00000040
+const mvUINTMAX_MAX = "__UINTMAX_MAX__"
+const mvUINTPTR_MAX = "__UINTPTR_MAX__"
+const mvUINT_FAST16_MAX = "__UINT_LEAST16_MAX"
+const mvUINT_FAST32_MAX = "__UINT_LEAST32_MAX"
+const mvUINT_FAST64_MAX = "__UINT_LEAST64_MAX"
+const mvUINT_FAST8_MAX = "__UINT_LEAST8_MAX"
+const mvUINT_LEAST16_MAX = "__UINT_LEAST16_MAX"
+const mvUINT_LEAST32_MAX = "__UINT_LEAST32_MAX"
+const mvUINT_LEAST64_MAX = "__UINT_LEAST64_MAX"
+const mvUINT_LEAST8_MAX = "__UINT_LEAST8_MAX"
+const mvVERSION = "0.14.1"
+const mvWAIT_MYPGRP = 0
+const mvWAKEMON_DISABLE = 0x02
+const mvWAKEMON_ENABLE = 0x01
+const mvWAKEMON_GET_PARAMS = 0x04
+const mvWAKEMON_MAKE_FATAL = 0x10
+const mvWAKEMON_SET_DEFAULTS = 0x08
+const mvWCHAR_MAX = "__WCHAR_MAX__"
+const mvWCONTINUED = 0x00000010
+const mvWCOREFLAG = 0200
+const mvWEXITED = 0x00000004
+const mvWNOHANG = 0x00000001
+const mvWNOWAIT = 0x00000020
+const mvWSTOPPED = 0x00000008
+const mvWUNTRACED = 0x00000002
+const mv_ALL_SOURCE = 1
+const mv_ARM_SIGNAL_ = 1
+const mv_CS_DARWIN_USER_CACHE_DIR = 65538
+const mv_CS_DARWIN_USER_DIR = 65536
+const mv_CS_DARWIN_USER_TEMP_DIR = 65537
+const mv_CS_PATH = 1
+const mv_CS_POSIX_V6_ILP32_OFF32_CFLAGS = 2
+const mv_CS_POSIX_V6_ILP32_OFF32_LDFLAGS = 3
+const mv_CS_POSIX_V6_ILP32_OFF32_LIBS = 4
+const mv_CS_POSIX_V6_ILP32_OFFBIG_CFLAGS = 5
+const mv_CS_POSIX_V6_ILP32_OFFBIG_LDFLAGS = 6
+const mv_CS_POSIX_V6_ILP32_OFFBIG_LIBS = 7
+const mv_CS_POSIX_V6_LP64_OFF64_CFLAGS = 8
+const mv_CS_POSIX_V6_LP64_OFF64_LDFLAGS = 9
+const mv_CS_POSIX_V6_LP64_OFF64_LIBS = 10
+const mv_CS_POSIX_V6_LPBIG_OFFBIG_CFLAGS = 11
+const mv_CS_POSIX_V6_LPBIG_OFFBIG_LDFLAGS = 12
+const mv_CS_POSIX_V6_LPBIG_OFFBIG_LIBS = 13
+const mv_CS_POSIX_V6_WIDTH_RESTRICTED_ENVS = 14
+const mv_CS_XBS5_ILP32_OFF32_CFLAGS = 20
+const mv_CS_XBS5_ILP32_OFF32_LDFLAGS = 21
+const mv_CS_XBS5_ILP32_OFF32_LIBS = 22
+const mv_CS_XBS5_ILP32_OFF32_LINTFLAGS = 23
+const mv_CS_XBS5_ILP32_OFFBIG_CFLAGS = 24
+const mv_CS_XBS5_ILP32_OFFBIG_LDFLAGS = 25
+const mv_CS_XBS5_ILP32_OFFBIG_LIBS = 26
+const mv_CS_XBS5_ILP32_OFFBIG_LINTFLAGS = 27
+const mv_CS_XBS5_LP64_OFF64_CFLAGS = 28
+const mv_CS_XBS5_LP64_OFF64_LDFLAGS = 29
+const mv_CS_XBS5_LP64_OFF64_LIBS = 30
+const mv_CS_XBS5_LP64_OFF64_LINTFLAGS = 31
+const mv_CS_XBS5_LPBIG_OFFBIG_CFLAGS = 32
+const mv_CS_XBS5_LPBIG_OFFBIG_LDFLAGS = 33
+const mv_CS_XBS5_LPBIG_OFFBIG_LIBS = 34
+const mv_CS_XBS5_LPBIG_OFFBIG_LINTFLAGS = 35
+const mv_CTYPE_A = 256
+const mv_CTYPE_B = 131072
+const mv_CTYPE_C = 512
+const mv_CTYPE_D = 1024
+const mv_CTYPE_G = 2048
+const mv_CTYPE_I = 524288
+const mv_CTYPE_L = 4096
+const mv_CTYPE_P = 8192
+const mv_CTYPE_Q = 2097152
+const mv_CTYPE_R = 262144
+const mv_CTYPE_S = 16384
+const mv_CTYPE_SW0 = 0x20000000
+const mv_CTYPE_SW1 = 0x40000000
+const mv_CTYPE_SW2 = 0x80000000
+const mv_CTYPE_SW3 = 0xc0000000
+const mv_CTYPE_SWM = 3758096384
+const mv_CTYPE_SWS = 30
+const mv_CTYPE_T = 1048576
+const mv_CTYPE_U = 32768
+const mv_CTYPE_X = 65536
+const mv_DARWIN_C_SOURCE = 1
+const mv_DARWIN_FEATURE_64_BIT_INODE = 1
+const mv_DARWIN_FEATURE_ONLY_64_BIT_INODE = 1
+const mv_DARWIN_FEATURE_ONLY_UNIX_CONFORMANCE = 1
+const mv_DARWIN_FEATURE_ONLY_VERS_1050 = 1
+const mv_DARWIN_FEATURE_UNIX_CONFORMANCE = 3
+const mv_FORTIFY_SOURCE = 2
+const mv_GNU_SOURCE = 1
+const mv_HAS_BUILTIN_AVAILABLE_FEATS = 1
+const mv_HPUX_ALT_XOPEN_SOCKET_API = 1
+const mv_INTL_REDIRECT_MACROS = 1
+const mv_IOFBF = 0
+const mv_IOLBF = 1
+const mv_IONBF = 2
+const mv_LIBC_COUNT__MB_LEN_MAX = "_LIBC_UNSAFE_INDEXABLE"
+const mv_LIBC_COUNT__PATH_MAX = "_LIBC_UNSAFE_INDEXABLE"
+const mv_LP64 = 1
+const mv_MALLOC_TYPE_MALLOC_BACKDEPLOY_PUBLIC = 1
+const mv_NETBSD_SOURCE = 1
+const mv_OPENBSD_SOURCE = 1
+const mv_PC_2_SYMLINKS = 15
+const mv_PC_ALLOC_SIZE_MIN = 16
+const mv_PC_ASYNC_IO = 17
+const mv_PC_AUTH_OPAQUE_NP = 14
+const mv_PC_CASE_PRESERVING = 12
+const mv_PC_CASE_SENSITIVE = 11
+const mv_PC_CHOWN_RESTRICTED = 7
+const mv_PC_EXTENDED_SECURITY_NP = 13
+const mv_PC_FILESIZEBITS = 18
+const mv_PC_LINK_MAX = 1
+const mv_PC_MAX_CANON = 2
+const mv_PC_MAX_INPUT = 3
+const mv_PC_MIN_HOLE_SIZE = 27
+const mv_PC_NAME_CHARS_MAX = 10
+const mv_PC_NAME_MAX = 4
+const mv_PC_NO_TRUNC = 8
+const mv_PC_PATH_MAX = 5
+const mv_PC_PIPE_BUF = 6
+const mv_PC_PRIO_IO = 19
+const mv_PC_REC_INCR_XFER_SIZE = 20
+const mv_PC_REC_MAX_XFER_SIZE = 21
+const mv_PC_REC_MIN_XFER_SIZE = 22
+const mv_PC_REC_XFER_ALIGN = 23
+const mv_PC_SYMLINK_MAX = 24
+const mv_PC_SYNC_IO = 25
+const mv_PC_VDISABLE = 9
+const mv_PC_XATTR_SIZE_BITS = 26
+const mv_POSIX2_CHAR_TERM = 200112
+const mv_POSIX2_C_BIND = 200112
+const mv_POSIX2_C_DEV = 200112
+const mv_POSIX2_FORT_RUN = 200112
+const mv_POSIX2_LOCALEDEF = 200112
+const mv_POSIX2_SW_DEV = 200112
+const mv_POSIX2_UPE = 200112
+const mv_POSIX2_VERSION = 200112
+const mv_POSIX_CHOWN_RESTRICTED = 200112
+const mv_POSIX_FSYNC = 200112
+const mv_POSIX_IPV6 = 200112
+const mv_POSIX_JOB_CONTROL = 200112
+const mv_POSIX_MAPPED_FILES = 200112
+const mv_POSIX_MEMORY_PROTECTION = 200112
+const mv_POSIX_NO_TRUNC = 200112
+const mv_POSIX_PTHREAD_SEMANTICS = 1
+const mv_POSIX_READER_WRITER_LOCKS = 200112
+const mv_POSIX_REGEXP = 200112
+const mv_POSIX_SAVED_IDS = 200112
+const mv_POSIX_SHELL = 200112
+const mv_POSIX_SPAWN = 200112
+const mv_POSIX_THREADS = 200112
+const mv_POSIX_THREAD_ATTR_STACKADDR = 200112
+const mv_POSIX_THREAD_ATTR_STACKSIZE = 200112
+const mv_POSIX_THREAD_KEYS_MAX = 128
+const mv_POSIX_THREAD_PROCESS_SHARED = 200112
+const mv_POSIX_THREAD_SAFE_FUNCTIONS = 200112
+const mv_POSIX_V6_ILP32_OFF32 = "__ILP32_OFF32"
+const mv_POSIX_V6_ILP32_OFFBIG = "__ILP32_OFFBIG"
+const mv_POSIX_V6_LP64_OFF64 = "__LP64_OFF64"
+const mv_POSIX_V6_LPBIG_OFFBIG = "__LPBIG_OFFBIG"
+const mv_POSIX_V7_ILP32_OFF32 = "__ILP32_OFF32"
+const mv_POSIX_V7_ILP32_OFFBIG = "__ILP32_OFFBIG"
+const mv_POSIX_V7_LP64_OFF64 = "__LP64_OFF64"
+const mv_POSIX_V7_LPBIG_OFFBIG = "__LPBIG_OFFBIG"
+const mv_POSIX_VERSION = 200112
+const mv_QUAD_HIGHWORD = 1
+const mv_QUAD_LOWWORD = 0
+const mv_RLIMIT_POSIX_FLAG = 0x1000
+const mv_RUNE_MAGIC_A = "RuneMagA"
+const mv_SC_2_CHAR_TERM = 20
+const mv_SC_2_C_BIND = 18
+const mv_SC_2_C_DEV = 19
+const mv_SC_2_FORT_DEV = 21
+const mv_SC_2_FORT_RUN = 22
+const mv_SC_2_LOCALEDEF = 23
+const mv_SC_2_PBS = 59
+const mv_SC_2_PBS_ACCOUNTING = 60
+const mv_SC_2_PBS_CHECKPOINT = 61
+const mv_SC_2_PBS_LOCATE = 62
+const mv_SC_2_PBS_MESSAGE = 63
+const mv_SC_2_PBS_TRACK = 64
+const mv_SC_2_SW_DEV = 24
+const mv_SC_2_UPE = 25
+const mv_SC_2_VERSION = 17
+const mv_SC_ADVISORY_INFO = 65
+const mv_SC_AIO_LISTIO_MAX = 42
+const mv_SC_AIO_MAX = 43
+const mv_SC_AIO_PRIO_DELTA_MAX = 44
+const mv_SC_ARG_MAX = 1
+const mv_SC_ASYNCHRONOUS_IO = 28
+const mv_SC_ATEXIT_MAX = 107
+const mv_SC_BARRIERS = 66
+const mv_SC_BC_BASE_MAX = 9
+const mv_SC_BC_DIM_MAX = 10
+const mv_SC_BC_SCALE_MAX = 11
+const mv_SC_BC_STRING_MAX = 12
+const mv_SC_CHILD_MAX = 2
+const mv_SC_CLK_TCK = 3
+const mv_SC_CLOCK_SELECTION = 67
+const mv_SC_COLL_WEIGHTS_MAX = 13
+const mv_SC_CPUTIME = 68
+const mv_SC_DELAYTIMER_MAX = 45
+const mv_SC_EXPR_NEST_MAX = 14
+const mv_SC_FILE_LOCKING = 69
+const mv_SC_FSYNC = 38
+const mv_SC_GETGR_R_SIZE_MAX = 70
+const mv_SC_GETPW_R_SIZE_MAX = 71
+const mv_SC_HOST_NAME_MAX = 72
+const mv_SC_IOV_MAX = 56
+const mv_SC_IPV6 = 118
+const mv_SC_JOB_CONTROL = 6
+const mv_SC_LINE_MAX = 15
+const mv_SC_LOGIN_NAME_MAX = 73
+const mv_SC_MAPPED_FILES = 47
+const mv_SC_MEMLOCK = 30
+const mv_SC_MEMLOCK_RANGE = 31
+const mv_SC_MEMORY_PROTECTION = 32
+const mv_SC_MESSAGE_PASSING = 33
+const mv_SC_MONOTONIC_CLOCK = 74
+const mv_SC_MQ_OPEN_MAX = 46
+const mv_SC_MQ_PRIO_MAX = 75
+const mv_SC_NGROUPS_MAX = 4
+const mv_SC_NPROCESSORS_CONF = 57
+const mv_SC_NPROCESSORS_ONLN = 58
+const mv_SC_OPEN_MAX = 5
+const mv_SC_PAGESIZE = 29
+const mv_SC_PAGE_SIZE = "_SC_PAGESIZE"
+const mv_SC_PASS_MAX = 131
+const mv_SC_PHYS_PAGES = 200
+const mv_SC_PRIORITIZED_IO = 34
+const mv_SC_PRIORITY_SCHEDULING = 35
+const mv_SC_RAW_SOCKETS = 119
+const mv_SC_READER_WRITER_LOCKS = 76
+const mv_SC_REALTIME_SIGNALS = 36
+const mv_SC_REGEXP = 77
+const mv_SC_RE_DUP_MAX = 16
+const mv_SC_RTSIG_MAX = 48
+const mv_SC_SAVED_IDS = 7
+const mv_SC_SEMAPHORES = 37
+const mv_SC_SEM_NSEMS_MAX = 49
+const mv_SC_SEM_VALUE_MAX = 50
+const mv_SC_SHARED_MEMORY_OBJECTS = 39
+const mv_SC_SHELL = 78
+const mv_SC_SIGQUEUE_MAX = 51
+const mv_SC_SPAWN = 79
+const mv_SC_SPIN_LOCKS = 80
+const mv_SC_SPORADIC_SERVER = 81
+const mv_SC_SS_REPL_MAX = 126
+const mv_SC_STREAM_MAX = 26
+const mv_SC_SYMLOOP_MAX = 120
+const mv_SC_SYNCHRONIZED_IO = 40
+const mv_SC_THREADS = 96
+const mv_SC_THREAD_ATTR_STACKADDR = 82
+const mv_SC_THREAD_ATTR_STACKSIZE = 83
+const mv_SC_THREAD_CPUTIME = 84
+const mv_SC_THREAD_DESTRUCTOR_ITERATIONS = 85
+const mv_SC_THREAD_KEYS_MAX = 86
+const mv_SC_THREAD_PRIORITY_SCHEDULING = 89
+const mv_SC_THREAD_PRIO_INHERIT = 87
+const mv_SC_THREAD_PRIO_PROTECT = 88
+const mv_SC_THREAD_PROCESS_SHARED = 90
+const mv_SC_THREAD_SAFE_FUNCTIONS = 91
+const mv_SC_THREAD_SPORADIC_SERVER = 92
+const mv_SC_THREAD_STACK_MIN = 93
+const mv_SC_THREAD_THREADS_MAX = 94
+const mv_SC_TIMEOUTS = 95
+const mv_SC_TIMERS = 41
+const mv_SC_TIMER_MAX = 52
+const mv_SC_TRACE = 97
+const mv_SC_TRACE_EVENT_FILTER = 98
+const mv_SC_TRACE_EVENT_NAME_MAX = 127
+const mv_SC_TRACE_INHERIT = 99
+const mv_SC_TRACE_LOG = 100
+const mv_SC_TRACE_NAME_MAX = 128
+const mv_SC_TRACE_SYS_MAX = 129
+const mv_SC_TRACE_USER_EVENT_MAX = 130
+const mv_SC_TTY_NAME_MAX = 101
+const mv_SC_TYPED_MEMORY_OBJECTS = 102
+const mv_SC_TZNAME_MAX = 27
+const mv_SC_V6_ILP32_OFF32 = 103
+const mv_SC_V6_ILP32_OFFBIG = 104
+const mv_SC_V6_LP64_OFF64 = 105
+const mv_SC_V6_LPBIG_OFFBIG = 106
+const mv_SC_VERSION = 8
+const mv_SC_XBS5_ILP32_OFF32 = 122
+const mv_SC_XBS5_ILP32_OFFBIG = 123
+const mv_SC_XBS5_LP64_OFF64 = 124
+const mv_SC_XBS5_LPBIG_OFFBIG = 125
+const mv_SC_XOPEN_CRYPT = 108
+const mv_SC_XOPEN_ENH_I18N = 109
+const mv_SC_XOPEN_LEGACY = 110
+const mv_SC_XOPEN_REALTIME = 111
+const mv_SC_XOPEN_REALTIME_THREADS = 112
+const mv_SC_XOPEN_SHM = 113
+const mv_SC_XOPEN_STREAMS = 114
+const mv_SC_XOPEN_UNIX = 115
+const mv_SC_XOPEN_VERSION = 116
+const mv_SC_XOPEN_XCU_VERSION = 121
+const mv_STRUCT_MCONTEXT = "_STRUCT_MCONTEXT64"
+const mv_TANDEM_SOURCE = 1
+const mv_V6_ILP32_OFF32 = "__ILP32_OFF32"
+const mv_V6_ILP32_OFFBIG = "__ILP32_OFFBIG"
+const mv_V6_LP64_OFF64 = "__LP64_OFF64"
+const mv_V6_LPBIG_OFFBIG = "__LPBIG_OFFBIG"
+const mv_WSTOPPED = 0177
+const mv_XBS5_ILP32_OFF32 = "__ILP32_OFF32"
+const mv_XBS5_ILP32_OFFBIG = "__ILP32_OFFBIG"
+const mv_XBS5_LP64_OFF64 = "__LP64_OFF64"
+const mv_XBS5_LPBIG_OFFBIG = "__LPBIG_OFFBIG"
+const mv_XOPEN_CRYPT = 1
+const mv_XOPEN_ENH_I18N = 1
+const mv_XOPEN_SHM = 1
+const mv_XOPEN_UNIX = 1
+const mv_XOPEN_VERSION = 600
+const mv_XOPEN_XCU_VERSION = 4
+const mv__AARCH64EL__ = 1
+const mv__AARCH64_CMODEL_SMALL__ = 1
+const mv__AARCH64_SIMD__ = 1
+const mv__API_TO_BE_DEPRECATED = 100000
+const mv__API_TO_BE_DEPRECATED_DRIVERKIT = 100000
+const mv__API_TO_BE_DEPRECATED_IOS = 100000
+const mv__API_TO_BE_DEPRECATED_IOSAPPLICATIONEXTENSION = 100000
+const mv__API_TO_BE_DEPRECATED_KERNELKIT = 100000
+const mv__API_TO_BE_DEPRECATED_MACCATALYST = 100000
+const mv__API_TO_BE_DEPRECATED_MACCATALYSTAPPLICATIONEXTENSION = 100000
+const mv__API_TO_BE_DEPRECATED_MACOS = 100000
+const mv__API_TO_BE_DEPRECATED_MACOSAPPLICATIONEXTENSION = 100000
+const mv__API_TO_BE_DEPRECATED_TVOS = 100000
+const mv__API_TO_BE_DEPRECATED_TVOSAPPLICATIONEXTENSION = 100000
+const mv__API_TO_BE_DEPRECATED_VISIONOS = 100000
+const mv__API_TO_BE_DEPRECATED_VISIONOSAPPLICATIONEXTENSION = 100000
+const mv__API_TO_BE_DEPRECATED_WATCHOS = 100000
+const mv__API_TO_BE_DEPRECATED_WATCHOSAPPLICATIONEXTENSION = 100000
+const mv__APPLE_CC__ = 6000
+const mv__APPLE__ = 1
+const mv__ARM64_ARCH_8__ = 1
+const mv__ARM_64BIT_STATE = 1
+const mv__ARM_ACLE = 200
+const mv__ARM_ALIGN_MAX_STACK_PWR = 4
+const mv__ARM_ARCH = 8
+const mv__ARM_ARCH_8_3__ = 1
+const mv__ARM_ARCH_8_4__ = 1
+const mv__ARM_ARCH_8_5__ = 1
+const mv__ARM_ARCH_ISA_A64 = 1
+const mv__ARM_ARCH_PROFILE = 'A'
+const mv__ARM_FEATURE_AES = 1
+const mv__ARM_FEATURE_ATOMICS = 1
+const mv__ARM_FEATURE_BTI = 1
+const mv__ARM_FEATURE_CLZ = 1
+const mv__ARM_FEATURE_COMPLEX = 1
+const mv__ARM_FEATURE_CRC32 = 1
+const mv__ARM_FEATURE_CRYPTO = 1
+const mv__ARM_FEATURE_DIRECTED_ROUNDING = 1
+const mv__ARM_FEATURE_DIV = 1
+const mv__ARM_FEATURE_DOTPROD = 1
+const mv__ARM_FEATURE_FMA = 1
+const mv__ARM_FEATURE_FP16_FML = 1
+const mv__ARM_FEATURE_FP16_SCALAR_ARITHMETIC = 1
+const mv__ARM_FEATURE_FP16_VECTOR_ARITHMETIC = 1
+const mv__ARM_FEATURE_FRINT = 1
+const mv__ARM_FEATURE_IDIV = 1
+const mv__ARM_FEATURE_JCVT = 1
+const mv__ARM_FEATURE_LDREX = 0xF
+const mv__ARM_FEATURE_NUMERIC_MAXMIN = 1
+const mv__ARM_FEATURE_PAUTH = 1
+const mv__ARM_FEATURE_QRDMX = 1
+const mv__ARM_FEATURE_RCPC = 1
+const mv__ARM_FEATURE_SHA2 = 1
+const mv__ARM_FEATURE_SHA3 = 1
+const mv__ARM_FEATURE_SHA512 = 1
+const mv__ARM_FEATURE_UNALIGNED = 1
+const mv__ARM_FP = 0xE
+const mv__ARM_FP16_ARGS = 1
+const mv__ARM_FP16_FORMAT_IEEE = 1
+const mv__ARM_NEON = 1
+const mv__ARM_NEON_FP = 0xE
+const mv__ARM_NEON__ = 1
+const mv__ARM_PCS_AAPCS64 = 1
+const mv__ARM_SIZEOF_MINIMAL_ENUM = 4
+const mv__ARM_SIZEOF_WCHAR_T = 4
+const mv__ARM_STATE_ZA = 1
+const mv__ARM_STATE_ZT0 = 1
+const mv__ATOMIC_ACQUIRE = 2
+const mv__ATOMIC_ACQ_REL = 4
+const mv__ATOMIC_CONSUME = 1
+const mv__ATOMIC_RELAXED = 0
+const mv__ATOMIC_RELEASE = 3
+const mv__ATOMIC_SEQ_CST = 5
+const mv__AVAILABILITY_FILE = "AvailabilityVersions.h"
+const mv__AVAILABILITY_VERSIONS_VERSION_HASH = 93585900
+const mv__AVAILABILITY_VERSIONS_VERSION_STRING = "Local"
+const mv__BIGGEST_ALIGNMENT__ = 8
+const mv__BITINT_MAXWIDTH__ = 128
+const mv__BLOCKS__ = 1
+const mv__BOOL_WIDTH__ = 8
+const mv__BRIDGEOS_10_0 = 100000
+const mv__BRIDGEOS_2_0 = 20000
+const mv__BRIDGEOS_3_0 = 30000
+const mv__BRIDGEOS_3_1 = 30100
+const mv__BRIDGEOS_3_4 = 30400
+const mv__BRIDGEOS_4_0 = 40000
+const mv__BRIDGEOS_4_1 = 40100
+const mv__BRIDGEOS_5_0 = 50000
+const mv__BRIDGEOS_5_1 = 50100
+const mv__BRIDGEOS_5_3 = 50300
+const mv__BRIDGEOS_6_0 = 60000
+const mv__BRIDGEOS_6_2 = 60200
+const mv__BRIDGEOS_6_4 = 60400
+const mv__BRIDGEOS_6_5 = 60500
+const mv__BRIDGEOS_6_6 = 60600
+const mv__BRIDGEOS_7_0 = 70000
+const mv__BRIDGEOS_7_1 = 70100
+const mv__BRIDGEOS_7_2 = 70200
+const mv__BRIDGEOS_7_3 = 70300
+const mv__BRIDGEOS_7_4 = 70400
+const mv__BRIDGEOS_7_6 = 70600
+const mv__BRIDGEOS_8_0 = 80000
+const mv__BRIDGEOS_8_1 = 80100
+const mv__BRIDGEOS_8_2 = 80200
+const mv__BRIDGEOS_8_3 = 80300
+const mv__BRIDGEOS_8_4 = 80400
+const mv__BRIDGEOS_8_5 = 80500
+const mv__BRIDGEOS_8_6 = 80600
+const mv__BRIDGEOS_9_0 = 90000
+const mv__BRIDGEOS_9_1 = 90100
+const mv__BRIDGEOS_9_2 = 90200
+const mv__BRIDGEOS_9_3 = 90300
+const mv__BRIDGEOS_9_4 = 90400
+const mv__BRIDGEOS_9_5 = 90500
+const mv__BRIDGEOS_9_6 = 90600
+const mv__BYTE_ORDER__ = "__ORDER_LITTLE_ENDIAN__"
+const mv__CCGO__ = 1
+const mv__CHAR_BIT__ = 8
+const mv__CLANG_ATOMIC_BOOL_LOCK_FREE = 2
+const mv__CLANG_ATOMIC_CHAR16_T_LOCK_FREE = 2
+const mv__CLANG_ATOMIC_CHAR32_T_LOCK_FREE = 2
+const mv__CLANG_ATOMIC_CHAR_LOCK_FREE = 2
+const mv__CLANG_ATOMIC_INT_LOCK_FREE = 2
+const mv__CLANG_ATOMIC_LLONG_LOCK_FREE = 2
+const mv__CLANG_ATOMIC_LONG_LOCK_FREE = 2
+const mv__CLANG_ATOMIC_POINTER_LOCK_FREE = 2
+const mv__CLANG_ATOMIC_SHORT_LOCK_FREE = 2
+const mv__CLANG_ATOMIC_WCHAR_T_LOCK_FREE = 2
+const mv__CONSTANT_CFSTRINGS__ = 1
+const mv__DARWIN_64_BIT_INO_T = 1
+const mv__DARWIN_BIG_ENDIAN = 4321
+const mv__DARWIN_BYTE_ORDER = "__DARWIN_LITTLE_ENDIAN"
+const mv__DARWIN_CTYPE_TOP_inline = "__header_inline"
+const mv__DARWIN_CTYPE_inline = "__header_inline"
+const mv__DARWIN_C_ANSI = 010000
+const mv__DARWIN_C_FULL = 900000
+const mv__DARWIN_C_LEVEL = "__DARWIN_C_FULL"
+const mv__DARWIN_FD_SETSIZE = 1024
+const mv__DARWIN_LITTLE_ENDIAN = 1234
+const mv__DARWIN_MAXNAMLEN = 255
+const mv__DARWIN_MAXPATHLEN = 1024
+const mv__DARWIN_NBBY = 8
+const mv__DARWIN_NON_CANCELABLE = 0
+const mv__DARWIN_NO_LONG_LONG = 0
+const mv__DARWIN_NSIG = 32
+const mv__DARWIN_ONLY_64_BIT_INO_T = 1
+const mv__DARWIN_ONLY_UNIX_CONFORMANCE = 1
+const mv__DARWIN_ONLY_VERS_1050 = 1
+const mv__DARWIN_OPAQUE_ARM_THREAD_STATE64 = 0
+const mv__DARWIN_PDP_ENDIAN = 3412
+const mv__DARWIN_SUF_EXTSN = "$DARWIN_EXTSN"
+const mv__DARWIN_UNIX03 = 1
+const mv__DARWIN_VERS_1050 = 1
+const mv__DARWIN_WCHAR_MAX = "__WCHAR_MAX__"
+const mv__DBL_DECIMAL_DIG__ = 17
+const mv__DBL_DENORM_MIN__ = 4.9406564584124654e-324
+const mv__DBL_DIG__ = 15
+const mv__DBL_EPSILON__ = 2.2204460492503131e-16
+const mv__DBL_HAS_DENORM__ = 1
+const mv__DBL_HAS_INFINITY__ = 1
+const mv__DBL_HAS_QUIET_NAN__ = 1
+const mv__DBL_MANT_DIG__ = 53
+const mv__DBL_MAX_10_EXP__ = 308
+const mv__DBL_MAX_EXP__ = 1024
+const mv__DBL_MAX__ = 1.7976931348623157e+308
+const mv__DBL_MIN__ = 2.2250738585072014e-308
+const mv__DBL_NORM_MAX__ = 1.7976931348623157e+308
+const mv__DECIMAL_DIG__ = "__LDBL_DECIMAL_DIG__"
+const mv__DRIVERKIT_19_0 = 190000
+const mv__DRIVERKIT_20_0 = 200000
+const mv__DRIVERKIT_21_0 = 210000
+const mv__DRIVERKIT_22_0 = 220000
+const mv__DRIVERKIT_22_4 = 220400
+const mv__DRIVERKIT_22_5 = 220500
+const mv__DRIVERKIT_22_6 = 220600
+const mv__DRIVERKIT_23_0 = 230000
+const mv__DRIVERKIT_23_1 = 230100
+const mv__DRIVERKIT_23_2 = 230200
+const mv__DRIVERKIT_23_3 = 230300
+const mv__DRIVERKIT_23_4 = 230400
+const mv__DRIVERKIT_23_5 = 230500
+const mv__DRIVERKIT_23_6 = 230600
+const mv__DRIVERKIT_24_0 = 240000
+const mv__DRIVERKIT_24_1 = 240100
+const mv__DRIVERKIT_24_2 = 240200
+const mv__DRIVERKIT_24_3 = 240300
+const mv__DRIVERKIT_24_4 = 240400
+const mv__DRIVERKIT_24_5 = 240500
+const mv__DRIVERKIT_24_6 = 240600
+const mv__DRIVERKIT_25_0 = 250000
+const mv__DTF_ATEND = 0x0020
+const mv__DTF_READALL = 0x0008
+const mv__DTF_SKIPREAD = 0x0010
+const mv__DYNAMIC__ = 1
+const mv__ENABLE_LEGACY_MAC_AVAILABILITY = 1
+const mv__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ = 260000
+const mv__ENVIRONMENT_OS_VERSION_MIN_REQUIRED__ = 260000
+const mv__EXTENSIONS__ = 1
+const mv__FINITE_MATH_ONLY__ = 0
+const mv__FLT16_DECIMAL_DIG__ = 5
+const mv__FLT16_DENORM_MIN__ = 5.9604644775390625e-8
+const mv__FLT16_DIG__ = 3
+const mv__FLT16_EPSILON__ = 9.765625e-4
+const mv__FLT16_HAS_DENORM__ = 1
+const mv__FLT16_HAS_INFINITY__ = 1
+const mv__FLT16_HAS_QUIET_NAN__ = 1
+const mv__FLT16_MANT_DIG__ = 11
+const mv__FLT16_MAX_10_EXP__ = 4
+const mv__FLT16_MAX_EXP__ = 16
+const mv__FLT16_MAX__ = 6.5504e+4
+const mv__FLT16_MIN__ = 6.103515625e-5
+const mv__FLT16_NORM_MAX__ = 6.5504e+4
+const mv__FLT_DECIMAL_DIG__ = 9
+const mv__FLT_DENORM_MIN__ = 1.40129846e-45
+const mv__FLT_DIG__ = 6
+const mv__FLT_EPSILON__ = 1.19209290e-7
+const mv__FLT_HAS_DENORM__ = 1
+const mv__FLT_HAS_INFINITY__ = 1
+const mv__FLT_HAS_QUIET_NAN__ = 1
+const mv__FLT_MANT_DIG__ = 24
+const mv__FLT_MAX_10_EXP__ = 38
+const mv__FLT_MAX_EXP__ = 128
+const mv__FLT_MAX__ = 3.40282347e+38
+const mv__FLT_MIN__ = 1.17549435e-38
+const mv__FLT_NORM_MAX__ = 3.40282347e+38
+const mv__FLT_RADIX__ = 2
+const mv__FPCLASS_NEGINF = 0x0004
+const mv__FPCLASS_NEGNORMAL = 0x0008
+const mv__FPCLASS_NEGSUBNORMAL = 0x0010
+const mv__FPCLASS_NEGZERO = 0x0020
+const mv__FPCLASS_POSINF = 0x0200
+const mv__FPCLASS_POSNORMAL = 0x0100
+const mv__FPCLASS_POSSUBNORMAL = 0x0080
+const mv__FPCLASS_POSZERO = 0x0040
+const mv__FPCLASS_QNAN = 0x0002
+const mv__FPCLASS_SNAN = 0x0001
+const mv__FP_FAST_FMA = 1
+const mv__FP_FAST_FMAF = 1
+const mv__FUNCTION__ = "__func__"
+const mv__GCC_ASM_FLAG_OUTPUTS__ = 1
+const mv__GCC_ATOMIC_BOOL_LOCK_FREE = 2
+const mv__GCC_ATOMIC_CHAR16_T_LOCK_FREE = 2
+const mv__GCC_ATOMIC_CHAR32_T_LOCK_FREE = 2
+const mv__GCC_ATOMIC_CHAR_LOCK_FREE = 2
+const mv__GCC_ATOMIC_INT_LOCK_FREE = 2
+const mv__GCC_ATOMIC_LLONG_LOCK_FREE = 2
+const mv__GCC_ATOMIC_LONG_LOCK_FREE = 2
+const mv__GCC_ATOMIC_POINTER_LOCK_FREE = 2
+const mv__GCC_ATOMIC_SHORT_LOCK_FREE = 2
+const mv__GCC_ATOMIC_TEST_AND_SET_TRUEVAL = 1
+const mv__GCC_ATOMIC_WCHAR_T_LOCK_FREE = 2
+const mv__GCC_CONSTRUCTIVE_SIZE = 64
+const mv__GCC_DESTRUCTIVE_SIZE = 64
+const mv__GCC_HAVE_DWARF2_CFI_ASM = 1
+const mv__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 = 1
+const mv__GCC_HAVE_SYNC_COMPARE_AND_SWAP_16 = 1
+const mv__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 = 1
+const mv__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 = 1
+const mv__GCC_HAVE_SYNC_COMPARE_AND_SWAP_8 = 1
+const mv__GNUC_MINOR__ = 2
+const mv__GNUC_PATCHLEVEL__ = 1
+const mv__GNUC_STDC_INLINE__ = 1
+const mv__GNUC__ = 4
+const mv__GXX_ABI_VERSION = 1002
+const mv__HAVE_FUNCTION_MULTI_VERSIONING = 1
+const mv__INT16_FMTd__ = "hd"
+const mv__INT16_FMTi__ = "hi"
+const mv__INT16_MAX__ = 32767
+const mv__INT16_TYPE__ = "short"
+const mv__INT32_FMTd__ = "d"
+const mv__INT32_FMTi__ = "i"
+const mv__INT32_MAX__ = 2147483647
+const mv__INT32_TYPE__ = "int"
+const mv__INT64_C_SUFFIX__ = "LL"
+const mv__INT64_FMTd__ = "lld"
+const mv__INT64_FMTi__ = "lli"
+const mv__INT64_MAX__ = 9223372036854775807
+const mv__INT8_FMTd__ = "hhd"
+const mv__INT8_FMTi__ = "hhi"
+const mv__INT8_MAX__ = 127
+const mv__INTMAX_C_SUFFIX__ = "L"
+const mv__INTMAX_FMTd__ = "ld"
+const mv__INTMAX_FMTi__ = "li"
+const mv__INTMAX_MAX__ = 9223372036854775807
+const mv__INTMAX_WIDTH__ = 64
+const mv__INTPTR_FMTd__ = "ld"
+const mv__INTPTR_FMTi__ = "li"
+const mv__INTPTR_MAX__ = 9223372036854775807
+const mv__INTPTR_WIDTH__ = 64
+const mv__INT_FAST16_FMTd__ = "hd"
+const mv__INT_FAST16_FMTi__ = "hi"
+const mv__INT_FAST16_MAX__ = 32767
+const mv__INT_FAST16_TYPE__ = "short"
+const mv__INT_FAST16_WIDTH__ = 16
+const mv__INT_FAST32_FMTd__ = "d"
+const mv__INT_FAST32_FMTi__ = "i"
+const mv__INT_FAST32_MAX__ = 2147483647
+const mv__INT_FAST32_TYPE__ = "int"
+const mv__INT_FAST32_WIDTH__ = 32
+const mv__INT_FAST64_FMTd__ = "lld"
+const mv__INT_FAST64_FMTi__ = "lli"
+const mv__INT_FAST64_MAX__ = 9223372036854775807
+const mv__INT_FAST64_WIDTH__ = 64
+const mv__INT_FAST8_FMTd__ = "hhd"
+const mv__INT_FAST8_FMTi__ = "hhi"
+const mv__INT_FAST8_MAX__ = 127
+const mv__INT_FAST8_WIDTH__ = 8
+const mv__INT_LEAST16_FMTd__ = "hd"
+const mv__INT_LEAST16_FMTi__ = "hi"
+const mv__INT_LEAST16_MAX__ = 32767
+const mv__INT_LEAST16_TYPE__ = "short"
+const mv__INT_LEAST16_WIDTH__ = 16
+const mv__INT_LEAST32_FMTd__ = "d"
+const mv__INT_LEAST32_FMTi__ = "i"
+const mv__INT_LEAST32_MAX__ = 2147483647
+const mv__INT_LEAST32_TYPE__ = "int"
+const mv__INT_LEAST32_WIDTH__ = 32
+const mv__INT_LEAST64_FMTd__ = "lld"
+const mv__INT_LEAST64_FMTi__ = "lli"
+const mv__INT_LEAST64_MAX = "INT64_MAX"
+const mv__INT_LEAST64_MAX__ = 9223372036854775807
+const mv__INT_LEAST64_MIN = "INT64_MIN"
+const mv__INT_LEAST64_WIDTH__ = 64
+const mv__INT_LEAST8_FMTd__ = "hhd"
+const mv__INT_LEAST8_FMTi__ = "hhi"
+const mv__INT_LEAST8_MAX__ = 127
+const mv__INT_LEAST8_WIDTH__ = 8
+const mv__INT_MAX__ = 2147483647
+const mv__INT_WIDTH__ = 32
+const mv__IPHONE_10_0 = 100000
+const mv__IPHONE_10_1 = 100100
+const mv__IPHONE_10_2 = 100200
+const mv__IPHONE_10_3 = 100300
+const mv__IPHONE_11_0 = 110000
+const mv__IPHONE_11_1 = 110100
+const mv__IPHONE_11_2 = 110200
+const mv__IPHONE_11_3 = 110300
+const mv__IPHONE_11_4 = 110400
+const mv__IPHONE_12_0 = 120000
+const mv__IPHONE_12_1 = 120100
+const mv__IPHONE_12_2 = 120200
+const mv__IPHONE_12_3 = 120300
+const mv__IPHONE_12_4 = 120400
+const mv__IPHONE_13_0 = 130000
+const mv__IPHONE_13_1 = 130100
+const mv__IPHONE_13_2 = 130200
+const mv__IPHONE_13_3 = 130300
+const mv__IPHONE_13_4 = 130400
+const mv__IPHONE_13_5 = 130500
+const mv__IPHONE_13_6 = 130600
+const mv__IPHONE_13_7 = 130700
+const mv__IPHONE_14_0 = 140000
+const mv__IPHONE_14_1 = 140100
+const mv__IPHONE_14_2 = 140200
+const mv__IPHONE_14_3 = 140300
+const mv__IPHONE_14_5 = 140500
+const mv__IPHONE_14_6 = 140600
+const mv__IPHONE_14_7 = 140700
+const mv__IPHONE_14_8 = 140800
+const mv__IPHONE_15_0 = 150000
+const mv__IPHONE_15_1 = 150100
+const mv__IPHONE_15_2 = 150200
+const mv__IPHONE_15_3 = 150300
+const mv__IPHONE_15_4 = 150400
+const mv__IPHONE_15_5 = 150500
+const mv__IPHONE_15_6 = 150600
+const mv__IPHONE_15_7 = 150700
+const mv__IPHONE_15_8 = 150800
+const mv__IPHONE_16_0 = 160000
+const mv__IPHONE_16_1 = 160100
+const mv__IPHONE_16_2 = 160200
+const mv__IPHONE_16_3 = 160300
+const mv__IPHONE_16_4 = 160400
+const mv__IPHONE_16_5 = 160500
+const mv__IPHONE_16_6 = 160600
+const mv__IPHONE_16_7 = 160700
+const mv__IPHONE_17_0 = 170000
+const mv__IPHONE_17_1 = 170100
+const mv__IPHONE_17_2 = 170200
+const mv__IPHONE_17_3 = 170300
+const mv__IPHONE_17_4 = 170400
+const mv__IPHONE_17_5 = 170500
+const mv__IPHONE_17_6 = 170600
+const mv__IPHONE_17_7 = 170700
+const mv__IPHONE_18_0 = 180000
+const mv__IPHONE_18_1 = 180100
+const mv__IPHONE_18_2 = 180200
+const mv__IPHONE_18_3 = 180300
+const mv__IPHONE_18_4 = 180400
+const mv__IPHONE_18_5 = 180500
+const mv__IPHONE_18_6 = 180600
+const mv__IPHONE_19_0 = 190000
+const mv__IPHONE_26_0 = 260000
+const mv__IPHONE_2_0 = 20000
+const mv__IPHONE_2_1 = 20100
+const mv__IPHONE_2_2 = 20200
+const mv__IPHONE_3_0 = 30000
+const mv__IPHONE_3_1 = 30100
+const mv__IPHONE_3_2 = 30200
+const mv__IPHONE_4_0 = 40000
+const mv__IPHONE_4_1 = 40100
+const mv__IPHONE_4_2 = 40200
+const mv__IPHONE_4_3 = 40300
+const mv__IPHONE_5_0 = 50000
+const mv__IPHONE_5_1 = 50100
+const mv__IPHONE_6_0 = 60000
+const mv__IPHONE_6_1 = 60100
+const mv__IPHONE_7_0 = 70000
+const mv__IPHONE_7_1 = 70100
+const mv__IPHONE_8_0 = 80000
+const mv__IPHONE_8_1 = 80100
+const mv__IPHONE_8_2 = 80200
+const mv__IPHONE_8_3 = 80300
+const mv__IPHONE_8_4 = 80400
+const mv__IPHONE_9_0 = 90000
+const mv__IPHONE_9_1 = 90100
+const mv__IPHONE_9_2 = 90200
+const mv__IPHONE_9_3 = 90300
+const mv__LDBL_DECIMAL_DIG__ = 17
+const mv__LDBL_DENORM_MIN__ = 4.9406564584124654e-324
+const mv__LDBL_DIG__ = 15
+const mv__LDBL_EPSILON__ = 2.2204460492503131e-16
+const mv__LDBL_HAS_DENORM__ = 1
+const mv__LDBL_HAS_INFINITY__ = 1
+const mv__LDBL_HAS_QUIET_NAN__ = 1
+const mv__LDBL_MANT_DIG__ = 53
+const mv__LDBL_MAX_10_EXP__ = 308
+const mv__LDBL_MAX_EXP__ = 1024
+const mv__LDBL_MAX__ = 1.7976931348623157e+308
+const mv__LDBL_MIN__ = 2.2250738585072014e-308
+const mv__LDBL_NORM_MAX__ = 1.7976931348623157e+308
+const mv__LITTLE_ENDIAN__ = 1
+const mv__LLONG_WIDTH__ = 64
+const mv__LONG_LONG_MAX__ = 9223372036854775807
+const mv__LONG_MAX__ = 9223372036854775807
+const mv__LONG_WIDTH__ = 64
+const mv__LP64_OFF64 = 1
+const mv__LP64__ = 1
+const mv__LPBIG_OFFBIG = 1
+const mv__MACH__ = 1
+const mv__MAC_10_0 = 1000
+const mv__MAC_10_1 = 1010
+const mv__MAC_10_10 = 101000
+const mv__MAC_10_10_2 = 101002
+const mv__MAC_10_10_3 = 101003
+const mv__MAC_10_11 = 101100
+const mv__MAC_10_11_2 = 101102
+const mv__MAC_10_11_3 = 101103
+const mv__MAC_10_11_4 = 101104
+const mv__MAC_10_12 = 101200
+const mv__MAC_10_12_1 = 101201
+const mv__MAC_10_12_2 = 101202
+const mv__MAC_10_12_4 = 101204
+const mv__MAC_10_13 = 101300
+const mv__MAC_10_13_1 = 101301
+const mv__MAC_10_13_2 = 101302
+const mv__MAC_10_13_4 = 101304
+const mv__MAC_10_14 = 101400
+const mv__MAC_10_14_1 = 101401
+const mv__MAC_10_14_4 = 101404
+const mv__MAC_10_14_5 = 101405
+const mv__MAC_10_14_6 = 101406
+const mv__MAC_10_15 = 101500
+const mv__MAC_10_15_1 = 101501
+const mv__MAC_10_15_4 = 101504
+const mv__MAC_10_16 = 101600
+const mv__MAC_10_2 = 1020
+const mv__MAC_10_3 = 1030
+const mv__MAC_10_4 = 1040
+const mv__MAC_10_5 = 1050
+const mv__MAC_10_6 = 1060
+const mv__MAC_10_7 = 1070
+const mv__MAC_10_8 = 1080
+const mv__MAC_10_9 = 1090
+const mv__MAC_11_0 = 110000
+const mv__MAC_11_1 = 110100
+const mv__MAC_11_3 = 110300
+const mv__MAC_11_4 = 110400
+const mv__MAC_11_5 = 110500
+const mv__MAC_11_6 = 110600
+const mv__MAC_12_0 = 120000
+const mv__MAC_12_1 = 120100
+const mv__MAC_12_2 = 120200
+const mv__MAC_12_3 = 120300
+const mv__MAC_12_4 = 120400
+const mv__MAC_12_5 = 120500
+const mv__MAC_12_6 = 120600
+const mv__MAC_12_7 = 120700
+const mv__MAC_13_0 = 130000
+const mv__MAC_13_1 = 130100
+const mv__MAC_13_2 = 130200
+const mv__MAC_13_3 = 130300
+const mv__MAC_13_4 = 130400
+const mv__MAC_13_5 = 130500
+const mv__MAC_13_6 = 130600
+const mv__MAC_13_7 = 130700
+const mv__MAC_14_0 = 140000
+const mv__MAC_14_1 = 140100
+const mv__MAC_14_2 = 140200
+const mv__MAC_14_3 = 140300
+const mv__MAC_14_4 = 140400
+const mv__MAC_14_5 = 140500
+const mv__MAC_14_6 = 140600
+const mv__MAC_14_7 = 140700
+const mv__MAC_15_0 = 150000
+const mv__MAC_15_1 = 150100
+const mv__MAC_15_2 = 150200
+const mv__MAC_15_3 = 150300
+const mv__MAC_15_4 = 150400
+const mv__MAC_15_5 = 150500
+const mv__MAC_15_6 = 150600
+const mv__MAC_16_0 = 160000
+const mv__MAC_26_0 = 260000
+const mv__MAC_OS_X_VERSION_MAX_ALLOWED = "__MAC_26_0"
+const mv__MAC_OS_X_VERSION_MIN_REQUIRED = "__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__"
+const mv__MEMORY_SCOPE_DEVICE = 1
+const mv__MEMORY_SCOPE_SINGLE = 4
+const mv__MEMORY_SCOPE_SYSTEM = 0
+const mv__MEMORY_SCOPE_WRKGRP = 2
+const mv__MEMORY_SCOPE_WVFRNT = 3
+const mv__NO_INLINE__ = 1
+const mv__NO_MATH_ERRNO__ = 1
+const mv__OBJC_BOOL_IS_BOOL = 1
+const mv__OPENCL_MEMORY_SCOPE_ALL_SVM_DEVICES = 3
+const mv__OPENCL_MEMORY_SCOPE_DEVICE = 2
+const mv__OPENCL_MEMORY_SCOPE_SUB_GROUP = 4
+const mv__OPENCL_MEMORY_SCOPE_WORK_GROUP = 1
+const mv__OPENCL_MEMORY_SCOPE_WORK_ITEM = 0
+const mv__ORDER_BIG_ENDIAN__ = 4321
+const mv__ORDER_LITTLE_ENDIAN__ = 1234
+const mv__ORDER_PDP_ENDIAN__ = 3412
+const mv__PIC__ = 2
+const mv__POINTER_WIDTH__ = 64
+const mv__PRAGMA_REDEFINE_EXTNAME = 1
+const mv__PRETTY_FUNCTION__ = "__func__"
+const mv__PTHREAD_ATTR_SIZE__ = 56
+const mv__PTHREAD_CONDATTR_SIZE__ = 8
+const mv__PTHREAD_COND_SIZE__ = 40
+const mv__PTHREAD_MUTEXATTR_SIZE__ = 8
+const mv__PTHREAD_MUTEX_SIZE__ = 56
+const mv__PTHREAD_ONCE_SIZE__ = 8
+const mv__PTHREAD_RWLOCKATTR_SIZE__ = 16
+const mv__PTHREAD_RWLOCK_SIZE__ = 192
+const mv__PTHREAD_SIZE__ = 8176
+const mv__PTRDIFF_FMTd__ = "ld"
+const mv__PTRDIFF_FMTi__ = "li"
+const mv__PTRDIFF_MAX__ = 9223372036854775807
+const mv__PTRDIFF_WIDTH__ = 64
+const mv__SALC = 0x4000
+const mv__SAPP = 0x0100
+const mv__SCHAR_MAX__ = 127
+const mv__SEOF = 0x0020
+const mv__SERR = 0x0040
+const mv__SHRT_MAX__ = 32767
+const mv__SHRT_WIDTH__ = 16
+const mv__SIGN = 0x8000
+const mv__SIG_ATOMIC_MAX__ = 2147483647
+const mv__SIG_ATOMIC_WIDTH__ = 32
+const mv__SIZEOF_DOUBLE__ = 8
+const mv__SIZEOF_FLOAT__ = 4
+const mv__SIZEOF_INT128__ = 16
+const mv__SIZEOF_INT__ = 4
+const mv__SIZEOF_LONG_DOUBLE__ = 8
+const mv__SIZEOF_LONG_LONG__ = 8
+const mv__SIZEOF_LONG__ = 8
+const mv__SIZEOF_POINTER__ = 8
+const mv__SIZEOF_PTRDIFF_T__ = 8
+const mv__SIZEOF_SHORT__ = 2
+const mv__SIZEOF_SIZE_T__ = 8
+const mv__SIZEOF_WCHAR_T__ = 4
+const mv__SIZEOF_WINT_T__ = 4
+const mv__SIZE_FMTX__ = "lX"
+const mv__SIZE_FMTo__ = "lo"
+const mv__SIZE_FMTu__ = "lu"
+const mv__SIZE_FMTx__ = "lx"
+const mv__SIZE_MAX__ = 18446744073709551615
+const mv__SIZE_WIDTH__ = 64
+const mv__SLBF = 0x0001
+const mv__SMBF = 0x0080
+const mv__SMOD = 0x2000
+const mv__SNBF = 0x0002
+const mv__SNPT = 0x0800
+const mv__SOFF = 0x1000
+const mv__SOPT = 0x0400
+const mv__SRD = 0x0004
+const mv__SRW = 0x0010
+const mv__SSP__ = 1
+const mv__SSTR = 0x0200
+const mv__STDC_EMBED_EMPTY__ = 2
+const mv__STDC_EMBED_FOUND__ = 1
+const mv__STDC_EMBED_NOT_FOUND__ = 0
+const mv__STDC_HOSTED__ = 1
+const mv__STDC_NO_THREADS__ = 1
+const mv__STDC_UTF_16__ = 1
+const mv__STDC_UTF_32__ = 1
+const mv__STDC_VERSION__ = 201710
+const mv__STDC_WANT_IEC_60559_ATTRIBS_EXT__ = 1
+const mv__STDC_WANT_IEC_60559_BFP_EXT__ = 1
+const mv__STDC_WANT_IEC_60559_DFP_EXT__ = 1
+const mv__STDC_WANT_IEC_60559_EXT__ = 1
+const mv__STDC_WANT_IEC_60559_FUNCS_EXT__ = 1
+const mv__STDC_WANT_IEC_60559_TYPES_EXT__ = 1
+const mv__STDC_WANT_LIB_EXT1__ = 1
+const mv__STDC_WANT_LIB_EXT2__ = 1
+const mv__STDC_WANT_MATH_SPEC_FUNCS__ = 1
+const mv__STDC__ = 1
+const mv__SWR = 0x0008
+const mv__TVOS_10_0 = 100000
+const mv__TVOS_10_0_1 = 100001
+const mv__TVOS_10_1 = 100100
+const mv__TVOS_10_2 = 100200
+const mv__TVOS_11_0 = 110000
+const mv__TVOS_11_1 = 110100
+const mv__TVOS_11_2 = 110200
+const mv__TVOS_11_3 = 110300
+const mv__TVOS_11_4 = 110400
+const mv__TVOS_12_0 = 120000
+const mv__TVOS_12_1 = 120100
+const mv__TVOS_12_2 = 120200
+const mv__TVOS_12_3 = 120300
+const mv__TVOS_12_4 = 120400
+const mv__TVOS_13_0 = 130000
+const mv__TVOS_13_2 = 130200
+const mv__TVOS_13_3 = 130300
+const mv__TVOS_13_4 = 130400
+const mv__TVOS_14_0 = 140000
+const mv__TVOS_14_1 = 140100
+const mv__TVOS_14_2 = 140200
+const mv__TVOS_14_3 = 140300
+const mv__TVOS_14_5 = 140500
+const mv__TVOS_14_6 = 140600
+const mv__TVOS_14_7 = 140700
+const mv__TVOS_15_0 = 150000
+const mv__TVOS_15_1 = 150100
+const mv__TVOS_15_2 = 150200
+const mv__TVOS_15_3 = 150300
+const mv__TVOS_15_4 = 150400
+const mv__TVOS_15_5 = 150500
+const mv__TVOS_15_6 = 150600
+const mv__TVOS_16_0 = 160000
+const mv__TVOS_16_1 = 160100
+const mv__TVOS_16_2 = 160200
+const mv__TVOS_16_3 = 160300
+const mv__TVOS_16_4 = 160400
+const mv__TVOS_16_5 = 160500
+const mv__TVOS_16_6 = 160600
+const mv__TVOS_17_0 = 170000
+const mv__TVOS_17_1 = 170100
+const mv__TVOS_17_2 = 170200
+const mv__TVOS_17_3 = 170300
+const mv__TVOS_17_4 = 170400
+const mv__TVOS_17_5 = 170500
+const mv__TVOS_17_6 = 170600
+const mv__TVOS_18_0 = 180000
+const mv__TVOS_18_1 = 180100
+const mv__TVOS_18_2 = 180200
+const mv__TVOS_18_3 = 180300
+const mv__TVOS_18_4 = 180400
+const mv__TVOS_18_5 = 180500
+const mv__TVOS_18_6 = 180600
+const mv__TVOS_19_0 = 190000
+const mv__TVOS_26_0 = 260000
+const mv__TVOS_9_0 = 90000
+const mv__TVOS_9_1 = 90100
+const mv__TVOS_9_2 = 90200
+const mv__UINT16_FMTX__ = "hX"
+const mv__UINT16_FMTo__ = "ho"
+const mv__UINT16_FMTu__ = "hu"
+const mv__UINT16_FMTx__ = "hx"
+const mv__UINT16_MAX__ = 65535
+const mv__UINT32_C_SUFFIX__ = "U"
+const mv__UINT32_FMTX__ = "X"
+const mv__UINT32_FMTo__ = "o"
+const mv__UINT32_FMTu__ = "u"
+const mv__UINT32_FMTx__ = "x"
+const mv__UINT32_MAX__ = 4294967295
+const mv__UINT64_C_SUFFIX__ = "ULL"
+const mv__UINT64_FMTX__ = "llX"
+const mv__UINT64_FMTo__ = "llo"
+const mv__UINT64_FMTu__ = "llu"
+const mv__UINT64_FMTx__ = "llx"
+const mv__UINT64_MAX__ = "18446744073709551615U"
+const mv__UINT8_FMTX__ = "hhX"
+const mv__UINT8_FMTo__ = "hho"
+const mv__UINT8_FMTu__ = "hhu"
+const mv__UINT8_FMTx__ = "hhx"
+const mv__UINT8_MAX__ = 255
+const mv__UINTMAX_C_SUFFIX__ = "UL"
+const mv__UINTMAX_FMTX__ = "lX"
+const mv__UINTMAX_FMTo__ = "lo"
+const mv__UINTMAX_FMTu__ = "lu"
+const mv__UINTMAX_FMTx__ = "lx"
+const mv__UINTMAX_MAX__ = 18446744073709551615
+const mv__UINTMAX_WIDTH__ = 64
+const mv__UINTPTR_FMTX__ = "lX"
+const mv__UINTPTR_FMTo__ = "lo"
+const mv__UINTPTR_FMTu__ = "lu"
+const mv__UINTPTR_FMTx__ = "lx"
+const mv__UINTPTR_MAX__ = 18446744073709551615
+const mv__UINTPTR_WIDTH__ = 64
+const mv__UINT_FAST16_FMTX__ = "hX"
+const mv__UINT_FAST16_FMTo__ = "ho"
+const mv__UINT_FAST16_FMTu__ = "hu"
+const mv__UINT_FAST16_FMTx__ = "hx"
+const mv__UINT_FAST16_MAX__ = 65535
+const mv__UINT_FAST32_FMTX__ = "X"
+const mv__UINT_FAST32_FMTo__ = "o"
+const mv__UINT_FAST32_FMTu__ = "u"
+const mv__UINT_FAST32_FMTx__ = "x"
+const mv__UINT_FAST32_MAX__ = 4294967295
+const mv__UINT_FAST64_FMTX__ = "llX"
+const mv__UINT_FAST64_FMTo__ = "llo"
+const mv__UINT_FAST64_FMTu__ = "llu"
+const mv__UINT_FAST64_FMTx__ = "llx"
+const mv__UINT_FAST64_MAX__ = "18446744073709551615U"
+const mv__UINT_FAST8_FMTX__ = "hhX"
+const mv__UINT_FAST8_FMTo__ = "hho"
+const mv__UINT_FAST8_FMTu__ = "hhu"
+const mv__UINT_FAST8_FMTx__ = "hhx"
+const mv__UINT_FAST8_MAX__ = 255
+const mv__UINT_LEAST16_FMTX__ = "hX"
+const mv__UINT_LEAST16_FMTo__ = "ho"
+const mv__UINT_LEAST16_FMTu__ = "hu"
+const mv__UINT_LEAST16_FMTx__ = "hx"
+const mv__UINT_LEAST16_MAX__ = 65535
+const mv__UINT_LEAST32_FMTX__ = "X"
+const mv__UINT_LEAST32_FMTo__ = "o"
+const mv__UINT_LEAST32_FMTu__ = "u"
+const mv__UINT_LEAST32_FMTx__ = "x"
+const mv__UINT_LEAST32_MAX__ = 4294967295
+const mv__UINT_LEAST64_FMTX__ = "llX"
+const mv__UINT_LEAST64_FMTo__ = "llo"
+const mv__UINT_LEAST64_FMTu__ = "llu"
+const mv__UINT_LEAST64_FMTx__ = "llx"
+const mv__UINT_LEAST64_MAX = "UINT64_MAX"
+const mv__UINT_LEAST64_MAX__ = "18446744073709551615U"
+const mv__UINT_LEAST8_FMTX__ = "hhX"
+const mv__UINT_LEAST8_FMTo__ = "hho"
+const mv__UINT_LEAST8_FMTu__ = "hhu"
+const mv__UINT_LEAST8_FMTx__ = "hhx"
+const mv__UINT_LEAST8_MAX__ = 255
+const mv__USER_LABEL_PREFIX__ = "_"
+const mv__VERSION__ = "Apple LLVM 17.0.0 (clang-1700.3.19.1)"
+const mv__VISIONOS_1_0 = 10000
+const mv__VISIONOS_1_1 = 10100
+const mv__VISIONOS_1_2 = 10200
+const mv__VISIONOS_1_3 = 10300
+const mv__VISIONOS_26_0 = 260000
+const mv__VISIONOS_2_0 = 20000
+const mv__VISIONOS_2_1 = 20100
+const mv__VISIONOS_2_2 = 20200
+const mv__VISIONOS_2_3 = 20300
+const mv__VISIONOS_2_4 = 20400
+const mv__VISIONOS_2_5 = 20500
+const mv__VISIONOS_2_6 = 20600
+const mv__VISIONOS_3_0 = 30000
+const mv__WATCHOS_10_0 = 100000
+const mv__WATCHOS_10_1 = 100100
+const mv__WATCHOS_10_2 = 100200
+const mv__WATCHOS_10_3 = 100300
+const mv__WATCHOS_10_4 = 100400
+const mv__WATCHOS_10_5 = 100500
+const mv__WATCHOS_10_6 = 100600
+const mv__WATCHOS_10_7 = 100700
+const mv__WATCHOS_11_0 = 110000
+const mv__WATCHOS_11_1 = 110100
+const mv__WATCHOS_11_2 = 110200
+const mv__WATCHOS_11_3 = 110300
+const mv__WATCHOS_11_4 = 110400
+const mv__WATCHOS_11_5 = 110500
+const mv__WATCHOS_11_6 = 110600
+const mv__WATCHOS_12_0 = 120000
+const mv__WATCHOS_1_0 = 10000
+const mv__WATCHOS_26_0 = 260000
+const mv__WATCHOS_2_0 = 20000
+const mv__WATCHOS_2_1 = 20100
+const mv__WATCHOS_2_2 = 20200
+const mv__WATCHOS_3_0 = 30000
+const mv__WATCHOS_3_1 = 30100
+const mv__WATCHOS_3_1_1 = 30101
+const mv__WATCHOS_3_2 = 30200
+const mv__WATCHOS_4_0 = 40000
+const mv__WATCHOS_4_1 = 40100
+const mv__WATCHOS_4_2 = 40200
+const mv__WATCHOS_4_3 = 40300
+const mv__WATCHOS_5_0 = 50000
+const mv__WATCHOS_5_1 = 50100
+const mv__WATCHOS_5_2 = 50200
+const mv__WATCHOS_5_3 = 50300
+const mv__WATCHOS_6_0 = 60000
+const mv__WATCHOS_6_1 = 60100
+const mv__WATCHOS_6_2 = 60200
+const mv__WATCHOS_7_0 = 70000
+const mv__WATCHOS_7_1 = 70100
+const mv__WATCHOS_7_2 = 70200
+const mv__WATCHOS_7_3 = 70300
+const mv__WATCHOS_7_4 = 70400
+const mv__WATCHOS_7_5 = 70500
+const mv__WATCHOS_7_6 = 70600
+const mv__WATCHOS_8_0 = 80000
+const mv__WATCHOS_8_1 = 80100
+const mv__WATCHOS_8_3 = 80300
+const mv__WATCHOS_8_4 = 80400
+const mv__WATCHOS_8_5 = 80500
+const mv__WATCHOS_8_6 = 80600
+const mv__WATCHOS_8_7 = 80700
+const mv__WATCHOS_8_8 = 80800
+const mv__WATCHOS_9_0 = 90000
+const mv__WATCHOS_9_1 = 90100
+const mv__WATCHOS_9_2 = 90200
+const mv__WATCHOS_9_3 = 90300
+const mv__WATCHOS_9_4 = 90400
+const mv__WATCHOS_9_5 = 90500
+const mv__WATCHOS_9_6 = 90600
+const mv__WCHAR_MAX__ = 2147483647
+const mv__WCHAR_TYPE__ = "int"
+const mv__WCHAR_WIDTH__ = 32
+const mv__WINT_MAX__ = 2147483647
+const mv__WINT_TYPE__ = "int"
+const mv__WINT_WIDTH__ = 32
+const mv__aarch64__ = 1
+const mv__apple_build_version__ = 17000319
+const mv__arm64 = 1
+const mv__arm64__ = 1
+const mv__clang__ = 1
+const mv__clang_literal_encoding__ = "UTF-8"
+const mv__clang_major__ = 17
+const mv__clang_minor__ = 0
+const mv__clang_patchlevel__ = 0
+const mv__clang_version__ = "17.0.0 (clang-1700.3.19.1)"
+const mv__clang_wide_literal_encoding__ = "UTF-32"
+const mv__const = "const"
+const mv__exported_hidden = "__private_extern__"
+const mv__has_bounds_safety_attributes = 0
+const mv__has_ptrcheck = 0
+const mv__has_safe_buffers = 0
+const mv__header_inline = "inline"
+const mv__llvm__ = 1
+const mv__nonnull = "_Nonnull"
+const mv__null_unspecified = "_Null_unspecified"
+const mv__nullable = "_Nullable"
+const mv__pic__ = 2
+const mv__restrict = "restrict"
+const mv__restrict_arr = "restrict"
+const mv__signed = "signed"
+const mv__volatile = "volatile"
+const mvd_fileno = "d_ino"
+const mvinit_prof_err_tbl = "initialize_prof_error_table"
+const mvprof_err_base = "ERROR_TABLE_BASE_prof"
+const mvru_first = "ru_ixrss"
+const mvru_last = "ru_nivcsw"
+const mvstderr = "__stderrp"
+const mvstdin = "__stdinp"
+const mvstdout = "__stdoutp"
+const mvsv_onstack = "sv_flags"
+
+type tn__builtin_va_list = ppuintptr
+
+type tn__predefined_size_t = ppuint64
+
+type tn__predefined_wchar_t = ppint32
+
+type tn__predefined_ptrdiff_t = ppint64
+
+type tn__int8_t = ppint8
+
+type tn__uint8_t = ppuint8
+
+type tn__int16_t = ppint16
+
+type tn__uint16_t = ppuint16
+
+type tn__int32_t = ppint32
+
+type tn__uint32_t = ppuint32
+
+type tn__int64_t = ppint64
+
+type tn__uint64_t = ppuint64
+
+type tn__darwin_intptr_t = ppint64
+
+type tn__darwin_natural_t = ppuint32
+
+type tn__darwin_ct_rune_t = ppint32
+
+type tn__mbstate_t = struct {
+	fd_mbstateL  [0]ppint64
+	fd__mbstate8 [128]ppint8
+}
+
+type tn__darwin_mbstate_t = struct {
+	fd_mbstateL  [0]ppint64
+	fd__mbstate8 [128]ppint8
+}
+
+type tn__darwin_ptrdiff_t = ppint64
+
+type tn__darwin_size_t = ppuint64
+
+type tn__darwin_va_list = ppuintptr
+
+type tn__darwin_wchar_t = ppint32
+
+type tn__darwin_rune_t = ppint32
+
+type tn__darwin_wint_t = ppint32
+
+type tn__darwin_clock_t = ppuint64
+
+type tn__darwin_socklen_t = ppuint32
+
+type tn__darwin_ssize_t = ppint64
+
+type tn__darwin_time_t = ppint64
+
+type tn__darwin_blkcnt_t = ppint64
+
+type tn__darwin_blksize_t = ppint32
+
+type tn__darwin_dev_t = ppint32
+
+type tn__darwin_fsblkcnt_t = ppuint32
+
+type tn__darwin_fsfilcnt_t = ppuint32
+
+type tn__darwin_gid_t = ppuint32
+
+type tn__darwin_id_t = ppuint32
+
+type tn__darwin_ino64_t = ppuint64
+
+type tn__darwin_ino_t = ppuint64
+
+type tn__darwin_mach_port_name_t = ppuint32
+
+type tn__darwin_mach_port_t = ppuint32
+
+type tn__darwin_mode_t = ppuint16
+
+type tn__darwin_off_t = ppint64
+
+type tn__darwin_pid_t = ppint32
+
+type tn__darwin_sigset_t = ppuint32
+
+type tn__darwin_suseconds_t = ppint32
+
+type tn__darwin_uid_t = ppuint32
+
+type tn__darwin_useconds_t = ppuint32
+
+type tn__darwin_uuid_t = [16]ppuint8
+
+type tn__darwin_uuid_string_t = [37]ppint8
+
+type ts__darwin_pthread_handler_rec = struct {
+	fd__routine ppuintptr
+	fd__arg     ppuintptr
+	fd__next    ppuintptr
+}
+
+type ts_opaque_pthread_attr_t = struct {
+	fd__sig    ppint64
+	fd__opaque [56]ppint8
+}
+
+type ts_opaque_pthread_cond_t = struct {
+	fd__sig    ppint64
+	fd__opaque [40]ppint8
+}
+
+type ts_opaque_pthread_condattr_t = struct {
+	fd__sig    ppint64
+	fd__opaque [8]ppint8
+}
+
+type ts_opaque_pthread_mutex_t = struct {
+	fd__sig    ppint64
+	fd__opaque [56]ppint8
+}
+
+type ts_opaque_pthread_mutexattr_t = struct {
+	fd__sig    ppint64
+	fd__opaque [8]ppint8
+}
+
+type ts_opaque_pthread_once_t = struct {
+	fd__sig    ppint64
+	fd__opaque [8]ppint8
+}
+
+type ts_opaque_pthread_rwlock_t = struct {
+	fd__sig    ppint64
+	fd__opaque [192]ppint8
+}
+
+type ts_opaque_pthread_rwlockattr_t = struct {
+	fd__sig    ppint64
+	fd__opaque [16]ppint8
+}
+
+type ts_opaque_pthread_t = struct {
+	fd__sig           ppint64
+	fd__cleanup_stack ppuintptr
+	fd__opaque        [8176]ppint8
+}
+
+type tn__darwin_pthread_attr_t = struct {
+	fd__sig    ppint64
+	fd__opaque [56]ppint8
+}
+
+type tn__darwin_pthread_cond_t = struct {
+	fd__sig    ppint64
+	fd__opaque [40]ppint8
+}
+
+type tn__darwin_pthread_condattr_t = struct {
+	fd__sig    ppint64
+	fd__opaque [8]ppint8
+}
+
+type tn__darwin_pthread_key_t = ppuint64
+
+type tn__darwin_pthread_mutex_t = struct {
+	fd__sig    ppint64
+	fd__opaque [56]ppint8
+}
+
+type tn__darwin_pthread_mutexattr_t = struct {
+	fd__sig    ppint64
+	fd__opaque [8]ppint8
+}
+
+type tn__darwin_pthread_once_t = struct {
+	fd__sig    ppint64
+	fd__opaque [8]ppint8
+}
+
+type tn__darwin_pthread_rwlock_t = struct {
+	fd__sig    ppint64
+	fd__opaque [192]ppint8
+}
+
+type tn__darwin_pthread_rwlockattr_t = struct {
+	fd__sig    ppint64
+	fd__opaque [16]ppint8
+}
+
+type tn__darwin_pthread_t = ppuintptr
+
+type tn__darwin_nl_item = ppint32
+
+type tn__darwin_wctrans_t = ppint32
+
+type tn__darwin_wctype_t = ppuint32
+
+type tsaccessx_descriptor = struct {
+	fdad_name_offset ppuint32
+	fdad_flags       ppint32
+	fdad_pad         [2]ppint32
+}
+
+type tnsize_t = ppuint64
+
+type tnint8_t = ppint8
+
+type tnint16_t = ppint16
+
+type tnint32_t = ppint32
+
+type tnint64_t = ppint64
+
+type tnu_int8_t = ppuint8
+
+type tnu_int16_t = ppuint16
+
+type tnu_int32_t = ppuint32
+
+type tnu_int64_t = ppuint64
+
+type tnregister_t = ppint64
+
+type tnintptr_t = ppint64
+
+type tnuintptr_t = ppuint64
+
+type tnuser_addr_t = ppuint64
+
+type tnuser_size_t = ppuint64
+
+type tnuser_ssize_t = ppint64
+
+type tnuser_long_t = ppint64
+
+type tnuser_ulong_t = ppuint64
+
+type tnuser_time_t = ppint64
+
+type tnuser_off_t = ppint64
+
+type tnsyscall_arg_t = ppuint64
+
+type tnssize_t = ppint64
+
+type tnuint64_t = ppuint64
+
+type tnuint32_t = ppuint32
+
+type tnuid_t = ppuint32
+
+type tngid_t = ppuint32
+
+type tnoff_t = ppint64
+
+type tnpid_t = ppint32
+
+type tnuseconds_t = ppuint32
+
+type tnfd_set = struct {
+	fdfds_bits [32]tn__int32_t
+}
+
+type tstimespec = struct {
+	fdtv_sec  tn__darwin_time_t
+	fdtv_nsec ppint64
+}
+
+type tstimeval = struct {
+	fdtv_sec  tn__darwin_time_t
+	fdtv_usec tn__darwin_suseconds_t
+}
+
+type tntime_t = ppint64
+
+type tnsuseconds_t = ppint32
+
+type tnsigset_t = ppuint32
+
+type tndev_t = ppint32
+
+type tnmode_t = ppuint16
+
+type tnuuid_t = [16]ppuint8
+
+type tnva_list = ppuintptr
+
+type tnfpos_t = ppint64
+
+type ts__sbuf = struct {
+	fd_base ppuintptr
+	fd_size ppint32
+}
+
+type tnFILE = struct {
+	fd_p       ppuintptr
+	fd_r       ppint32
+	fd_w       ppint32
+	fd_flags   ppint16
+	fd_file    ppint16
+	fd_bf      ts__sbuf
+	fd_lbfsize ppint32
+	fd_cookie  ppuintptr
+	fd_close   ppuintptr
+	fd_read    ppuintptr
+	fd_seek    ppuintptr
+	fd_write   ppuintptr
+	fd_ub      ts__sbuf
+	fd_extra   ppuintptr
+	fd_ur      ppint32
+	fd_ubuf    [3]ppuint8
+	fd_nbuf    [1]ppuint8
+	fd_lb      ts__sbuf
+	fd_blksize ppint32
+	fd_offset  tnfpos_t
+}
+
+type ts__sFILE = tnFILE
+
+type tnidtype_t = ppint32
+
+const ecP_ALL = 0
+const ecP_PID = 1
+const ecP_PGID = 2
+
+type tnid_t = ppuint32
+
+type tnsig_atomic_t = ppint32
+
+type ts__darwin_arm_exception_state = struct {
+	fd__exception tn__uint32_t
+	fd__fsr       tn__uint32_t
+	fd__far       tn__uint32_t
+}
+
+type ts__darwin_arm_exception_state64 = struct {
+	fd__far       tn__uint64_t
+	fd__esr       tn__uint32_t
+	fd__exception tn__uint32_t
+}
+
+type ts__darwin_arm_exception_state64_v2 = struct {
+	fd__far tn__uint64_t
+	fd__esr tn__uint64_t
+}
+
+type ts__darwin_arm_thread_state = struct {
+	fd__r    [13]tn__uint32_t
+	fd__sp   tn__uint32_t
+	fd__lr   tn__uint32_t
+	fd__pc   tn__uint32_t
+	fd__cpsr tn__uint32_t
+}
+
+type ts__darwin_arm_thread_state64 = struct {
+	fd__x    [29]tn__uint64_t
+	fd__fp   tn__uint64_t
+	fd__lr   tn__uint64_t
+	fd__sp   tn__uint64_t
+	fd__pc   tn__uint64_t
+	fd__cpsr tn__uint32_t
+	fd__pad  tn__uint32_t
+}
+
+type ts__darwin_arm_vfp_state = struct {
+	fd__r     [64]tn__uint32_t
+	fd__fpscr tn__uint32_t
+}
+
+type ts__darwin_arm_neon_state64 = struct {
+	fd__ccgo_align [0]ppuint64
+	fd__v          [32][2]ppuint64
+	fd__fpsr       tn__uint32_t
+	fd__fpcr       tn__uint32_t
+	fd__ccgo_pad3  [8]byte
+}
+
+type ts__darwin_arm_neon_state = struct {
+	fd__ccgo_align [0]ppuint64
+	fd__v          [16][2]ppuint64
+	fd__fpsr       tn__uint32_t
+	fd__fpcr       tn__uint32_t
+	fd__ccgo_pad3  [8]byte
+}
+
+type ts__arm_pagein_state = struct {
+	fd__pagein_error ppint32
+}
+
+type ts__darwin_arm_sme_state = struct {
+	fd__svcr       tn__uint64_t
+	fd__tpidr2_el0 tn__uint64_t
+	fd__svl_b      tn__uint16_t
+}
+
+type ts__darwin_arm_sve_z_state = struct {
+	fd__z [16][256]ppint8
+}
+
+type ts__darwin_arm_sve_p_state = struct {
+	fd__p [16][32]ppint8
+}
+
+type ts__darwin_arm_sme_za_state = struct {
+	fd__za [4096]ppint8
+}
+
+type ts__darwin_arm_sme2_state = struct {
+	fd__zt0 [64]ppint8
+}
+
+type ts__arm_legacy_debug_state = struct {
+	fd__bvr [16]tn__uint32_t
+	fd__bcr [16]tn__uint32_t
+	fd__wvr [16]tn__uint32_t
+	fd__wcr [16]tn__uint32_t
+}
+
+type ts__darwin_arm_debug_state32 = struct {
+	fd__bvr       [16]tn__uint32_t
+	fd__bcr       [16]tn__uint32_t
+	fd__wvr       [16]tn__uint32_t
+	fd__wcr       [16]tn__uint32_t
+	fd__mdscr_el1 tn__uint64_t
+}
+
+type ts__darwin_arm_debug_state64 = struct {
+	fd__bvr       [16]tn__uint64_t
+	fd__bcr       [16]tn__uint64_t
+	fd__wvr       [16]tn__uint64_t
+	fd__wcr       [16]tn__uint64_t
+	fd__mdscr_el1 tn__uint64_t
+}
+
+type ts__darwin_arm_cpmu_state64 = struct {
+	fd__ctrs [16]tn__uint64_t
+}
+
+type ts__darwin_mcontext32 = struct {
+	fd__es ts__darwin_arm_exception_state
+	fd__ss ts__darwin_arm_thread_state
+	fd__fs ts__darwin_arm_vfp_state
+}
+
+type ts__darwin_mcontext64 = struct {
+	fd__ccgo_align [0]ppuint64
+	fd__es         ts__darwin_arm_exception_state64
+	fd__ss         ts__darwin_arm_thread_state64
+	fd__ns         ts__darwin_arm_neon_state64
+}
+
+type tnmcontext_t = ppuintptr
+
+type tnpthread_attr_t = struct {
+	fd__sig    ppint64
+	fd__opaque [56]ppint8
+}
+
+type ts__darwin_sigaltstack = struct {
+	fdss_sp    ppuintptr
+	fdss_size  tn__darwin_size_t
+	fdss_flags ppint32
+}
+
+type tnstack_t = struct {
+	fdss_sp    ppuintptr
+	fdss_size  tn__darwin_size_t
+	fdss_flags ppint32
+}
+
+type ts__darwin_ucontext = struct {
+	fduc_onstack  ppint32
+	fduc_sigmask  tn__darwin_sigset_t
+	fduc_stack    ts__darwin_sigaltstack
+	fduc_link     ppuintptr
+	fduc_mcsize   tn__darwin_size_t
+	fduc_mcontext ppuintptr
+}
+
+type tnucontext_t = struct {
+	fduc_onstack  ppint32
+	fduc_sigmask  tn__darwin_sigset_t
+	fduc_stack    ts__darwin_sigaltstack
+	fduc_link     ppuintptr
+	fduc_mcsize   tn__darwin_size_t
+	fduc_mcontext ppuintptr
+}
+
+type tusigval = struct {
+	fdsival_ptr   [0]ppuintptr
+	fdsival_int   ppint32
+	fd__ccgo_pad2 [4]byte
+}
+
+type tssigevent = struct {
+	fdsigev_notify            ppint32
+	fdsigev_signo             ppint32
+	fdsigev_value             tusigval
+	fdsigev_notify_function   ppuintptr
+	fdsigev_notify_attributes ppuintptr
+}
+
+type tnsiginfo_t = struct {
+	fdsi_signo  ppint32
+	fdsi_errno  ppint32
+	fdsi_code   ppint32
+	fdsi_pid    tnpid_t
+	fdsi_uid    tnuid_t
+	fdsi_status ppint32
+	fdsi_addr   ppuintptr
+	fdsi_value  tusigval
+	fdsi_band   ppint64
+	fd__pad     [7]ppuint64
+}
+
+type ts__siginfo = tnsiginfo_t
+
+type tu__sigaction_u = struct {
+	fd__sa_sigaction [0]ppuintptr
+	fd__sa_handler   ppuintptr
+}
+
+type ts__sigaction = struct {
+	fd__sigaction_u tu__sigaction_u
+	fdsa_tramp      ppuintptr
+	fdsa_mask       tnsigset_t
+	fdsa_flags      ppint32
+}
+
+type tssigaction = struct {
+	fd__sigaction_u tu__sigaction_u
+	fdsa_mask       tnsigset_t
+	fdsa_flags      ppint32
+}
+
+type tnsig_t = ppuintptr
+
+type tssigvec = struct {
+	fdsv_handler ppuintptr
+	fdsv_mask    ppint32
+	fdsv_flags   ppint32
+}
+
+type tssigstack = struct {
+	fdss_sp      ppuintptr
+	fdss_onstack ppint32
+}
+
+type tnint_least64_t = ppint64
+
+type tnuint_least64_t = ppuint64
+
+type tnint_fast64_t = ppint64
+
+type tnuint_fast64_t = ppuint64
+
+type tnint_least32_t = ppint32
+
+type tnuint_least32_t = ppuint32
+
+type tnint_fast32_t = ppint32
+
+type tnuint_fast32_t = ppuint32
+
+type tnuint16_t = ppuint16
+
+type tnint_least16_t = ppint16
+
+type tnuint_least16_t = ppuint16
+
+type tnint_fast16_t = ppint16
+
+type tnuint_fast16_t = ppuint16
+
+type tnuint8_t = ppuint8
+
+type tnint_least8_t = ppint8
+
+type tnuint_least8_t = ppuint8
+
+type tnint_fast8_t = ppint8
+
+type tnuint_fast8_t = ppuint8
+
+type tnintmax_t = ppint64
+
+type tnuintmax_t = ppuint64
+
+type tnrlim_t = ppuint64
+
+type tsrusage = struct {
+	fdru_utime    tstimeval
+	fdru_stime    tstimeval
+	fdru_maxrss   ppint64
+	fdru_ixrss    ppint64
+	fdru_idrss    ppint64
+	fdru_isrss    ppint64
+	fdru_minflt   ppint64
+	fdru_majflt   ppint64
+	fdru_nswap    ppint64
+	fdru_inblock  ppint64
+	fdru_oublock  ppint64
+	fdru_msgsnd   ppint64
+	fdru_msgrcv   ppint64
+	fdru_nsignals ppint64
+	fdru_nvcsw    ppint64
+	fdru_nivcsw   ppint64
+}
+
+type tnrusage_info_t = ppuintptr
+
+type tsrusage_info_v0 = struct {
+	fdri_uuid               [16]tnuint8_t
+	fdri_user_time          tnuint64_t
+	fdri_system_time        tnuint64_t
+	fdri_pkg_idle_wkups     tnuint64_t
+	fdri_interrupt_wkups    tnuint64_t
+	fdri_pageins            tnuint64_t
+	fdri_wired_size         tnuint64_t
+	fdri_resident_size      tnuint64_t
+	fdri_phys_footprint     tnuint64_t
+	fdri_proc_start_abstime tnuint64_t
+	fdri_proc_exit_abstime  tnuint64_t
+}
+
+type tsrusage_info_v1 = struct {
+	fdri_uuid                  [16]tnuint8_t
+	fdri_user_time             tnuint64_t
+	fdri_system_time           tnuint64_t
+	fdri_pkg_idle_wkups        tnuint64_t
+	fdri_interrupt_wkups       tnuint64_t
+	fdri_pageins               tnuint64_t
+	fdri_wired_size            tnuint64_t
+	fdri_resident_size         tnuint64_t
+	fdri_phys_footprint        tnuint64_t
+	fdri_proc_start_abstime    tnuint64_t
+	fdri_proc_exit_abstime     tnuint64_t
+	fdri_child_user_time       tnuint64_t
+	fdri_child_system_time     tnuint64_t
+	fdri_child_pkg_idle_wkups  tnuint64_t
+	fdri_child_interrupt_wkups tnuint64_t
+	fdri_child_pageins         tnuint64_t
+	fdri_child_elapsed_abstime tnuint64_t
+}
+
+type tsrusage_info_v2 = struct {
+	fdri_uuid                  [16]tnuint8_t
+	fdri_user_time             tnuint64_t
+	fdri_system_time           tnuint64_t
+	fdri_pkg_idle_wkups        tnuint64_t
+	fdri_interrupt_wkups       tnuint64_t
+	fdri_pageins               tnuint64_t
+	fdri_wired_size            tnuint64_t
+	fdri_resident_size         tnuint64_t
+	fdri_phys_footprint        tnuint64_t
+	fdri_proc_start_abstime    tnuint64_t
+	fdri_proc_exit_abstime     tnuint64_t
+	fdri_child_user_time       tnuint64_t
+	fdri_child_system_time     tnuint64_t
+	fdri_child_pkg_idle_wkups  tnuint64_t
+	fdri_child_interrupt_wkups tnuint64_t
+	fdri_child_pageins         tnuint64_t
+	fdri_child_elapsed_abstime tnuint64_t
+	fdri_diskio_bytesread      tnuint64_t
+	fdri_diskio_byteswritten   tnuint64_t
+}
+
+type tsrusage_info_v3 = struct {
+	fdri_uuid                          [16]tnuint8_t
+	fdri_user_time                     tnuint64_t
+	fdri_system_time                   tnuint64_t
+	fdri_pkg_idle_wkups                tnuint64_t
+	fdri_interrupt_wkups               tnuint64_t
+	fdri_pageins                       tnuint64_t
+	fdri_wired_size                    tnuint64_t
+	fdri_resident_size                 tnuint64_t
+	fdri_phys_footprint                tnuint64_t
+	fdri_proc_start_abstime            tnuint64_t
+	fdri_proc_exit_abstime             tnuint64_t
+	fdri_child_user_time               tnuint64_t
+	fdri_child_system_time             tnuint64_t
+	fdri_child_pkg_idle_wkups          tnuint64_t
+	fdri_child_interrupt_wkups         tnuint64_t
+	fdri_child_pageins                 tnuint64_t
+	fdri_child_elapsed_abstime         tnuint64_t
+	fdri_diskio_bytesread              tnuint64_t
+	fdri_diskio_byteswritten           tnuint64_t
+	fdri_cpu_time_qos_default          tnuint64_t
+	fdri_cpu_time_qos_maintenance      tnuint64_t
+	fdri_cpu_time_qos_background       tnuint64_t
+	fdri_cpu_time_qos_utility          tnuint64_t
+	fdri_cpu_time_qos_legacy           tnuint64_t
+	fdri_cpu_time_qos_user_initiated   tnuint64_t
+	fdri_cpu_time_qos_user_interactive tnuint64_t
+	fdri_billed_system_time            tnuint64_t
+	fdri_serviced_system_time          tnuint64_t
+}
+
+type tsrusage_info_v4 = struct {
+	fdri_uuid                          [16]tnuint8_t
+	fdri_user_time                     tnuint64_t
+	fdri_system_time                   tnuint64_t
+	fdri_pkg_idle_wkups                tnuint64_t
+	fdri_interrupt_wkups               tnuint64_t
+	fdri_pageins                       tnuint64_t
+	fdri_wired_size                    tnuint64_t
+	fdri_resident_size                 tnuint64_t
+	fdri_phys_footprint                tnuint64_t
+	fdri_proc_start_abstime            tnuint64_t
+	fdri_proc_exit_abstime             tnuint64_t
+	fdri_child_user_time               tnuint64_t
+	fdri_child_system_time             tnuint64_t
+	fdri_child_pkg_idle_wkups          tnuint64_t
+	fdri_child_interrupt_wkups         tnuint64_t
+	fdri_child_pageins                 tnuint64_t
+	fdri_child_elapsed_abstime         tnuint64_t
+	fdri_diskio_bytesread              tnuint64_t
+	fdri_diskio_byteswritten           tnuint64_t
+	fdri_cpu_time_qos_default          tnuint64_t
+	fdri_cpu_time_qos_maintenance      tnuint64_t
+	fdri_cpu_time_qos_background       tnuint64_t
+	fdri_cpu_time_qos_utility          tnuint64_t
+	fdri_cpu_time_qos_legacy           tnuint64_t
+	fdri_cpu_time_qos_user_initiated   tnuint64_t
+	fdri_cpu_time_qos_user_interactive tnuint64_t
+	fdri_billed_system_time            tnuint64_t
+	fdri_serviced_system_time          tnuint64_t
+	fdri_logical_writes                tnuint64_t
+	fdri_lifetime_max_phys_footprint   tnuint64_t
+	fdri_instructions                  tnuint64_t
+	fdri_cycles                        tnuint64_t
+	fdri_billed_energy                 tnuint64_t
+	fdri_serviced_energy               tnuint64_t
+	fdri_interval_max_phys_footprint   tnuint64_t
+	fdri_runnable_time                 tnuint64_t
+}
+
+type tsrusage_info_v5 = struct {
+	fdri_uuid                          [16]tnuint8_t
+	fdri_user_time                     tnuint64_t
+	fdri_system_time                   tnuint64_t
+	fdri_pkg_idle_wkups                tnuint64_t
+	fdri_interrupt_wkups               tnuint64_t
+	fdri_pageins                       tnuint64_t
+	fdri_wired_size                    tnuint64_t
+	fdri_resident_size                 tnuint64_t
+	fdri_phys_footprint                tnuint64_t
+	fdri_proc_start_abstime            tnuint64_t
+	fdri_proc_exit_abstime             tnuint64_t
+	fdri_child_user_time               tnuint64_t
+	fdri_child_system_time             tnuint64_t
+	fdri_child_pkg_idle_wkups          tnuint64_t
+	fdri_child_interrupt_wkups         tnuint64_t
+	fdri_child_pageins                 tnuint64_t
+	fdri_child_elapsed_abstime         tnuint64_t
+	fdri_diskio_bytesread              tnuint64_t
+	fdri_diskio_byteswritten           tnuint64_t
+	fdri_cpu_time_qos_default          tnuint64_t
+	fdri_cpu_time_qos_maintenance      tnuint64_t
+	fdri_cpu_time_qos_background       tnuint64_t
+	fdri_cpu_time_qos_utility          tnuint64_t
+	fdri_cpu_time_qos_legacy           tnuint64_t
+	fdri_cpu_time_qos_user_initiated   tnuint64_t
+	fdri_cpu_time_qos_user_interactive tnuint64_t
+	fdri_billed_system_time            tnuint64_t
+	fdri_serviced_system_time          tnuint64_t
+	fdri_logical_writes                tnuint64_t
+	fdri_lifetime_max_phys_footprint   tnuint64_t
+	fdri_instructions                  tnuint64_t
+	fdri_cycles                        tnuint64_t
+	fdri_billed_energy                 tnuint64_t
+	fdri_serviced_energy               tnuint64_t
+	fdri_interval_max_phys_footprint   tnuint64_t
+	fdri_runnable_time                 tnuint64_t
+	fdri_flags                         tnuint64_t
+}
+
+type tsrusage_info_v6 = struct {
+	fdri_uuid                          [16]tnuint8_t
+	fdri_user_time                     tnuint64_t
+	fdri_system_time                   tnuint64_t
+	fdri_pkg_idle_wkups                tnuint64_t
+	fdri_interrupt_wkups               tnuint64_t
+	fdri_pageins                       tnuint64_t
+	fdri_wired_size                    tnuint64_t
+	fdri_resident_size                 tnuint64_t
+	fdri_phys_footprint                tnuint64_t
+	fdri_proc_start_abstime            tnuint64_t
+	fdri_proc_exit_abstime             tnuint64_t
+	fdri_child_user_time               tnuint64_t
+	fdri_child_system_time             tnuint64_t
+	fdri_child_pkg_idle_wkups          tnuint64_t
+	fdri_child_interrupt_wkups         tnuint64_t
+	fdri_child_pageins                 tnuint64_t
+	fdri_child_elapsed_abstime         tnuint64_t
+	fdri_diskio_bytesread              tnuint64_t
+	fdri_diskio_byteswritten           tnuint64_t
+	fdri_cpu_time_qos_default          tnuint64_t
+	fdri_cpu_time_qos_maintenance      tnuint64_t
+	fdri_cpu_time_qos_background       tnuint64_t
+	fdri_cpu_time_qos_utility          tnuint64_t
+	fdri_cpu_time_qos_legacy           tnuint64_t
+	fdri_cpu_time_qos_user_initiated   tnuint64_t
+	fdri_cpu_time_qos_user_interactive tnuint64_t
+	fdri_billed_system_time            tnuint64_t
+	fdri_serviced_system_time          tnuint64_t
+	fdri_logical_writes                tnuint64_t
+	fdri_lifetime_max_phys_footprint   tnuint64_t
+	fdri_instructions                  tnuint64_t
+	fdri_cycles                        tnuint64_t
+	fdri_billed_energy                 tnuint64_t
+	fdri_serviced_energy               tnuint64_t
+	fdri_interval_max_phys_footprint   tnuint64_t
+	fdri_runnable_time                 tnuint64_t
+	fdri_flags                         tnuint64_t
+	fdri_user_ptime                    tnuint64_t
+	fdri_system_ptime                  tnuint64_t
+	fdri_pinstructions                 tnuint64_t
+	fdri_pcycles                       tnuint64_t
+	fdri_energy_nj                     tnuint64_t
+	fdri_penergy_nj                    tnuint64_t
+	fdri_secure_time_in_system         tnuint64_t
+	fdri_secure_ptime_in_system        tnuint64_t
+	fdri_neural_footprint              tnuint64_t
+	fdri_lifetime_max_neural_footprint tnuint64_t
+	fdri_interval_max_neural_footprint tnuint64_t
+	fdri_reserved                      [9]tnuint64_t
+}
+
+type tnrusage_info_current = struct {
+	fdri_uuid                          [16]tnuint8_t
+	fdri_user_time                     tnuint64_t
+	fdri_system_time                   tnuint64_t
+	fdri_pkg_idle_wkups                tnuint64_t
+	fdri_interrupt_wkups               tnuint64_t
+	fdri_pageins                       tnuint64_t
+	fdri_wired_size                    tnuint64_t
+	fdri_resident_size                 tnuint64_t
+	fdri_phys_footprint                tnuint64_t
+	fdri_proc_start_abstime            tnuint64_t
+	fdri_proc_exit_abstime             tnuint64_t
+	fdri_child_user_time               tnuint64_t
+	fdri_child_system_time             tnuint64_t
+	fdri_child_pkg_idle_wkups          tnuint64_t
+	fdri_child_interrupt_wkups         tnuint64_t
+	fdri_child_pageins                 tnuint64_t
+	fdri_child_elapsed_abstime         tnuint64_t
+	fdri_diskio_bytesread              tnuint64_t
+	fdri_diskio_byteswritten           tnuint64_t
+	fdri_cpu_time_qos_default          tnuint64_t
+	fdri_cpu_time_qos_maintenance      tnuint64_t
+	fdri_cpu_time_qos_background       tnuint64_t
+	fdri_cpu_time_qos_utility          tnuint64_t
+	fdri_cpu_time_qos_legacy           tnuint64_t
+	fdri_cpu_time_qos_user_initiated   tnuint64_t
+	fdri_cpu_time_qos_user_interactive tnuint64_t
+	fdri_billed_system_time            tnuint64_t
+	fdri_serviced_system_time          tnuint64_t
+	fdri_logical_writes                tnuint64_t
+	fdri_lifetime_max_phys_footprint   tnuint64_t
+	fdri_instructions                  tnuint64_t
+	fdri_cycles                        tnuint64_t
+	fdri_billed_energy                 tnuint64_t
+	fdri_serviced_energy               tnuint64_t
+	fdri_interval_max_phys_footprint   tnuint64_t
+	fdri_runnable_time                 tnuint64_t
+	fdri_flags                         tnuint64_t
+	fdri_user_ptime                    tnuint64_t
+	fdri_system_ptime                  tnuint64_t
+	fdri_pinstructions                 tnuint64_t
+	fdri_pcycles                       tnuint64_t
+	fdri_energy_nj                     tnuint64_t
+	fdri_penergy_nj                    tnuint64_t
+	fdri_secure_time_in_system         tnuint64_t
+	fdri_secure_ptime_in_system        tnuint64_t
+	fdri_neural_footprint              tnuint64_t
+	fdri_lifetime_max_neural_footprint tnuint64_t
+	fdri_interval_max_neural_footprint tnuint64_t
+	fdri_reserved                      [9]tnuint64_t
+}
+
+type tsrlimit = struct {
+	fdrlim_cur tnrlim_t
+	fdrlim_max tnrlim_t
+}
+
+type tsproc_rlimit_control_wakeupmon = struct {
+	fdwm_flags tnuint32_t
+	fdwm_rate  tnint32_t
+}
+
+type tuwait = struct {
+	fdw_T [0]struct {
+		fd__ccgo0 uint32
+	}
+	fdw_S [0]struct {
+		fd__ccgo0 uint32
+	}
+	fdw_status ppint32
+}
+
+type tnct_rune_t = ppint32
+
+type tnrune_t = ppint32
+
+type tnwchar_t = ppint32
+
+type tndiv_t = struct {
+	fdquot ppint32
+	fdrem  ppint32
+}
+
+type tnldiv_t = struct {
+	fdquot ppint64
+	fdrem  ppint64
+}
+
+type tnlldiv_t = struct {
+	fdquot ppint64
+	fdrem  ppint64
+}
+
+type tnmalloc_type_id_t = ppuint64
+
+type tnclock_t = ppuint64
+
+type tstm = struct {
+	fdtm_sec    ppint32
+	fdtm_min    ppint32
+	fdtm_hour   ppint32
+	fdtm_mday   ppint32
+	fdtm_mon    ppint32
+	fdtm_year   ppint32
+	fdtm_wday   ppint32
+	fdtm_yday   ppint32
+	fdtm_isdst  ppint32
+	fdtm_gmtoff ppint64
+	fdtm_zone   ppuintptr
+} //TODO "timezone" // _time.h:106:13:
+
+type tnclockid_t = ppint32
+
+const ec_CLOCK_REALTIME = 0
+const ec_CLOCK_MONOTONIC = 6
+const ec_CLOCK_MONOTONIC_RAW = 4
+const ec_CLOCK_MONOTONIC_RAW_APPROX = 5
+const ec_CLOCK_UPTIME_RAW = 8
+const ec_CLOCK_UPTIME_RAW_APPROX = 9
+const ec_CLOCK_PROCESS_CPUTIME_ID = 12
+const ec_CLOCK_THREAD_CPUTIME_ID = 16
+
+type tnrsize_t = ppuint64
+
+type tnerrno_t = ppint32
+
+type tnwint_t = ppint32
+
+type tn_RuneEntry = struct {
+	fd__min   tn__darwin_rune_t
+	fd__max   tn__darwin_rune_t
+	fd__map   tn__darwin_rune_t
+	fd__types ppuintptr
+}
+
+type tn_RuneRange = struct {
+	fd__nranges ppint32
+	fd__ranges  ppuintptr
+}
+
+type tn_RuneCharClass = struct {
+	fd__name [14]ppint8
+	fd__mask tn__uint32_t
+}
+
+type tn_RuneLocale = struct {
+	fd__magic        [8]ppint8
+	fd__encoding     [32]ppint8
+	fd__sgetrune     ppuintptr
+	fd__sputrune     ppuintptr
+	fd__invalid_rune tn__darwin_rune_t
+	fd__runetype     [256]tn__uint32_t
+	fd__maplower     [256]tn__darwin_rune_t
+	fd__mapupper     [256]tn__darwin_rune_t
+	fd__runetype_ext tn_RuneRange
+	fd__maplower_ext tn_RuneRange
+	fd__mapupper_ext tn_RuneRange
+	fd__variable     ppuintptr
+	fd__variable_len ppint32
+	fd__ncharclasses ppint32
+	fd__charclasses  ppuintptr
+}
+
+type tnptrdiff_t = ppint64
+
+type tnmax_align_t = ppfloat64
+
+type tnu_char = ppuint8
+
+type tnu_short = ppuint16
+
+type tnu_int = ppuint32
+
+type tnu_long = ppuint64
+
+type tnushort = ppuint16
+
+type tnuint = ppuint32
+
+type tnu_quad_t = ppuint64
+
+type tnquad_t = ppint64
+
+type tnqaddr_t = ppuintptr
+
+type tncaddr_t = ppuintptr
+
+type tndaddr_t = ppint32
+
+type tnfixpt_t = ppuint32
+
+type tnblkcnt_t = ppint64
+
+type tnblksize_t = ppint32
+
+type tnin_addr_t = ppuint32
+
+type tnin_port_t = ppuint16
+
+type tnino_t = ppuint64
+
+type tnino64_t = ppuint64
+
+type tnkey_t = ppint32
+
+type tnnlink_t = ppuint16
+
+type tnsegsz_t = ppint32
+
+type tnswblk_t = ppint32
+
+type tnfd_mask = ppint32
+
+type tnpthread_cond_t = struct {
+	fd__sig    ppint64
+	fd__opaque [40]ppint8
+}
+
+type tnpthread_condattr_t = struct {
+	fd__sig    ppint64
+	fd__opaque [8]ppint8
+}
+
+type tnpthread_mutex_t = struct {
+	fd__sig    ppint64
+	fd__opaque [56]ppint8
+}
+
+type tnpthread_mutexattr_t = struct {
+	fd__sig    ppint64
+	fd__opaque [8]ppint8
+}
+
+type tnpthread_once_t = struct {
+	fd__sig    ppint64
+	fd__opaque [8]ppint8
+}
+
+type tnpthread_rwlock_t = struct {
+	fd__sig    ppint64
+	fd__opaque [192]ppint8
+}
+
+type tnpthread_rwlockattr_t = struct {
+	fd__sig    ppint64
+	fd__opaque [16]ppint8
+}
+
+type tnpthread_t = ppuintptr
+
+type tnpthread_key_t = ppuint64
+
+type tnfsblkcnt_t = ppuint32
+
+type tnfsfilcnt_t = ppuint32
+
+type tsostat = struct {
+	fdst_dev       tn__uint16_t
+	fdst_ino       tnino_t
+	fdst_mode      tnmode_t
+	fdst_nlink     tnnlink_t
+	fdst_uid       tn__uint16_t
+	fdst_gid       tn__uint16_t
+	fdst_rdev      tn__uint16_t
+	fdst_size      tn__int32_t
+	fdst_atimespec tstimespec
+	fdst_mtimespec tstimespec
+	fdst_ctimespec tstimespec
+	fdst_blksize   tn__int32_t
+	fdst_blocks    tn__int32_t
+	fdst_flags     tn__uint32_t
+	fdst_gen       tn__uint32_t
+}
+
+type tsstat = struct {
+	fdst_dev           tndev_t
+	fdst_mode          tnmode_t
+	fdst_nlink         tnnlink_t
+	fdst_ino           tn__darwin_ino64_t
+	fdst_uid           tnuid_t
+	fdst_gid           tngid_t
+	fdst_rdev          tndev_t
+	fdst_atimespec     tstimespec
+	fdst_mtimespec     tstimespec
+	fdst_ctimespec     tstimespec
+	fdst_birthtimespec tstimespec
+	fdst_size          tnoff_t
+	fdst_blocks        tnblkcnt_t
+	fdst_blksize       tnblksize_t
+	fdst_flags         tn__uint32_t
+	fdst_gen           tn__uint32_t
+	fdst_lspare        tn__int32_t
+	fdst_qspare        [2]tn__int64_t
+}
+
+type tnfilesec_t = ppuintptr
+
+type tsdirent = struct {
+	fdd_ino     tn__uint64_t
+	fdd_seekoff tn__uint64_t
+	fdd_reclen  tn__uint16_t
+	fdd_namlen  tn__uint16_t
+	fdd_type    tn__uint8_t
+	fdd_name    [1024]ppint8
+}
+
+type tnDIR = struct {
+	fd__dd_fd    ppint32
+	fd__dd_loc   ppint64
+	fd__dd_size  ppint64
+	fd__dd_buf   ppuintptr
+	fd__dd_len   ppint32
+	fd__dd_seek  ppint64
+	fd__padding  ppint64
+	fd__dd_flags ppint32
+	fd__dd_lock  tn__darwin_pthread_mutex_t
+	fd__dd_td    ppuintptr
+}
+
+type tn__gnuc_va_list = ppuintptr
+
+type tnerrcode_t = ppint64
+
+type tserror_table = struct {
+	fdmsgs   ppuintptr
+	fdbase   ppint64
+	fdn_msgs ppint32
+}
+
+type tnprofile_t = ppuintptr
+
+type ts_profile_t = struct {
+	fdmagic      tnprf_magic_t
+	fdfirst_file tnprf_file_t
+}
+
+type tnprofile_syntax_err_cb_t = ppuintptr
+
+/* for compatibility with older versions... */
+
+/*
+ * prof_int.h
+ */
+
+type tnprf_magic_t = ppint64
+
+/*
+ * This is the structure which stores the profile information for a
+ * particular configuration file.
+ */
+type ts_prf_file_t = struct {
+	fdmagic      tnprf_magic_t
+	fdfilespec   ppuintptr
+	fdtimestamp  tntime_t
+	fdflags      ppint32
+	fdupd_serial ppint32
+	fdroot       ppuintptr
+	fdnext       ppuintptr
+}
+
+type tnprf_file_t = ppuintptr
+
+/*
+ * Used by the profile iterator in prof_get.c
+ */
+
+/*
+ * Check if a filespec is last in a list (NULL on UNIX, invalid FSSpec on MacOS
+ */
+
+type tsprofile_node = struct {
+	fdmagic       tnerrcode_t
+	fdname        ppuintptr
+	fdvalue       ppuintptr
+	fdgroup_level ppint32
+	fd__ccgo28    uint8
+	fdfirst_child ppuintptr
+	fdparent      ppuintptr
+	fdnext        ppuintptr
+	fdprev        ppuintptr
+}
+
+/* profile parser declarations */
+type tsparse_state = struct {
+	fdstate           ppint32
+	fdgroup_level     ppint32
+	fdline_num        ppint32
+	fdroot_section    ppuintptr
+	fdcurrent_section ppuintptr
+}
+
+var sidefault_filename = "<default>\x00"
+
+var sisyntax_err_cb tnprofile_syntax_err_cb_t
+
+/*
+ * prof_init.c --- routines that manipulate the user-visible profile_t
+ * 	object.
+ */
+
+func sicompstr(cgtls *iqlibc.ppTLS, aam1 ppuintptr, aam2 ppuintptr) (cgr ppint32) {
+
+	var aas1, aas2 ppuintptr
+	pp_, pp_ = aas1, aas2
+	aas1 = *(*ppuintptr)(iqunsafe.ppPointer(aam1))
+	aas2 = *(*ppuintptr)(iqunsafe.ppPointer(aam2))
+
+	return Xstrcmp(cgtls, aas1, aas2)
+}
+
+func sifree_list(cgtls *iqlibc.ppTLS, aalist ppuintptr) {
+
+	var aacp ppuintptr
+	pp_ = aacp
+
+	if aalist == ppuintptr(0) {
+		return
+	}
+
+	aacp = aalist
+	for {
+		if !(*(*ppuintptr)(iqunsafe.ppPointer(aacp)) != 0) {
+			break
+		}
+		Xfree(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(aacp)))
+		goto cg_1
+	cg_1:
+		;
+		aacp += 8
+	}
+	Xfree(cgtls, aalist)
+}
+
+func siget_dirlist(cgtls *iqlibc.ppTLS, aadirname ppuintptr, aaret_array ppuintptr) (cgr tnerrcode_t) {
+	cgbp := cgtls.ppAlloc(176)
+	defer cgtls.ppFree(176)
+
+	var aaarray, aacp, aade, aadir, aafn, aanew_array, ccv1 ppuintptr
+	var aamax, aanum, ccv10, ccv12, ccv13, ccv3, ccv7, ccv9 ppint32
+	var aaretval tnerrcode_t
+	var ccv5 tn__darwin_ct_rune_t
+	var ccv6 ppuint64
+	var pp_ /* st at bp+0 */ tsstat
+	pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_ = aaarray, aacp, aade, aadir, aafn, aamax, aanew_array, aanum, aaretval, ccv1, ccv10, ccv12, ccv13, ccv3, ccv5, ccv6, ccv7, ccv9
+	aaarray = ppuintptr(0)
+	aamax = 0
+	aanum = 0
+
+	aadir = Xopendir(cgtls, aadirname)
+	if !(aadir != 0) {
+		return ppint64(*(*ppint32)(iqunsafe.ppPointer(X__error(cgtls))))
+	}
+
+	for {
+		ccv1 = Xreaddir(cgtls, aadir)
+		aade = ccv1
+		if !(ccv1 != iqlibc.ppUintptrFromInt32(0)) {
+			break
+		}
+		aacp = aade + 21
+		for {
+			if !(*(*ppint8)(iqunsafe.ppPointer(aacp)) != 0) {
+				break
+			}
+			ccv5 = ppint32(*(*ppint8)(iqunsafe.ppPointer(aacp)))
+			ccv6 = iqlibc.ppUint64FromInt64(iqlibc.ppInt64FromInt64(0x00000100) | iqlibc.ppInt64FromInt64(0x00000400))
+			ccv10 = iqlibc.ppBoolInt32(ccv5 & ^iqlibc.ppInt32FromInt32(0x7F) == 0)
+			goto cg_11
+		cg_11:
+			if ccv10 != 0 {
+				ccv9 = iqlibc.ppBoolInt32(!!(ppuint64(*(*tn__uint32_t)(iqunsafe.ppPointer(ppuintptr(iqunsafe.ppPointer(&X_DefaultRuneLocale)) + 60 + ppuintptr(ccv5)*4)))&ccv6 != 0))
+			} else {
+				ccv9 = iqlibc.ppBoolInt32(!!(X__maskrune(cgtls, ccv5, ccv6) != 0))
+			}
+			ccv7 = ccv9
+			goto cg_8
+		cg_8:
+			ccv3 = ccv7
+			goto cg_4
+		cg_4:
+			;
+			if !(ccv3 != 0) && ppint32(*(*ppint8)(iqunsafe.ppPointer(aacp))) != ppint32('-') && ppint32(*(*ppint8)(iqunsafe.ppPointer(aacp))) != ppint32('_') {
+				break
+			}
+
+			goto cg_2
+		cg_2:
+			;
+			aacp = aacp + 1
+		}
+		if *(*ppint8)(iqunsafe.ppPointer(aacp)) != 0 {
+			continue
+		}
+		aafn = Xmalloc(cgtls, Xstrlen(cgtls, aadirname)+Xstrlen(cgtls, aade+21)+ppuint64(2))
+		if !(aafn != 0) {
+			aaretval = ppint64(mvENOMEM)
+			goto pperrout
+		}
+		Xsprintf(cgtls, aafn, "%s/%s\x00", iqlibc.ppVaList(cgbp+152, aadirname, aade+21))
+		if Xstat(cgtls, aafn, cgbp) < 0 || !(iqlibc.ppInt32FromUint16((*(*tsstat)(iqunsafe.ppPointer(cgbp))).fdst_mode)&iqlibc.ppInt32FromInt32(mvS_IFMT) == iqlibc.ppInt32FromInt32(mvS_IFREG)) {
+			Xfree(cgtls, aafn)
+			continue
+		}
+		if aanum >= aamax {
+			aamax = aamax + ppint32(10)
+			aanew_array = Xrealloc(cgtls, aaarray, ppuint64(8)*iqlibc.ppUint64FromInt32(aamax+iqlibc.ppInt32FromInt32(1)))
+			if !(aanew_array != 0) {
+				aaretval = ppint64(mvENOMEM)
+				Xfree(cgtls, aafn)
+				goto pperrout
+			}
+			aaarray = aanew_array
+		}
+		ccv3 = aanum
+		aanum = aanum + 1
+		*(*ppuintptr)(iqunsafe.ppPointer(aaarray + ppuintptr(ccv3)*8)) = aafn
+
+	}
+	if aaarray != 0 {
+		Xqsort(cgtls, aaarray, iqlibc.ppUint64FromInt32(aanum), ppuint64(8), pp__ccgo_fp(sicompstr))
+		ccv3 = aanum
+		aanum = aanum + 1
+		*(*ppuintptr)(iqunsafe.ppPointer(aaarray + ppuintptr(ccv3)*8)) = ppuintptr(0)
+	}
+	*(*ppuintptr)(iqunsafe.ppPointer(aaret_array)) = aaarray
+	Xclosedir(cgtls, aadir)
+	return 0
+	goto pperrout
+pperrout:
+	;
+	if aaarray != 0 {
+		*(*ppuintptr)(iqunsafe.ppPointer(aaarray + ppuintptr(aanum)*8)) = ppuintptr(0)
+	}
+	Xclosedir(cgtls, aadir)
+	sifree_list(cgtls, aaarray)
+	return aaretval
+}
+
+func Xprofile_init(cgtls *iqlibc.ppTLS, aafiles ppuintptr, aaret_profile ppuintptr) (cgr tnerrcode_t) {
+	cgbp := cgtls.ppAlloc(16)
+	defer cgtls.ppFree(16)
+
+	var aacp, aacpp, aafs, aalast, ccv3 ppuintptr
+	var aaprofile tnprofile_t
+	var aaretval tnerrcode_t
+	var pp_ /* array at bp+8 */ ppuintptr
+	var pp_ /* new_file at bp+0 */ tnprf_file_t
+	pp_, pp_, pp_, pp_, pp_, pp_, pp_ = aacp, aacpp, aafs, aalast, aaprofile, aaretval, ccv3
+	aaretval = 0
+	*(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)) = ppuintptr(0)
+
+	aaprofile = Xmalloc(cgtls, ppuint64(16))
+	if !(aaprofile != 0) {
+		return ppint64(mvENOMEM)
+	}
+	Xmemset(cgtls, aaprofile, 0, ppuint64(16))
+	(*ts_profile_t)(iqunsafe.ppPointer(aaprofile)).fdmagic = -iqlibc.ppInt64FromInt64(1429577710)
+	aalast = aaprofile + 8
+
+	/* if the filenames list is not specified return an empty profile */
+	if aafiles != 0 {
+		aafs = aafiles
+		for {
+			if !!(*(*ppuintptr)(iqunsafe.ppPointer(aafs)) == iqlibc.ppUintptrFromInt32(0) || ppint32(*(*ppint8)(iqunsafe.ppPointer(*(*ppuintptr)(iqunsafe.ppPointer(aafs))))) == ppint32('\000')) {
+				break
+			}
+			if *(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)) != 0 {
+				sifree_list(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)))
+			}
+			*(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)) = iqlibc.ppUintptrFromInt32(0)
+			aaretval = siget_dirlist(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(aafs)), cgbp+8)
+			if aaretval == 0 {
+				if !(*(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)) != 0) {
+					goto cg_1
+				}
+				aacpp = *(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8))
+				for {
+					ccv3 = *(*ppuintptr)(iqunsafe.ppPointer(aacpp))
+					aacp = ccv3
+					if !(ccv3 != 0) {
+						break
+					}
+					aaretval = siprofile_open_file(cgtls, aacp, cgbp)
+					if aaretval == ppint64(mvEACCES) {
+						goto cg_2
+					}
+					if aaretval != 0 {
+						goto pperrout
+					}
+					*(*tnprf_file_t)(iqunsafe.ppPointer(aalast)) = *(*tnprf_file_t)(iqunsafe.ppPointer(cgbp))
+					aalast = *(*tnprf_file_t)(iqunsafe.ppPointer(cgbp)) + 40
+
+					goto cg_2
+				cg_2:
+					;
+					aacpp += 8
+				}
+			} else {
+				if aaretval != ppint64(mvENOTDIR) && Xstrcmp(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(aafs)), sidefault_filename) != 0 {
+					goto pperrout
+				}
+			}
+
+			aaretval = siprofile_open_file(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(aafs)), cgbp)
+			/* if this file is missing, skip to the next */
+			if aaretval == ppint64(mvENOENT) || aaretval == ppint64(mvEACCES) {
+				goto cg_1
+			}
+			if aaretval != 0 {
+				goto pperrout
+			}
+			*(*tnprf_file_t)(iqunsafe.ppPointer(aalast)) = *(*tnprf_file_t)(iqunsafe.ppPointer(cgbp))
+			aalast = *(*tnprf_file_t)(iqunsafe.ppPointer(cgbp)) + 40
+
+			goto cg_1
+		cg_1:
+			;
+			aafs += 8
+		}
+		/*
+		 * If all the files were not found, return the appropriate error.
+		 */
+		if !((*ts_profile_t)(iqunsafe.ppPointer(aaprofile)).fdfirst_file != 0) {
+			aaretval = ppint64(mvENOENT)
+			goto pperrout
+		}
+	}
+
+	sifree_list(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)))
+	*(*tnprofile_t)(iqunsafe.ppPointer(aaret_profile)) = aaprofile
+	return 0
+	goto pperrout
+pperrout:
+	;
+	sifree_list(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)))
+	Xprofile_release(cgtls, aaprofile)
+	return aaretval
+}
+
+func Xprofile_release(cgtls *iqlibc.ppTLS, aaprofile tnprofile_t) {
+
+	var aanext, aap tnprf_file_t
+	pp_, pp_ = aanext, aap
+
+	if !(aaprofile != 0) || (*ts_profile_t)(iqunsafe.ppPointer(aaprofile)).fdmagic != -ppint64(1429577710) {
+		return
+	}
+
+	aap = (*ts_profile_t)(iqunsafe.ppPointer(aaprofile)).fdfirst_file
+	for {
+		if !(aap != 0) {
+			break
+		}
+		aanext = (*ts_prf_file_t)(iqunsafe.ppPointer(aap)).fdnext
+		siprofile_free_file(cgtls, aap)
+
+		goto cg_1
+	cg_1:
+		;
+		aap = aanext
+	}
+	(*ts_profile_t)(iqunsafe.ppPointer(aaprofile)).fdmagic = 0
+	Xfree(cgtls, aaprofile)
+}
+
+// C documentation
+//
+//	/*
+//	 * This function sets the value of the pseudo file "<default>".  If
+//	 * the file "<default>" had previously been passed to profile_init(),
+//	 * then def_string parameter will be parsed and used as the profile
+//	 * information for the "<default>" file.
+//	 */
+func Xprofile_set_default(cgtls *iqlibc.ppTLS, aaprofile tnprofile_t, aadef_string ppuintptr) (cgr tnerrcode_t) {
+	cgbp := cgtls.ppAlloc(32)
+	defer cgtls.ppFree(32)
+
+	var aaend, aain, aaline, aap ppuintptr
+	var aalen, aaline_size ppint32
+	var aaprf tnprf_file_t
+	var aaretval tnerrcode_t
+	var ccv4 ppint64
+	var pp_ /* state at bp+0 */ tsparse_state
+	pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_ = aaend, aain, aalen, aaline, aaline_size, aap, aaprf, aaretval, ccv4
+
+	if !(aadef_string != 0) || !(aaprofile != 0) || (*ts_profile_t)(iqunsafe.ppPointer(aaprofile)).fdmagic != -ppint64(1429577710) {
+		return -iqlibc.ppInt64FromInt64(1429577710)
+	}
+
+	aaprf = (*ts_profile_t)(iqunsafe.ppPointer(aaprofile)).fdfirst_file
+	for {
+		if !(aaprf != 0) {
+			break
+		}
+		if Xstrcmp(cgtls, (*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdfilespec, sidefault_filename) == 0 {
+			break
+		}
+
+		goto cg_1
+	cg_1:
+		;
+		aaprf = (*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdnext
+	}
+	if !(aaprf != 0) {
+		return 0
+	}
+
+	if (*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdroot != 0 {
+		siprofile_free_node(cgtls, (*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdroot)
+		(*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdroot = ppuintptr(0)
+	}
+
+	Xmemset(cgtls, cgbp, 0, ppuint64(32))
+	aaretval = siprofile_create_node(cgtls, "(root)\x00", ppuintptr(0), cgbp+16)
+	if aaretval != 0 {
+		return aaretval
+	}
+
+	aaline = ppuintptr(0)
+	aaline_size = 0
+	aain = aadef_string
+cg_3:
+	;
+	if !(*(*ppint8)(iqunsafe.ppPointer(aain)) != 0) {
+		goto cg_2
+	}
+	aaend = Xstrchr(cgtls, aain, ppint32('\n'))
+	if aaend != 0 {
+		ccv4 = ppint64(aaend) - ppint64(aain)
+	} else {
+		ccv4 = ppint64(iqlibc.ppInt32FromUint64(Xstrlen(cgtls, aain)))
+	}
+	aalen = ppint32(ccv4)
+	if aalen >= aaline_size {
+		aaline_size = aalen + ppint32(1)
+		aap = Xrealloc(cgtls, aaline, iqlibc.ppUint64FromInt32(aaline_size))
+		if !(aap != 0) {
+			aaretval = ppint64(mvENOMEM)
+			goto pperrout
+		}
+		aaline = aap
+	}
+	Xmemcpy(cgtls, aaline, aain, iqlibc.ppUint64FromInt32(aalen))
+	*(*ppint8)(iqunsafe.ppPointer(aaline + ppuintptr(aalen))) = 0
+	aaretval = siparse_line(cgtls, aaline, cgbp)
+	if !(aaretval != 0) {
+		goto cg_5
+	}
+	goto pperrout
+pperrout:
+	;
+	if sisyntax_err_cb != 0 {
+		(*(*func(*iqlibc.ppTLS, ppuintptr, ppint64, ppint32))(iqunsafe.ppPointer(&struct{ ppuintptr }{sisyntax_err_cb})))(cgtls, (*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdfilespec, aaretval, (*(*tsparse_state)(iqunsafe.ppPointer(cgbp))).fdline_num)
+	}
+	Xfree(cgtls, aaline)
+	if (*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdroot != 0 {
+		siprofile_free_node(cgtls, (*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdroot)
+	}
+	return aaretval
+cg_5:
+	;
+	if !(aaend != 0) {
+		goto cg_2
+	}
+	aain = aaend + ppuintptr(1)
+	goto cg_3
+cg_2:
+	;
+	(*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdroot = (*(*tsparse_state)(iqunsafe.ppPointer(cgbp))).fdroot_section
+	Xfree(cgtls, aaline)
+
+	return 0
+}
+
+/*
+ * prof_file.c ---- routines that manipulate an individual profile file.
+ */
+
+func siprofile_open_file(cgtls *iqlibc.ppTLS, aafilespec ppuintptr, aaret_prof ppuintptr) (cgr tnerrcode_t) {
+
+	var aaexpanded_filename, aahome_env ppuintptr
+	var aalen ppuint32
+	var aaprf tnprf_file_t
+	var aaretval tnerrcode_t
+	pp_, pp_, pp_, pp_, pp_ = aaexpanded_filename, aahome_env, aalen, aaprf, aaretval
+	aahome_env = ppuintptr(0)
+
+	aaprf = Xmalloc(cgtls, ppuint64(48))
+	if !(aaprf != 0) {
+		return ppint64(mvENOMEM)
+	}
+	Xmemset(cgtls, aaprf, 0, ppuint64(48))
+	(*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdmagic = -iqlibc.ppInt64FromInt64(1429577703)
+
+	aalen = ppuint32(Xstrlen(cgtls, aafilespec) + ppuint64(1))
+	if ppint32(*(*ppint8)(iqunsafe.ppPointer(aafilespec))) == ppint32('~') && ppint32(*(*ppint8)(iqunsafe.ppPointer(aafilespec + 1))) == ppint32('/') {
+		aahome_env = Xgetenv(cgtls, "HOME\x00")
+		if aahome_env != 0 {
+
+			aalen = ppuint32(ppuint64(aalen) + Xstrlen(cgtls, aahome_env))
+		}
+	}
+	aaexpanded_filename = Xmalloc(cgtls, ppuint64(aalen))
+	if aaexpanded_filename == ppuintptr(0) {
+		siprofile_free_file(cgtls, aaprf)
+		return ppint64(*(*ppint32)(iqunsafe.ppPointer(X__error(cgtls))))
+	}
+	if aahome_env != 0 {
+		Xstrcpy(cgtls, aaexpanded_filename, aahome_env)
+		Xstrcat(cgtls, aaexpanded_filename, aafilespec+ppuintptr(1))
+	} else {
+		Xmemcpy(cgtls, aaexpanded_filename, aafilespec, ppuint64(aalen))
+	}
+
+	(*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdfilespec = aaexpanded_filename
+
+	if Xstrcmp(cgtls, (*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdfilespec, sidefault_filename) != 0 {
+		aaretval = siprofile_update_file(cgtls, aaprf)
+		if aaretval != 0 {
+			siprofile_free_file(cgtls, aaprf)
+			return aaretval
+		}
+	}
+
+	*(*tnprf_file_t)(iqunsafe.ppPointer(aaret_prof)) = aaprf
+	return 0
+}
+
+func siprofile_update_file(cgtls *iqlibc.ppTLS, aaprf tnprf_file_t) (cgr tnerrcode_t) {
+	cgbp := cgtls.ppAlloc(2080)
+	defer cgtls.ppFree(2080)
+
+	var aaf ppuintptr
+	var aaretval tnerrcode_t
+	var pp_ /* buf at bp+0 */ [2048]ppint8
+	var pp_ /* state at bp+2048 */ tsparse_state
+	pp_, pp_ = aaf, aaretval
+
+	if (*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdflags&ppint32(mvPROFILE_FILE_NO_RELOAD) != 0 {
+		return 0
+	}
+
+	/*
+	 * If we don't have the stat() call, assume that our in-core
+	 * memory image is correct.  That is, we won't reread the
+	 * profile file if it changes.
+	 */
+	if (*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdroot != 0 {
+		return 0
+	}
+	Xmemset(cgtls, cgbp+2048, 0, ppuint64(32))
+	aaretval = siprofile_create_node(cgtls, "(root)\x00", ppuintptr(0), cgbp+2048+16)
+	if aaretval != 0 {
+		return aaretval
+	}
+	*(*ppint32)(iqunsafe.ppPointer(X__error(cgtls))) = 0
+	aaf = Xfopen(cgtls, (*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdfilespec, "r\x00")
+	if aaf == iqlibc.ppUintptrFromInt32(0) {
+		aaretval = ppint64(*(*ppint32)(iqunsafe.ppPointer(X__error(cgtls))))
+		if aaretval == 0 {
+			aaretval = ppint64(mvENOENT)
+		}
+		return aaretval
+	}
+	(*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdupd_serial = (*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdupd_serial + 1
+	for !(Xfeof(cgtls, aaf) != 0) {
+		if Xfgets(cgtls, cgbp, ppint32(2048), aaf) == iqlibc.ppUintptrFromInt32(0) {
+			break
+		}
+		aaretval = siparse_line(cgtls, cgbp, cgbp+2048)
+		if aaretval != 0 {
+			if sisyntax_err_cb != 0 {
+				(*(*func(*iqlibc.ppTLS, ppuintptr, ppint64, ppint32))(iqunsafe.ppPointer(&struct{ ppuintptr }{sisyntax_err_cb})))(cgtls, (*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdfilespec, aaretval, (*(*tsparse_state)(iqunsafe.ppPointer(cgbp + 2048))).fdline_num)
+			}
+			Xfclose(cgtls, aaf)
+			return aaretval
+		}
+	}
+	(*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdroot = (*(*tsparse_state)(iqunsafe.ppPointer(cgbp + 2048))).fdroot_section
+
+	Xfclose(cgtls, aaf)
+
+	return 0
+}
+
+func siprofile_free_file(cgtls *iqlibc.ppTLS, aaprf tnprf_file_t) {
+
+	if (*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdroot != 0 {
+		siprofile_free_node(cgtls, (*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdroot)
+	}
+	Xfree(cgtls, (*ts_prf_file_t)(iqunsafe.ppPointer(aaprf)).fdfilespec)
+	Xfree(cgtls, aaprf)
+}
+
+type tn__ccgo_fp__Xprofile_set_syntax_err_cb_0 = func(*iqlibc.ppTLS, ppuintptr, ppint64, ppint32)
+
+/* Begin the profile parser */
+
+func Xprofile_set_syntax_err_cb(cgtls *iqlibc.ppTLS, aa__ccgo_fp_hook tnprofile_syntax_err_cb_t) (cgr tnprofile_syntax_err_cb_t) {
+
+	var aaold tnprofile_syntax_err_cb_t
+	pp_ = aaold
+
+	aaold = sisyntax_err_cb
+	sisyntax_err_cb = aa__ccgo_fp_hook
+	return aaold
+}
+
+func siskip_over_blanks(cgtls *iqlibc.ppTLS, aacp ppuintptr) (cgr ppuintptr) {
+
+	var ccv1, ccv5, ccv7, ccv8 ppint32
+	var ccv10 ppbool
+	var ccv3 tn__darwin_ct_rune_t
+	var ccv4 ppuint64
+	pp_, pp_, pp_, pp_, pp_, pp_, pp_ = ccv1, ccv10, ccv3, ccv4, ccv5, ccv7, ccv8
+	for {
+		if ccv10 = *(*ppint8)(iqunsafe.ppPointer(aacp)) != 0; ccv10 {
+			ccv3 = ppint32(*(*ppint8)(iqunsafe.ppPointer(aacp)))
+			ccv4 = ppuint64(0x00004000)
+			ccv8 = iqlibc.ppBoolInt32(ccv3 & ^iqlibc.ppInt32FromInt32(0x7F) == 0)
+			goto cg_9
+		cg_9:
+			if ccv8 != 0 {
+				ccv7 = iqlibc.ppBoolInt32(!!(ppuint64(*(*tn__uint32_t)(iqunsafe.ppPointer(ppuintptr(iqunsafe.ppPointer(&X_DefaultRuneLocale)) + 60 + ppuintptr(ccv3)*4)))&ccv4 != 0))
+			} else {
+				ccv7 = iqlibc.ppBoolInt32(!!(X__maskrune(cgtls, ccv3, ccv4) != 0))
+			}
+			ccv5 = ccv7
+			goto cg_6
+		cg_6:
+			ccv1 = ccv5
+			goto cg_2
+		cg_2:
+		}
+		if !(ccv10 && ccv1 != 0) {
+			break
+		}
+		aacp = aacp + 1
+	}
+	return aacp
+}
+
+func siend_or_comment(cgtls *iqlibc.ppTLS, aach ppint8) (cgr ppint32) {
+
+	return iqlibc.ppBoolInt32(ppint32(aach) == 0 || ppint32(aach) == ppint32('#') || ppint32(aach) == ppint32(';'))
+}
+
+func siskip_over_nonblanks(cgtls *iqlibc.ppTLS, aacp ppuintptr) (cgr ppuintptr) {
+
+	var ccv1, ccv5, ccv7, ccv8 ppint32
+	var ccv10 ppbool
+	var ccv3 tn__darwin_ct_rune_t
+	var ccv4 ppuint64
+	pp_, pp_, pp_, pp_, pp_, pp_, pp_ = ccv1, ccv10, ccv3, ccv4, ccv5, ccv7, ccv8
+	for {
+		if ccv10 = !(siend_or_comment(cgtls, *(*ppint8)(iqunsafe.ppPointer(aacp))) != 0); ccv10 {
+			ccv3 = ppint32(*(*ppint8)(iqunsafe.ppPointer(aacp)))
+			ccv4 = ppuint64(0x00004000)
+			ccv8 = iqlibc.ppBoolInt32(ccv3 & ^iqlibc.ppInt32FromInt32(0x7F) == 0)
+			goto cg_9
+		cg_9:
+			if ccv8 != 0 {
+				ccv7 = iqlibc.ppBoolInt32(!!(ppuint64(*(*tn__uint32_t)(iqunsafe.ppPointer(ppuintptr(iqunsafe.ppPointer(&X_DefaultRuneLocale)) + 60 + ppuintptr(ccv3)*4)))&ccv4 != 0))
+			} else {
+				ccv7 = iqlibc.ppBoolInt32(!!(X__maskrune(cgtls, ccv3, ccv4) != 0))
+			}
+			ccv5 = ccv7
+			goto cg_6
+		cg_6:
+			ccv1 = ccv5
+			goto cg_2
+		cg_2:
+		}
+		if !(ccv10 && !(ccv1 != 0)) {
+			break
+		}
+		aacp = aacp + 1
+	}
+	return aacp
+}
+
+func sistrip_line(cgtls *iqlibc.ppTLS, aaline ppuintptr) {
+
+	var aap, ccv1 ppuintptr
+	pp_, pp_ = aap, ccv1
+	aap = aaline + ppuintptr(Xstrlen(cgtls, aaline))
+	for aap > aaline && (ppint32(*(*ppint8)(iqunsafe.ppPointer(aap + ppuintptr(-iqlibc.ppInt32FromInt32(1))))) == ppint32('\n') || ppint32(*(*ppint8)(iqunsafe.ppPointer(aap + ppuintptr(-iqlibc.ppInt32FromInt32(1))))) == ppint32('\r')) {
+		ccv1 = aap
+		aap = aap - 1
+		*(*ppint8)(iqunsafe.ppPointer(ccv1)) = 0
+	}
+}
+
+func siparse_quoted_string(cgtls *iqlibc.ppTLS, aastr ppuintptr) {
+
+	var aafrom, aato, ccv1, ccv3 ppuintptr
+	pp_, pp_, pp_, pp_ = aafrom, aato, ccv1, ccv3
+
+	ccv1 = aastr
+	aafrom = ccv1
+	aato = ccv1
+
+	ccv1 = aastr
+	aafrom = ccv1
+	aato = ccv1
+	for {
+		if !(*(*ppint8)(iqunsafe.ppPointer(aafrom)) != 0 && ppint32(*(*ppint8)(iqunsafe.ppPointer(aafrom))) != ppint32('"')) {
+			break
+		}
+		if ppint32(*(*ppint8)(iqunsafe.ppPointer(aafrom))) == ppint32('\\') {
+			aafrom = aafrom + 1
+			switch ppint32(*(*ppint8)(iqunsafe.ppPointer(aafrom))) {
+			case ppint32('n'):
+				*(*ppint8)(iqunsafe.ppPointer(aato)) = ppint8('\n')
+				break
+				fallthrough
+			case ppint32('t'):
+				*(*ppint8)(iqunsafe.ppPointer(aato)) = ppint8('\t')
+				break
+				fallthrough
+			case ppint32('b'):
+				*(*ppint8)(iqunsafe.ppPointer(aato)) = ppint8('\b')
+				break
+				fallthrough
+			default:
+				*(*ppint8)(iqunsafe.ppPointer(aato)) = *(*ppint8)(iqunsafe.ppPointer(aafrom))
+			}
+			goto cg_2
+		}
+		*(*ppint8)(iqunsafe.ppPointer(aato)) = *(*ppint8)(iqunsafe.ppPointer(aafrom))
+
+		goto cg_2
+	cg_2:
+		;
+		aato = aato + 1
+		aafrom = aafrom + 1
+	}
+	*(*ppint8)(iqunsafe.ppPointer(aato)) = ppint8('\000')
+}
+
+func siparse_line(cgtls *iqlibc.ppTLS, aaline ppuintptr, aastate ppuintptr) (cgr tnerrcode_t) {
+	cgbp := cgtls.ppAlloc(16)
+	defer cgtls.ppFree(16)
+
+	var aach ppint8
+	var aacp, aap, aatag, aavalue, ccv1, ccv11, ccv12 ppuintptr
+	var aado_subsection, ccv2, ccv6, ccv8, ccv9 ppint32
+	var aaretval tnerrcode_t
+	var ccv4 tn__darwin_ct_rune_t
+	var ccv5 ppuint64
+	var pp_ /* iter at bp+8 */ ppuintptr
+	var pp_ /* node at bp+0 */ ppuintptr
+	pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_ = aach, aacp, aado_subsection, aap, aaretval, aatag, aavalue, ccv1, ccv11, ccv12, ccv2, ccv4, ccv5, ccv6, ccv8, ccv9
+	aado_subsection = 0
+	*(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)) = ppuintptr(0)
+
+	(*tsparse_state)(iqunsafe.ppPointer(aastate)).fdline_num = (*tsparse_state)(iqunsafe.ppPointer(aastate)).fdline_num + 1
+	if (*tsparse_state)(iqunsafe.ppPointer(aastate)).fdstate == ppint32(mvSTATE_GET_OBRACE) {
+		aacp = siskip_over_blanks(cgtls, aaline)
+		if ppint32(*(*ppint8)(iqunsafe.ppPointer(aacp))) != ppint32('{') {
+			return -iqlibc.ppInt64FromInt64(1429577711)
+		}
+		(*tsparse_state)(iqunsafe.ppPointer(aastate)).fdstate = ppint32(mvSTATE_STD_LINE)
+		return 0
+	}
+	if (*tsparse_state)(iqunsafe.ppPointer(aastate)).fdstate == mvSTATE_INIT_COMMENT {
+		if ppint32(*(*ppint8)(iqunsafe.ppPointer(aaline))) != ppint32('[') {
+			return 0
+		}
+		(*tsparse_state)(iqunsafe.ppPointer(aastate)).fdstate = ppint32(mvSTATE_STD_LINE)
+	}
+
+	if ppint32(*(*ppint8)(iqunsafe.ppPointer(aaline))) == 0 {
+		return 0
+	}
+	sistrip_line(cgtls, aaline)
+	aacp = siskip_over_blanks(cgtls, aaline)
+	aach = *(*ppint8)(iqunsafe.ppPointer(aacp))
+	if siend_or_comment(cgtls, aach) != 0 {
+		return 0
+	}
+	if ppint32(aach) == ppint32('[') {
+		if (*tsparse_state)(iqunsafe.ppPointer(aastate)).fdgroup_level > 0 {
+			return -iqlibc.ppInt64FromInt64(1429577715)
+		}
+		aacp = aacp + 1
+		aacp = siskip_over_blanks(cgtls, aacp)
+		aap = Xstrchr(cgtls, aacp, ppint32(']'))
+		if aap == iqlibc.ppUintptrFromInt32(0) {
+			return -iqlibc.ppInt64FromInt64(1429577714)
+		}
+		if ppint32(*(*ppint8)(iqunsafe.ppPointer(aacp))) == ppint32('"') {
+			aacp = aacp + 1
+			siparse_quoted_string(cgtls, aacp)
+		} else {
+			ccv1 = aap
+			aap = aap - 1
+			*(*ppint8)(iqunsafe.ppPointer(ccv1)) = ppint8('\000')
+			for {
+				ccv4 = ppint32(*(*ppint8)(iqunsafe.ppPointer(aap)))
+				ccv5 = ppuint64(0x00004000)
+				ccv9 = iqlibc.ppBoolInt32(ccv4 & ^iqlibc.ppInt32FromInt32(0x7F) == 0)
+				goto cg_10
+			cg_10:
+				if ccv9 != 0 {
+					ccv8 = iqlibc.ppBoolInt32(!!(ppuint64(*(*tn__uint32_t)(iqunsafe.ppPointer(ppuintptr(iqunsafe.ppPointer(&X_DefaultRuneLocale)) + 60 + ppuintptr(ccv4)*4)))&ccv5 != 0))
+				} else {
+					ccv8 = iqlibc.ppBoolInt32(!!(X__maskrune(cgtls, ccv4, ccv5) != 0))
+				}
+				ccv6 = ccv8
+				goto cg_7
+			cg_7:
+				ccv2 = ccv6
+				goto cg_3
+			cg_3:
+				;
+				if !(ccv2 != 0 && aap > aacp) {
+					break
+				}
+				ccv1 = aap
+				aap = aap - 1
+				*(*ppint8)(iqunsafe.ppPointer(ccv1)) = ppint8('\000')
+			}
+			if ppint32(*(*ppint8)(iqunsafe.ppPointer(aacp))) == 0 {
+				return -iqlibc.ppInt64FromInt64(1429577714)
+			}
+		}
+		aaretval = siprofile_find_node(cgtls, (*tsparse_state)(iqunsafe.ppPointer(aastate)).fdroot_section, aacp, ppuintptr(0), ppint32(1), cgbp+8, aastate+24)
+		if aaretval == -ppint64(1429577726) {
+			aaretval = siprofile_add_node(cgtls, (*tsparse_state)(iqunsafe.ppPointer(aastate)).fdroot_section, aacp, ppuintptr(0), aastate+24)
+			if aaretval != 0 {
+				return aaretval
+			}
+		} else {
+			if aaretval != 0 {
+				return aaretval
+			}
+		}
+
+		/*
+		 * Finish off the rest of the line.
+		 */
+		aacp = aap + ppuintptr(1)
+		if ppint32(*(*ppint8)(iqunsafe.ppPointer(aacp))) == ppint32('*') {
+			iqlibc.SetBitFieldPtr8Uint32((*tsparse_state)(iqunsafe.ppPointer(aastate)).fdcurrent_section+28, iqlibc.ppUint32FromInt32(1), 0, 0x1)
+			aacp = aacp + 1
+		}
+		/*
+		 * Spaces or comments after ']' should not be fatal
+		 */
+		aacp = siskip_over_blanks(cgtls, aacp)
+		if !(siend_or_comment(cgtls, *(*ppint8)(iqunsafe.ppPointer(aacp))) != 0) {
+			return -iqlibc.ppInt64FromInt64(1429577714)
+		}
+		return 0
+	}
+	if ppint32(aach) == ppint32('}') {
+		if (*tsparse_state)(iqunsafe.ppPointer(aastate)).fdgroup_level == 0 {
+			return -iqlibc.ppInt64FromInt64(1429577712)
+		}
+		if ppint32(*(*ppint8)(iqunsafe.ppPointer(aacp + iqlibc.ppUintptrFromInt32(1)))) == ppint32('*') {
+			iqlibc.SetBitFieldPtr8Uint32((*tsparse_state)(iqunsafe.ppPointer(aastate)).fdcurrent_section+28, iqlibc.ppUint32FromInt32(1), 0, 0x1)
+		}
+		(*tsparse_state)(iqunsafe.ppPointer(aastate)).fdcurrent_section = (*tsprofile_node)(iqunsafe.ppPointer((*tsparse_state)(iqunsafe.ppPointer(aastate)).fdcurrent_section)).fdparent
+		(*tsparse_state)(iqunsafe.ppPointer(aastate)).fdgroup_level = (*tsparse_state)(iqunsafe.ppPointer(aastate)).fdgroup_level - 1
+		return 0
+	}
+	/*
+	 * Parse the relations
+	 */
+	aatag = aacp
+	aacp = Xstrchr(cgtls, aacp, ppint32('='))
+	if !(aacp != 0) {
+		return -iqlibc.ppInt64FromInt64(1429577713)
+	}
+	if aacp == aatag {
+		return -iqlibc.ppInt64FromInt64(1429577713)
+	}
+	*(*ppint8)(iqunsafe.ppPointer(aacp)) = ppint8('\000')
+	if ppint32(*(*ppint8)(iqunsafe.ppPointer(aatag))) == ppint32('"') {
+		aatag = aatag + 1
+		siparse_quoted_string(cgtls, aatag)
+	} else {
+		/* Look for whitespace on left-hand side.  */
+		aap = siskip_over_nonblanks(cgtls, aatag)
+		if *(*ppint8)(iqunsafe.ppPointer(aap)) != 0 {
+			ccv1 = aap
+			aap = aap + 1
+			*(*ppint8)(iqunsafe.ppPointer(ccv1)) = 0
+		}
+		aap = siskip_over_blanks(cgtls, aap)
+		/* If we have more non-whitespace, it's an error.  */
+		if *(*ppint8)(iqunsafe.ppPointer(aap)) != 0 {
+			return -iqlibc.ppInt64FromInt64(1429577713)
+		}
+	}
+
+	aacp = siskip_over_blanks(cgtls, aacp+ppuintptr(1))
+	aavalue = aacp
+	aach = *(*ppint8)(iqunsafe.ppPointer(aavalue))
+	if ppint32(aach) == ppint32('"') {
+		aavalue = aavalue + 1
+		siparse_quoted_string(cgtls, aavalue)
+	} else {
+		if siend_or_comment(cgtls, aach) != 0 {
+			aado_subsection = aado_subsection + 1
+			(*tsparse_state)(iqunsafe.ppPointer(aastate)).fdstate = ppint32(mvSTATE_GET_OBRACE)
+		} else {
+			if ppint32(*(*ppint8)(iqunsafe.ppPointer(aavalue))) == ppint32('{') {
+				aacp = siskip_over_blanks(cgtls, aavalue+ppuintptr(1))
+				aach = *(*ppint8)(iqunsafe.ppPointer(aacp))
+				if siend_or_comment(cgtls, aach) != 0 {
+					aado_subsection = aado_subsection + 1
+				} else {
+					return -iqlibc.ppInt64FromInt64(1429577713)
+				}
+			} else {
+				aacp = siskip_over_nonblanks(cgtls, aavalue)
+				aap = siskip_over_blanks(cgtls, aacp)
+				aach = *(*ppint8)(iqunsafe.ppPointer(aap))
+				*(*ppint8)(iqunsafe.ppPointer(aacp)) = 0
+				if !(siend_or_comment(cgtls, aach) != 0) {
+					return -iqlibc.ppInt64FromInt64(1429577713)
+				}
+			}
+		}
+	}
+	if aado_subsection != 0 {
+		aap = Xstrchr(cgtls, aatag, ppint32('*'))
+		if aap != 0 {
+			*(*ppint8)(iqunsafe.ppPointer(aap)) = ppint8('\000')
+		}
+		aaretval = siprofile_add_node(cgtls, (*tsparse_state)(iqunsafe.ppPointer(aastate)).fdcurrent_section, aatag, ppuintptr(0), aastate+24)
+		if aaretval != 0 {
+			return aaretval
+		}
+		if aap != 0 {
+			iqlibc.SetBitFieldPtr8Uint32((*tsparse_state)(iqunsafe.ppPointer(aastate)).fdcurrent_section+28, iqlibc.ppUint32FromInt32(1), 0, 0x1)
+		}
+		(*tsparse_state)(iqunsafe.ppPointer(aastate)).fdgroup_level = (*tsparse_state)(iqunsafe.ppPointer(aastate)).fdgroup_level + 1
+		return 0
+	}
+	aap = Xstrchr(cgtls, aatag, ppint32('*'))
+	if aap != 0 {
+		*(*ppint8)(iqunsafe.ppPointer(aap)) = ppint8('\000')
+	}
+	siprofile_add_node(cgtls, (*tsparse_state)(iqunsafe.ppPointer(aastate)).fdcurrent_section, aatag, aavalue, cgbp)
+	if aap != 0 {
+		iqlibc.SetBitFieldPtr8Uint32(*(*ppuintptr)(iqunsafe.ppPointer(cgbp))+28, iqlibc.ppUint32FromInt32(1), 0, 0x1)
+	}
+	return 0
+}
+
+/*
+ * prof_tree.c --- these routines maintain the parse tree of the
+ * 	config file.
+ *
+ * All of the details of how the tree is stored is abstracted away in
+ * this file; all of the other profile routines build, access, and
+ * modify the tree via the accessor functions found in this file.
+ *
+ * Each node may represent either a relation or a section header.
+ *
+ * A section header must have its value field set to 0, and may a one
+ * or more child nodes, pointed to by first_child.
+ *
+ * A relation has as its value a pointer to allocated memory
+ * containing a string.  Its first_child pointer must be null.
+ *
+ */
+
+// C documentation
+//
+//	/*
+//	 * Free a node, and any children
+//	 */
+func siprofile_free_node(cgtls *iqlibc.ppTLS, aanode ppuintptr) {
+
+	var aachild, aanext ppuintptr
+	pp_, pp_ = aachild, aanext
+
+	if (*tsprofile_node)(iqunsafe.ppPointer(aanode)).fdmagic != -ppint64(1429577727) {
+		return
+	}
+
+	Xfree(cgtls, (*tsprofile_node)(iqunsafe.ppPointer(aanode)).fdname)
+	Xfree(cgtls, (*tsprofile_node)(iqunsafe.ppPointer(aanode)).fdvalue)
+
+	aachild = (*tsprofile_node)(iqunsafe.ppPointer(aanode)).fdfirst_child
+	for {
+		if !(aachild != 0) {
+			break
+		}
+		aanext = (*tsprofile_node)(iqunsafe.ppPointer(aachild)).fdnext
+		siprofile_free_node(cgtls, aachild)
+
+		goto cg_1
+	cg_1:
+		;
+		aachild = aanext
+	}
+	(*tsprofile_node)(iqunsafe.ppPointer(aanode)).fdmagic = 0
+
+	Xfree(cgtls, aanode)
+}
+
+// C documentation
+//
+//	/*
+//	 * Create a node
+//	 */
+func siprofile_create_node(cgtls *iqlibc.ppTLS, aaname ppuintptr, aavalue ppuintptr, aaret_node ppuintptr) (cgr tnerrcode_t) {
+
+	var aanew ppuintptr
+	pp_ = aanew
+
+	aanew = Xmalloc(cgtls, ppuint64(64))
+	if !(aanew != 0) {
+		return ppint64(mvENOMEM)
+	}
+	Xmemset(cgtls, aanew, 0, ppuint64(64))
+	(*tsprofile_node)(iqunsafe.ppPointer(aanew)).fdmagic = -iqlibc.ppInt64FromInt64(1429577727)
+	(*tsprofile_node)(iqunsafe.ppPointer(aanew)).fdname = Xstrdup(cgtls, aaname)
+	if (*tsprofile_node)(iqunsafe.ppPointer(aanew)).fdname == ppuintptr(0) {
+		siprofile_free_node(cgtls, aanew)
+		return ppint64(mvENOMEM)
+	}
+	if aavalue != 0 {
+		(*tsprofile_node)(iqunsafe.ppPointer(aanew)).fdvalue = Xstrdup(cgtls, aavalue)
+		if (*tsprofile_node)(iqunsafe.ppPointer(aanew)).fdvalue == ppuintptr(0) {
+			siprofile_free_node(cgtls, aanew)
+			return ppint64(mvENOMEM)
+		}
+	}
+
+	*(*ppuintptr)(iqunsafe.ppPointer(aaret_node)) = aanew
+	return 0
+}
+
+/*
+ * This function verifies that all of the representation invariants of
+ * the profile are true.  If not, we have a programming bug somewhere,
+ * probably in this file.
+ */
+
+// C documentation
+//
+//	/*
+//	 * Add a node to a particular section
+//	 */
+func siprofile_add_node(cgtls *iqlibc.ppTLS, aasection ppuintptr, aaname ppuintptr, aavalue ppuintptr, aaret_node ppuintptr) (cgr tnerrcode_t) {
+	cgbp := cgtls.ppAlloc(16)
+	defer cgtls.ppFree(16)
+
+	var aacmp ppint32
+	var aalast, aap ppuintptr
+	var aaretval tnerrcode_t
+	var pp_ /* new at bp+0 */ ppuintptr
+	pp_, pp_, pp_, pp_ = aacmp, aalast, aap, aaretval
+
+	if (*tsprofile_node)(iqunsafe.ppPointer(aasection)).fdmagic != -ppint64(1429577727) {
+		return -iqlibc.ppInt64FromInt64(1429577727)
+	}
+
+	if (*tsprofile_node)(iqunsafe.ppPointer(aasection)).fdvalue != 0 {
+		return -iqlibc.ppInt64FromInt64(1429577724)
+	}
+
+	/*
+	 * Find the place to insert the new node.  We look for the
+	 * place *after* the last match of the node name, since
+	 * order matters.
+	 */
+	aap = (*tsprofile_node)(iqunsafe.ppPointer(aasection)).fdfirst_child
+	aalast = iqlibc.ppUintptrFromInt32(0)
+	for {
+		if !(aap != 0) {
+			break
+		}
+		aacmp = Xstrcmp(cgtls, (*tsprofile_node)(iqunsafe.ppPointer(aap)).fdname, aaname)
+		if aacmp > 0 {
+			break
+		}
+
+		goto cg_1
+	cg_1:
+		;
+		aalast = aap
+		aap = (*tsprofile_node)(iqunsafe.ppPointer(aap)).fdnext
+	}
+	aaretval = siprofile_create_node(cgtls, aaname, aavalue, cgbp)
+	if aaretval != 0 {
+		return aaretval
+	}
+	(*tsprofile_node)(iqunsafe.ppPointer(*(*ppuintptr)(iqunsafe.ppPointer(cgbp)))).fdgroup_level = (*tsprofile_node)(iqunsafe.ppPointer(aasection)).fdgroup_level + ppint32(1)
+	iqlibc.SetBitFieldPtr8Uint32(*(*ppuintptr)(iqunsafe.ppPointer(cgbp))+28, iqlibc.ppUint32FromInt32(0), 1, 0x2)
+	(*tsprofile_node)(iqunsafe.ppPointer(*(*ppuintptr)(iqunsafe.ppPointer(cgbp)))).fdparent = aasection
+	(*tsprofile_node)(iqunsafe.ppPointer(*(*ppuintptr)(iqunsafe.ppPointer(cgbp)))).fdprev = aalast
+	(*tsprofile_node)(iqunsafe.ppPointer(*(*ppuintptr)(iqunsafe.ppPointer(cgbp)))).fdnext = aap
+	if aap != 0 {
+		(*tsprofile_node)(iqunsafe.ppPointer(aap)).fdprev = *(*ppuintptr)(iqunsafe.ppPointer(cgbp))
+	}
+	if aalast != 0 {
+		(*tsprofile_node)(iqunsafe.ppPointer(aalast)).fdnext = *(*ppuintptr)(iqunsafe.ppPointer(cgbp))
+	} else {
+		(*tsprofile_node)(iqunsafe.ppPointer(aasection)).fdfirst_child = *(*ppuintptr)(iqunsafe.ppPointer(cgbp))
+	}
+	if aaret_node != 0 {
+		*(*ppuintptr)(iqunsafe.ppPointer(aaret_node)) = *(*ppuintptr)(iqunsafe.ppPointer(cgbp))
+	}
+	return 0
+}
+
+// C documentation
+//
+//	/*
+//	 * Iterate through the section, returning the nodes which match
+//	 * the given name.  If name is NULL, then iterate through all the
+//	 * nodes in the section.  If section_flag is non-zero, only return the
+//	 * section which matches the name; don't return relations.  If value
+//	 * is non-NULL, then only return relations which match the requested
+//	 * value.  (The value argument is ignored if section_flag is non-zero.)
+//	 *
+//	 * The first time this routine is called, the state pointer must be
+//	 * null.  When this profile_find_node_relation() returns, if the state
+//	 * pointer is non-NULL, then this routine should be called again.
+//	 * (This won't happen if section_flag is non-zero, obviously.)
+//	 *
+//	 */
+func siprofile_find_node(cgtls *iqlibc.ppTLS, aasection ppuintptr, aaname ppuintptr, aavalue ppuintptr, aasection_flag ppint32, aastate ppuintptr, aanode ppuintptr) (cgr tnerrcode_t) {
+
+	var aap ppuintptr
+	var ccv2 ppint64
+	pp_, pp_ = aap, ccv2
+
+	if (*tsprofile_node)(iqunsafe.ppPointer(aasection)).fdmagic != -ppint64(1429577727) {
+		return -iqlibc.ppInt64FromInt64(1429577727)
+	}
+	aap = *(*ppuintptr)(iqunsafe.ppPointer(aastate))
+	if aap != 0 {
+		if (*tsprofile_node)(iqunsafe.ppPointer(aap)).fdmagic != -ppint64(1429577727) {
+			return -iqlibc.ppInt64FromInt64(1429577727)
+		}
+	} else {
+		aap = (*tsprofile_node)(iqunsafe.ppPointer(aasection)).fdfirst_child
+	}
+
+	for {
+		if !(aap != 0) {
+			break
+		}
+		if aaname != 0 && Xstrcmp(cgtls, (*tsprofile_node)(iqunsafe.ppPointer(aap)).fdname, aaname) != 0 {
+			goto cg_1
+		}
+		if aasection_flag != 0 {
+			if (*tsprofile_node)(iqunsafe.ppPointer(aap)).fdvalue != 0 {
+				goto cg_1
+			}
+		} else {
+			if !((*tsprofile_node)(iqunsafe.ppPointer(aap)).fdvalue != 0) {
+				goto cg_1
+			}
+			if aavalue != 0 && Xstrcmp(cgtls, (*tsprofile_node)(iqunsafe.ppPointer(aap)).fdvalue, aavalue) != 0 {
+				goto cg_1
+			}
+		}
+		if ppint32(ppuint32(*(*uint8)(iqunsafe.ppPointer(aap + 28))&0x2>>1)) != 0 {
+			goto cg_1
+		}
+		/* A match! */
+		if aanode != 0 {
+			*(*ppuintptr)(iqunsafe.ppPointer(aanode)) = aap
+		}
+		break
+
+		goto cg_1
+	cg_1:
+		;
+		aap = (*tsprofile_node)(iqunsafe.ppPointer(aap)).fdnext
+	}
+	if aap == ppuintptr(0) {
+		*(*ppuintptr)(iqunsafe.ppPointer(aastate)) = ppuintptr(0)
+		if aasection_flag != 0 {
+			ccv2 = -ppint64(1429577726)
+		} else {
+			ccv2 = -ppint64(1429577725)
+		}
+		return ccv2
+	}
+	/*
+	 * OK, we've found one match; now let's try to find another
+	 * one.  This way, if we return a non-zero state pointer,
+	 * there's guaranteed to be another match that's returned.
+	 */
+	aap = (*tsprofile_node)(iqunsafe.ppPointer(aap)).fdnext
+	for {
+		if !(aap != 0) {
+			break
+		}
+		if aaname != 0 && Xstrcmp(cgtls, (*tsprofile_node)(iqunsafe.ppPointer(aap)).fdname, aaname) != 0 {
+			goto cg_3
+		}
+		if aasection_flag != 0 {
+			if (*tsprofile_node)(iqunsafe.ppPointer(aap)).fdvalue != 0 {
+				goto cg_3
+			}
+		} else {
+			if !((*tsprofile_node)(iqunsafe.ppPointer(aap)).fdvalue != 0) {
+				goto cg_3
+			}
+			if aavalue != 0 && Xstrcmp(cgtls, (*tsprofile_node)(iqunsafe.ppPointer(aap)).fdvalue, aavalue) != 0 {
+				goto cg_3
+			}
+		}
+		/* A match! */
+		break
+
+		goto cg_3
+	cg_3:
+		;
+		aap = (*tsprofile_node)(iqunsafe.ppPointer(aap)).fdnext
+	}
+	*(*ppuintptr)(iqunsafe.ppPointer(aastate)) = aap
+	return 0
+}
+
+/*
+ * This is a general-purpose iterator for returning all nodes that
+ * match the specified name array.
+ */
+type tsprofile_iterator = struct {
+	fdmagic       tnprf_magic_t
+	fdprofile     tnprofile_t
+	fdflags       ppint32
+	fdnames       ppuintptr
+	fdname        ppuintptr
+	fdfile        tnprf_file_t
+	fdfile_serial ppint32
+	fddone_idx    ppint32
+	fdnode        ppuintptr
+	fdnum         ppint32
+}
+
+func Xprofile_iterator_create(cgtls *iqlibc.ppTLS, aaprofile tnprofile_t, aanames ppuintptr, aaflags ppint32, aaret_iter ppuintptr) (cgr tnerrcode_t) {
+
+	var aadone_idx ppint32
+	var aaiter, ccv1 ppuintptr
+	pp_, pp_, pp_ = aadone_idx, aaiter, ccv1
+	aadone_idx = 0
+
+	if aaprofile == ppuintptr(0) {
+		return -iqlibc.ppInt64FromInt64(1429577704)
+	}
+	if (*ts_profile_t)(iqunsafe.ppPointer(aaprofile)).fdmagic != -ppint64(1429577710) {
+		return -iqlibc.ppInt64FromInt64(1429577710)
+	}
+	if !(aanames != 0) {
+		return -iqlibc.ppInt64FromInt64(1429577705)
+	}
+	if !(aaflags&iqlibc.ppInt32FromInt32(mvPROFILE_ITER_LIST_SECTION) != 0) {
+		if !(*(*ppuintptr)(iqunsafe.ppPointer(aanames)) != 0) {
+			return -iqlibc.ppInt64FromInt64(1429577705)
+		}
+		aadone_idx = ppint32(1)
+	}
+
+	ccv1 = Xmalloc(cgtls, ppuint64(72))
+	aaiter = ccv1
+	if ccv1 == iqlibc.ppUintptrFromInt32(0) {
+		return ppint64(mvENOMEM)
+	}
+
+	(*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdmagic = -iqlibc.ppInt64FromInt64(1429577719)
+	(*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdprofile = aaprofile
+	(*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdnames = aanames
+	(*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdflags = aaflags
+	(*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile = (*ts_profile_t)(iqunsafe.ppPointer(aaprofile)).fdfirst_file
+	(*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fddone_idx = aadone_idx
+	(*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdnode = ppuintptr(0)
+	(*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdnum = 0
+	*(*ppuintptr)(iqunsafe.ppPointer(aaret_iter)) = aaiter
+	return 0
+}
+
+func Xprofile_iterator_free(cgtls *iqlibc.ppTLS, aaiter_p ppuintptr) {
+
+	var aaiter ppuintptr
+	pp_ = aaiter
+
+	if !(aaiter_p != 0) {
+		return
+	}
+	aaiter = *(*ppuintptr)(iqunsafe.ppPointer(aaiter_p))
+	if !(aaiter != 0) || (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdmagic != -ppint64(1429577719) {
+		return
+	}
+	Xfree(cgtls, aaiter)
+	*(*ppuintptr)(iqunsafe.ppPointer(aaiter_p)) = ppuintptr(0)
+}
+
+// C documentation
+//
+//	/*
+//	 * Note: the returned character strings in ret_name and ret_value
+//	 * points to the stored character string in the parse string.  Before
+//	 * this string value is returned to a calling application
+//	 * (profile_node_iterator is not an exported interface), it should be
+//	 * strdup()'ed.
+//	 */
+func siprofile_node_iterator(cgtls *iqlibc.ppTLS, aaiter_p ppuintptr, aaret_node ppuintptr, aaret_name ppuintptr, aaret_value ppuintptr) (cgr tnerrcode_t) {
+
+	var aacpp, aaiter, aap, aasection, ccv5 ppuintptr
+	var aaretval, ccv1 tnerrcode_t
+	var aaskip_num ppint32
+	pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_ = aacpp, aaiter, aap, aaretval, aasection, aaskip_num, ccv1, ccv5
+	aaiter = *(*ppuintptr)(iqunsafe.ppPointer(aaiter_p))
+	aaskip_num = 0
+
+	if !(aaiter != 0) || (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdmagic != -ppint64(1429577719) {
+		return -iqlibc.ppInt64FromInt64(1429577719)
+	}
+	if (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile != 0 && (*ts_prf_file_t)(iqunsafe.ppPointer((*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile)).fdmagic != -ppint64(1429577703) {
+		return -iqlibc.ppInt64FromInt64(1429577703)
+	}
+	/*
+	 * If the file has changed, then the node pointer is invalid,
+	 * so we'll have search the file again looking for it.
+	 */
+	if (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdnode != 0 && ((*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile != 0 && (*ts_prf_file_t)(iqunsafe.ppPointer((*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile)).fdupd_serial != (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile_serial) {
+
+		*(*ppint32)(iqunsafe.ppPointer(aaiter + 16)) &= ^iqlibc.ppInt32FromInt32(mvPROFILE_ITER_FINAL_SEEN)
+		aaskip_num = (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdnum
+		(*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdnode = ppuintptr(0)
+	}
+	if (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdnode != 0 && (*tsprofile_node)(iqunsafe.ppPointer((*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdnode)).fdmagic != -ppint64(1429577727) {
+		return -iqlibc.ppInt64FromInt64(1429577727)
+	}
+	goto ppget_new_file
+ppget_new_file:
+	;
+	if (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdnode == ppuintptr(0) {
+		if (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile == iqlibc.ppUintptrFromInt32(0) || (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdflags&ppint32(mvPROFILE_ITER_FINAL_SEEN) != 0 {
+			Xprofile_iterator_free(cgtls, aaiter_p)
+			if aaret_node != 0 {
+				*(*ppuintptr)(iqunsafe.ppPointer(aaret_node)) = ppuintptr(0)
+			}
+			if aaret_name != 0 {
+				*(*ppuintptr)(iqunsafe.ppPointer(aaret_name)) = ppuintptr(0)
+			}
+			if aaret_value != 0 {
+				*(*ppuintptr)(iqunsafe.ppPointer(aaret_value)) = ppuintptr(0)
+			}
+			return 0
+		}
+		ccv1 = siprofile_update_file(cgtls, (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile)
+		aaretval = ccv1
+		if ccv1 != 0 {
+			if aaretval == ppint64(mvENOENT) || aaretval == ppint64(mvEACCES) {
+				/* XXX memory leak? */
+				if (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile != 0 {
+					(*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile = (*ts_prf_file_t)(iqunsafe.ppPointer((*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile)).fdnext
+				}
+				aaskip_num = 0
+				aaretval = 0
+				goto ppget_new_file
+			} else {
+				Xprofile_iterator_free(cgtls, aaiter_p)
+				return aaretval
+			}
+		}
+		(*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile_serial = (*ts_prf_file_t)(iqunsafe.ppPointer((*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile)).fdupd_serial
+		/*
+		 * Find the section to list if we are a LIST_SECTION,
+		 * or find the containing section if not.
+		 */
+		aasection = (*ts_prf_file_t)(iqunsafe.ppPointer((*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile)).fdroot
+		aacpp = (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdnames
+		for {
+			if !(*(*ppuintptr)(iqunsafe.ppPointer(aacpp + ppuintptr((*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fddone_idx)*8)) != 0) {
+				break
+			}
+			aap = (*tsprofile_node)(iqunsafe.ppPointer(aasection)).fdfirst_child
+			for {
+				if !(aap != 0) {
+					break
+				}
+				if !(Xstrcmp(cgtls, (*tsprofile_node)(iqunsafe.ppPointer(aap)).fdname, *(*ppuintptr)(iqunsafe.ppPointer(aacpp))) != 0) && !((*tsprofile_node)(iqunsafe.ppPointer(aap)).fdvalue != 0) {
+					break
+				}
+
+				goto cg_3
+			cg_3:
+				;
+				aap = (*tsprofile_node)(iqunsafe.ppPointer(aap)).fdnext
+			}
+			if !(aap != 0) {
+				aasection = ppuintptr(0)
+				break
+			}
+			aasection = aap
+			if ppint32(ppuint32(*(*uint8)(iqunsafe.ppPointer(aap + 28))&0x1>>0)) != 0 {
+
+				*(*ppint32)(iqunsafe.ppPointer(aaiter + 16)) |= ppint32(mvPROFILE_ITER_FINAL_SEEN)
+			}
+
+			goto cg_2
+		cg_2:
+			;
+			aacpp += 8
+		}
+		if !(aasection != 0) {
+			if (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile != 0 {
+				(*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile = (*ts_prf_file_t)(iqunsafe.ppPointer((*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile)).fdnext
+			}
+			aaskip_num = 0
+			goto ppget_new_file
+		}
+		(*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdname = *(*ppuintptr)(iqunsafe.ppPointer(aacpp))
+		(*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdnode = (*tsprofile_node)(iqunsafe.ppPointer(aasection)).fdfirst_child
+	}
+	/*
+	 * OK, now we know iter->node is set up correctly.  Let's do
+	 * the search.
+	 */
+	aap = (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdnode
+	for {
+		if !(aap != 0) {
+			break
+		}
+		if (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdname != 0 && Xstrcmp(cgtls, (*tsprofile_node)(iqunsafe.ppPointer(aap)).fdname, (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdname) != 0 {
+			goto cg_4
+		}
+		if (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdflags&ppint32(mvPROFILE_ITER_SECTIONS_ONLY) != 0 && (*tsprofile_node)(iqunsafe.ppPointer(aap)).fdvalue != 0 {
+			goto cg_4
+		}
+		if (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdflags&ppint32(mvPROFILE_ITER_RELATIONS_ONLY) != 0 && !((*tsprofile_node)(iqunsafe.ppPointer(aap)).fdvalue != 0) {
+			goto cg_4
+		}
+		if aaskip_num > 0 {
+			aaskip_num = aaskip_num - 1
+			goto cg_4
+		}
+		if ppint32(ppuint32(*(*uint8)(iqunsafe.ppPointer(aap + 28))&0x2>>1)) != 0 {
+			goto cg_4
+		}
+		break
+
+		goto cg_4
+	cg_4:
+		;
+		aap = (*tsprofile_node)(iqunsafe.ppPointer(aap)).fdnext
+	}
+	(*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdnum = (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdnum + 1
+	if !(aap != 0) {
+		if (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile != 0 {
+			(*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile = (*ts_prf_file_t)(iqunsafe.ppPointer((*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile)).fdnext
+		}
+		(*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdnode = ppuintptr(0)
+		aaskip_num = 0
+		goto ppget_new_file
+	}
+	ccv5 = (*tsprofile_node)(iqunsafe.ppPointer(aap)).fdnext
+	(*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdnode = ccv5
+	if ccv5 == iqlibc.ppUintptrFromInt32(0) {
+		if (*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile != 0 {
+			(*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile = (*ts_prf_file_t)(iqunsafe.ppPointer((*tsprofile_iterator)(iqunsafe.ppPointer(aaiter)).fdfile)).fdnext
+		}
+	}
+	if aaret_node != 0 {
+		*(*ppuintptr)(iqunsafe.ppPointer(aaret_node)) = aap
+	}
+	if aaret_name != 0 {
+		*(*ppuintptr)(iqunsafe.ppPointer(aaret_name)) = (*tsprofile_node)(iqunsafe.ppPointer(aap)).fdname
+	}
+	if aaret_value != 0 {
+		*(*ppuintptr)(iqunsafe.ppPointer(aaret_value)) = (*tsprofile_node)(iqunsafe.ppPointer(aap)).fdvalue
+	}
+	return 0
+}
+
+/*
+ * prof_get.c --- routines that expose the public interfaces for
+ * 	querying items from the profile.
+ *
+ */
+
+// C documentation
+//
+//	/*
+//	 * This function only gets the first value from the file; it is a
+//	 * helper function for profile_get_string, profile_get_integer, etc.
+//	 */
+func siprofile_get_value(cgtls *iqlibc.ppTLS, aaprofile tnprofile_t, aaname ppuintptr, aasubname ppuintptr, aasubsubname ppuintptr, aaret_value ppuintptr) (cgr tnerrcode_t) {
+	cgbp := cgtls.ppAlloc(48)
+	defer cgtls.ppFree(48)
+
+	var aaretval, ccv1, ccv2 tnerrcode_t
+	var pp_ /* names at bp+16 */ [4]ppuintptr
+	var pp_ /* state at bp+0 */ ppuintptr
+	var pp_ /* value at bp+8 */ ppuintptr
+	pp_, pp_, pp_ = aaretval, ccv1, ccv2
+
+	(*(*[4]ppuintptr)(iqunsafe.ppPointer(cgbp + 16)))[0] = aaname
+	(*(*[4]ppuintptr)(iqunsafe.ppPointer(cgbp + 16)))[ppint32(1)] = aasubname
+	(*(*[4]ppuintptr)(iqunsafe.ppPointer(cgbp + 16)))[ppint32(2)] = aasubsubname
+	(*(*[4]ppuintptr)(iqunsafe.ppPointer(cgbp + 16)))[ppint32(3)] = ppuintptr(0)
+
+	ccv1 = Xprofile_iterator_create(cgtls, aaprofile, cgbp+16, ppint32(mvPROFILE_ITER_RELATIONS_ONLY), cgbp)
+	aaretval = ccv1
+	if ccv1 != 0 {
+		return aaretval
+	}
+
+	ccv1 = siprofile_node_iterator(cgtls, cgbp, ppuintptr(0), ppuintptr(0), cgbp+8)
+	aaretval = ccv1
+	if ccv1 != 0 {
+		goto ppcleanup
+	}
+
+	if *(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)) != 0 {
+		*(*ppuintptr)(iqunsafe.ppPointer(aaret_value)) = *(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8))
+	} else {
+		aaretval = -iqlibc.ppInt64FromInt64(1429577725)
+	}
+
+	goto ppcleanup
+ppcleanup:
+	;
+	Xprofile_iterator_free(cgtls, cgbp)
+	return aaretval
+}
+
+func Xprofile_get_string(cgtls *iqlibc.ppTLS, aaprofile tnprofile_t, aaname ppuintptr, aasubname ppuintptr, aasubsubname ppuintptr, aadef_val ppuintptr, aaret_string ppuintptr) (cgr tnerrcode_t) {
+	cgbp := cgtls.ppAlloc(16)
+	defer cgtls.ppFree(16)
+
+	var aaretval tnerrcode_t
+	var pp_ /* value at bp+0 */ ppuintptr
+	pp_ = aaretval
+
+	if aaprofile != 0 {
+		aaretval = siprofile_get_value(cgtls, aaprofile, aaname, aasubname, aasubsubname, cgbp)
+		if aaretval == -ppint64(1429577726) || aaretval == -ppint64(1429577725) {
+			*(*ppuintptr)(iqunsafe.ppPointer(cgbp)) = aadef_val
+		} else {
+			if aaretval != 0 {
+				return aaretval
+			}
+		}
+	} else {
+		*(*ppuintptr)(iqunsafe.ppPointer(cgbp)) = aadef_val
+	}
+
+	if *(*ppuintptr)(iqunsafe.ppPointer(cgbp)) != 0 {
+		*(*ppuintptr)(iqunsafe.ppPointer(aaret_string)) = Xmalloc(cgtls, Xstrlen(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(cgbp)))+ppuint64(1))
+		if *(*ppuintptr)(iqunsafe.ppPointer(aaret_string)) == ppuintptr(0) {
+			return ppint64(mvENOMEM)
+		}
+		Xstrcpy(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(aaret_string)), *(*ppuintptr)(iqunsafe.ppPointer(cgbp)))
+	} else {
+		*(*ppuintptr)(iqunsafe.ppPointer(aaret_string)) = ppuintptr(0)
+	}
+	return 0
+}
+
+func Xprofile_get_integer(cgtls *iqlibc.ppTLS, aaprofile tnprofile_t, aaname ppuintptr, aasubname ppuintptr, aasubsubname ppuintptr, aadef_val ppint32, aaret_int ppuintptr) (cgr tnerrcode_t) {
+	cgbp := cgtls.ppAlloc(16)
+	defer cgtls.ppFree(16)
+
+	var aaret_long ppint64
+	var aaretval tnerrcode_t
+	var pp_ /* end_value at bp+8 */ ppuintptr
+	var pp_ /* value at bp+0 */ ppuintptr
+	pp_, pp_ = aaret_long, aaretval
+
+	*(*ppint32)(iqunsafe.ppPointer(aaret_int)) = aadef_val
+	if aaprofile == ppuintptr(0) {
+		return 0
+	}
+
+	aaretval = siprofile_get_value(cgtls, aaprofile, aaname, aasubname, aasubsubname, cgbp)
+	if aaretval == -ppint64(1429577726) || aaretval == -ppint64(1429577725) {
+		*(*ppint32)(iqunsafe.ppPointer(aaret_int)) = aadef_val
+		return 0
+	} else {
+		if aaretval != 0 {
+			return aaretval
+		}
+	}
+
+	if ppint32(*(*ppint8)(iqunsafe.ppPointer(*(*ppuintptr)(iqunsafe.ppPointer(cgbp))))) == 0 {
+		/* Empty string is no good.  */
+		return -iqlibc.ppInt64FromInt64(1429577699)
+	}
+	*(*ppint32)(iqunsafe.ppPointer(X__error(cgtls))) = 0
+	aaret_long = Xstrtol(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(cgbp)), cgbp+8, 0)
+
+	/* Overflow or underflow.  */
+	if (aaret_long == -iqlibc.ppInt64FromInt64(9223372036854775807)-iqlibc.ppInt64FromInt64(1) || aaret_long == ppint64(9223372036854775807)) && *(*ppint32)(iqunsafe.ppPointer(X__error(cgtls))) != 0 {
+		return -iqlibc.ppInt64FromInt64(1429577699)
+	}
+	/* Value outside "int" range.  */
+	if ppint64(ppint32(aaret_long)) != aaret_long {
+		return -iqlibc.ppInt64FromInt64(1429577699)
+	}
+	/* Garbage in string.  */
+	if *(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)) != *(*ppuintptr)(iqunsafe.ppPointer(cgbp))+ppuintptr(Xstrlen(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(cgbp)))) {
+		return -iqlibc.ppInt64FromInt64(1429577699)
+	}
+
+	*(*ppint32)(iqunsafe.ppPointer(aaret_int)) = ppint32(aaret_long)
+	return 0
+}
+
+func Xprofile_get_uint(cgtls *iqlibc.ppTLS, aaprofile tnprofile_t, aaname ppuintptr, aasubname ppuintptr, aasubsubname ppuintptr, aadef_val ppuint32, aaret_int ppuintptr) (cgr tnerrcode_t) {
+	cgbp := cgtls.ppAlloc(16)
+	defer cgtls.ppFree(16)
+
+	var aaret_long ppuint64
+	var aaretval tnerrcode_t
+	var pp_ /* end_value at bp+8 */ ppuintptr
+	var pp_ /* value at bp+0 */ ppuintptr
+	pp_, pp_ = aaret_long, aaretval
+
+	*(*ppuint32)(iqunsafe.ppPointer(aaret_int)) = aadef_val
+	if aaprofile == ppuintptr(0) {
+		return 0
+	}
+
+	aaretval = siprofile_get_value(cgtls, aaprofile, aaname, aasubname, aasubsubname, cgbp)
+	if aaretval == -ppint64(1429577726) || aaretval == -ppint64(1429577725) {
+		*(*ppuint32)(iqunsafe.ppPointer(aaret_int)) = aadef_val
+		return 0
+	} else {
+		if aaretval != 0 {
+			return aaretval
+		}
+	}
+
+	if ppint32(*(*ppint8)(iqunsafe.ppPointer(*(*ppuintptr)(iqunsafe.ppPointer(cgbp))))) == 0 {
+		/* Empty string is no good.  */
+		return -iqlibc.ppInt64FromInt64(1429577699)
+	}
+	*(*ppint32)(iqunsafe.ppPointer(X__error(cgtls))) = 0
+	aaret_long = Xstrtoul(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(cgbp)), cgbp+8, 0)
+
+	/* Overflow or underflow.  */
+	if aaret_long == iqlibc.ppUint64FromInt64(9223372036854775807)*iqlibc.ppUint64FromUint64(2)+iqlibc.ppUint64FromUint64(1) && *(*ppint32)(iqunsafe.ppPointer(X__error(cgtls))) != 0 {
+		return -iqlibc.ppInt64FromInt64(1429577699)
+	}
+	/* Value outside "int" range.  */
+	if ppuint64(ppuint32(aaret_long)) != aaret_long {
+		return -iqlibc.ppInt64FromInt64(1429577699)
+	}
+	/* Garbage in string.  */
+	if *(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)) != *(*ppuintptr)(iqunsafe.ppPointer(cgbp))+ppuintptr(Xstrlen(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(cgbp)))) {
+		return -iqlibc.ppInt64FromInt64(1429577699)
+	}
+
+	*(*ppuint32)(iqunsafe.ppPointer(aaret_int)) = ppuint32(aaret_long)
+	return 0
+}
+
+func Xprofile_get_double(cgtls *iqlibc.ppTLS, aaprofile tnprofile_t, aaname ppuintptr, aasubname ppuintptr, aasubsubname ppuintptr, aadef_val ppfloat64, aaret_double ppuintptr) (cgr tnerrcode_t) {
+	cgbp := cgtls.ppAlloc(16)
+	defer cgtls.ppFree(16)
+
+	var aadouble_val ppfloat64
+	var aaretval tnerrcode_t
+	var pp_ /* end_value at bp+8 */ ppuintptr
+	var pp_ /* value at bp+0 */ ppuintptr
+	pp_, pp_ = aadouble_val, aaretval
+
+	*(*ppfloat64)(iqunsafe.ppPointer(aaret_double)) = aadef_val
+	if aaprofile == ppuintptr(0) {
+		return 0
+	}
+
+	aaretval = siprofile_get_value(cgtls, aaprofile, aaname, aasubname, aasubsubname, cgbp)
+	if aaretval == -ppint64(1429577726) || aaretval == -ppint64(1429577725) {
+		*(*ppfloat64)(iqunsafe.ppPointer(aaret_double)) = aadef_val
+		return 0
+	} else {
+		if aaretval != 0 {
+			return aaretval
+		}
+	}
+
+	if ppint32(*(*ppint8)(iqunsafe.ppPointer(*(*ppuintptr)(iqunsafe.ppPointer(cgbp))))) == 0 {
+		/* Empty string is no good.  */
+		return -iqlibc.ppInt64FromInt64(1429577699)
+	}
+	*(*ppint32)(iqunsafe.ppPointer(X__error(cgtls))) = 0
+	aadouble_val = Xstrtod(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(cgbp)), cgbp+8)
+
+	/* Overflow or underflow.  */
+	if *(*ppint32)(iqunsafe.ppPointer(X__error(cgtls))) != 0 {
+		return -iqlibc.ppInt64FromInt64(1429577699)
+	}
+	/* Garbage in string.  */
+	if *(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)) != *(*ppuintptr)(iqunsafe.ppPointer(cgbp))+ppuintptr(Xstrlen(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(cgbp)))) {
+		return -iqlibc.ppInt64FromInt64(1429577699)
+	}
+
+	*(*ppfloat64)(iqunsafe.ppPointer(aaret_double)) = aadouble_val
+	return 0
+}
+
+var siconf_yes = [7]ppuintptr{
+	0: "y\x00",
+	1: "yes\x00",
+	2: "true\x00",
+	3: "t\x00",
+	4: "1\x00",
+	5: "on\x00",
+}
+
+var siconf_no = [7]ppuintptr{
+	0: "n\x00",
+	1: "no\x00",
+	2: "false\x00",
+	3: "nil\x00",
+	4: "0\x00",
+	5: "off\x00",
+}
+
+func siprofile_parse_boolean(cgtls *iqlibc.ppTLS, aas ppuintptr, aaret_boolean ppuintptr) (cgr tnerrcode_t) {
+
+	var aap ppuintptr
+	pp_ = aap
+
+	if aaret_boolean == iqlibc.ppUintptrFromInt32(0) {
+		return -iqlibc.ppInt64FromInt64(1429577717)
+	}
+
+	aap = ppuintptr(iqunsafe.ppPointer(&siconf_yes))
+	for {
+		if !(*(*ppuintptr)(iqunsafe.ppPointer(aap)) != 0) {
+			break
+		}
+		if !(Xstrcasecmp(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(aap)), aas) != 0) {
+			*(*ppint32)(iqunsafe.ppPointer(aaret_boolean)) = ppint32(1)
+			return 0
+		}
+
+		goto cg_1
+	cg_1:
+		;
+		aap += 8
+	}
+
+	aap = ppuintptr(iqunsafe.ppPointer(&siconf_no))
+	for {
+		if !(*(*ppuintptr)(iqunsafe.ppPointer(aap)) != 0) {
+			break
+		}
+		if !(Xstrcasecmp(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(aap)), aas) != 0) {
+			*(*ppint32)(iqunsafe.ppPointer(aaret_boolean)) = 0
+			return 0
+		}
+
+		goto cg_2
+	cg_2:
+		;
+		aap += 8
+	}
+
+	return -iqlibc.ppInt64FromInt64(1429577700)
+}
+
+func Xprofile_get_boolean(cgtls *iqlibc.ppTLS, aaprofile tnprofile_t, aaname ppuintptr, aasubname ppuintptr, aasubsubname ppuintptr, aadef_val ppint32, aaret_boolean ppuintptr) (cgr tnerrcode_t) {
+	cgbp := cgtls.ppAlloc(16)
+	defer cgtls.ppFree(16)
+
+	var aaretval tnerrcode_t
+	var pp_ /* value at bp+0 */ ppuintptr
+	pp_ = aaretval
+
+	if aaprofile == ppuintptr(0) {
+		*(*ppint32)(iqunsafe.ppPointer(aaret_boolean)) = aadef_val
+		return 0
+	}
+
+	aaretval = siprofile_get_value(cgtls, aaprofile, aaname, aasubname, aasubsubname, cgbp)
+	if aaretval == -ppint64(1429577726) || aaretval == -ppint64(1429577725) {
+		*(*ppint32)(iqunsafe.ppPointer(aaret_boolean)) = aadef_val
+		return 0
+	} else {
+		if aaretval != 0 {
+			return aaretval
+		}
+	}
+
+	return siprofile_parse_boolean(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(cgbp)), aaret_boolean)
+}
+
+func Xprofile_iterator(cgtls *iqlibc.ppTLS, aaiter_p ppuintptr, aaret_name ppuintptr, aaret_value ppuintptr) (cgr tnerrcode_t) {
+	cgbp := cgtls.ppAlloc(16)
+	defer cgtls.ppFree(16)
+
+	var aaretval tnerrcode_t
+	var pp_ /* name at bp+0 */ ppuintptr
+	var pp_ /* value at bp+8 */ ppuintptr
+	pp_ = aaretval
+
+	aaretval = siprofile_node_iterator(cgtls, aaiter_p, ppuintptr(0), cgbp, cgbp+8)
+	if aaretval != 0 {
+		return aaretval
+	}
+
+	if aaret_name != 0 {
+		if *(*ppuintptr)(iqunsafe.ppPointer(cgbp)) != 0 {
+			*(*ppuintptr)(iqunsafe.ppPointer(aaret_name)) = Xmalloc(cgtls, Xstrlen(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(cgbp)))+ppuint64(1))
+			if !(*(*ppuintptr)(iqunsafe.ppPointer(aaret_name)) != 0) {
+				return ppint64(mvENOMEM)
+			}
+			Xstrcpy(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(aaret_name)), *(*ppuintptr)(iqunsafe.ppPointer(cgbp)))
+		} else {
+			*(*ppuintptr)(iqunsafe.ppPointer(aaret_name)) = ppuintptr(0)
+		}
+	}
+	if aaret_value != 0 {
+		if *(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)) != 0 {
+			*(*ppuintptr)(iqunsafe.ppPointer(aaret_value)) = Xmalloc(cgtls, Xstrlen(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)))+ppuint64(1))
+			if !(*(*ppuintptr)(iqunsafe.ppPointer(aaret_value)) != 0) {
+				if aaret_name != 0 {
+					Xfree(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(aaret_name)))
+					*(*ppuintptr)(iqunsafe.ppPointer(aaret_name)) = ppuintptr(0)
+				}
+				return ppint64(mvENOMEM)
+			}
+			Xstrcpy(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(aaret_value)), *(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)))
+		} else {
+			*(*ppuintptr)(iqunsafe.ppPointer(aaret_value)) = ppuintptr(0)
+		}
+	}
+	return 0
+}
+
+var __DefaultRuneLocale struct {
+	fd__magic        [8]ppint8
+	fd__encoding     [32]ppint8
+	fd__sgetrune     ppuintptr
+	fd__sputrune     ppuintptr
+	fd__invalid_rune tn__darwin_rune_t
+	fd__runetype     [256]tn__uint32_t
+	fd__maplower     [256]tn__darwin_rune_t
+	fd__mapupper     [256]tn__darwin_rune_t
+	fd__runetype_ext tn_RuneRange
+	fd__maplower_ext tn_RuneRange
+	fd__mapupper_ext tn_RuneRange
+	fd__variable     ppuintptr
+	fd__variable_len ppint32
+	fd__ncharclasses ppint32
+	fd__charclasses  ppuintptr
+}
+
+func ___error(*iqlibc.ppTLS) ppuintptr
+
+func ___maskrune(*iqlibc.ppTLS, ppint32, ppuint64) ppint32
+
+func _closedir(*iqlibc.ppTLS, ppuintptr) ppint32
+
+func _fclose(*iqlibc.ppTLS, ppuintptr) ppint32
+
+func _feof(*iqlibc.ppTLS, ppuintptr) ppint32
+
+func _fgets(*iqlibc.ppTLS, ppuintptr, ppint32, ppuintptr) ppuintptr
+
+func _fopen(*iqlibc.ppTLS, ppuintptr, ppuintptr) ppuintptr
+
+func _free(*iqlibc.ppTLS, ppuintptr)
+
+func _getenv(*iqlibc.ppTLS, ppuintptr) ppuintptr
+
+func _malloc(*iqlibc.ppTLS, ppuint64) ppuintptr
+
+func _memcpy(*iqlibc.ppTLS, ppuintptr, ppuintptr, ppuint64) ppuintptr
+
+func _memset(*iqlibc.ppTLS, ppuintptr, ppint32, ppuint64) ppuintptr
+
+func _opendir(*iqlibc.ppTLS, ppuintptr) ppuintptr
+
+func _qsort(*iqlibc.ppTLS, ppuintptr, ppuint64, ppuint64, ppuintptr)
+
+func _readdir(*iqlibc.ppTLS, ppuintptr) ppuintptr
+
+func _realloc(*iqlibc.ppTLS, ppuintptr, ppuint64) ppuintptr
+
+func _sprintf(*iqlibc.ppTLS, ppuintptr, ppuintptr, ppuintptr) ppint32
+
+func _stat(*iqlibc.ppTLS, ppuintptr, ppuintptr) ppint32
+
+func _strcasecmp(*iqlibc.ppTLS, ppuintptr, ppuintptr) ppint32
+
+func _strcat(*iqlibc.ppTLS, ppuintptr, ppuintptr) ppuintptr
+
+func _strchr(*iqlibc.ppTLS, ppuintptr, ppint32) ppuintptr
+
+func _strcmp(*iqlibc.ppTLS, ppuintptr, ppuintptr) ppint32
+
+func _strcpy(*iqlibc.ppTLS, ppuintptr, ppuintptr) ppuintptr
+
+func _strdup(*iqlibc.ppTLS, ppuintptr) ppuintptr
+
+func _strlen(*iqlibc.ppTLS, ppuintptr) ppuint64
+
+func _strtod(*iqlibc.ppTLS, ppuintptr, ppuintptr) ppfloat64
+
+func _strtol(*iqlibc.ppTLS, ppuintptr, ppuintptr, ppint32) ppint64
+
+func _strtoul(*iqlibc.ppTLS, ppuintptr, ppuintptr, ppint32) ppuint64
+
+const ___ccgo_meta_json = `{
+	"Aliases": {},
+	"Visibility": {},
+	"WeakAliases": {}
+}`
