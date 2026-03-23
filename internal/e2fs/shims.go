@@ -1,6 +1,8 @@
 package e2fs
 
 import (
+	"unsafe"
+
 	"modernc.org/libc"
 )
 
@@ -9,6 +11,16 @@ import (
 
 func difftime(tls *libc.TLS, time1, time0 int64) float64 {
 	return float64(time1 - time0)
+}
+
+func posix_memalign(tls *libc.TLS, memptr uintptr, alignment, size uint64) int32 {
+	p := libc.Xmalloc(tls, size)
+	if p == 0 {
+		return -1
+	}
+	//nolint:govet // memptr is a C pointer from ccgo TLS stack
+	*(*uintptr)(unsafe.Pointer(memptr)) = p
+	return 0
 }
 
 func srandom(tls *libc.TLS, seed uint32) {
