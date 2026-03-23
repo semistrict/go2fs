@@ -85,4 +85,4 @@ platform-specific due to ccgo's build constraint (`//go:build darwin && arm64`).
 
 ## License
 
-[LGPL-2.0](LICENSE) — same as libext2fs and libe2p from e2fsprogs.
+[LGPL-2.1](LICENSE) — compatible with libext2fs (LGPL-2.0-or-later) from e2fsprogs.
