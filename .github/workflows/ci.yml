@@ -18,7 +18,7 @@ jobs:
       - run: go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@latest
       - run: golangci-lint run ./...
 
-  test:
+  test-macos:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
@@ -29,3 +29,26 @@ jobs:
           go-version-file: go.mod
       - run: go build ./...
       - run: go test -race -gcflags=all=-d=checkptr=0 -count=1 ./...
+
+  test-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - run: go install modernc.org/ccgo/v4@latest
+      - name: Configure e2fsprogs
+        run: |
+          cd third_party/e2fsprogs
+          ./configure --disable-nls --disable-defrag --disable-fuse2fs \
+            --disable-debugfs --disable-imager --disable-resizer \
+            --disable-e2initrd-helper --disable-uuidd --disable-fsck --disable-tls
+      - name: Generate and build
+        run: |
+          make generate
+          CGO_ENABLED=0 go build ./...
+      - name: Test
+        run: CGO_ENABLED=0 go test -count=1 ./...

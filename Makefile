@@ -226,6 +226,13 @@ $(OUTDIR)/e2fs_impl.o.go: _e2fs_impl.c _e2fs_impl.h
 generate: $(GO_OBJS)
 	$(CCGO) -ignore-link-errors --package-name e2fs -o $(OUTDIR)/e2fs.go $(GO_OBJS)
 
+# On a linux/amd64 host, `make generate` produces e2fs.go with
+# //go:build linux && amd64. Use `make generate-linux-amd64` on
+# a linux runner to regenerate for that platform.
+generate-linux-amd64:
+	$(MAKE) clean
+	$(MAKE) generate
+
 clean:
 	find $(OUTDIR) -name '*.o.go' -delete 2>/dev/null; rm -f $(OUTDIR)/e2fs.go
 	find $(OUTDIR) -type d -empty -delete 2>/dev/null; true
