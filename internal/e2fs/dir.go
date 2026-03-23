@@ -1,6 +1,7 @@
 package e2fs
 
 import (
+	"errors"
 	"fmt"
 	"io/fs"
 	"log/slog"
@@ -17,8 +18,7 @@ func BuildExt4FromDir(imgPath string, dirPath string, sizeBytes uint64) error {
 		return fmt.Errorf("create image: %w", err)
 	}
 	if err := img.Truncate(int64(sizeBytes)); err != nil {
-		img.Close()
-		return fmt.Errorf("truncate image: %w", err)
+		return errors.Join(fmt.Errorf("truncate image: %w", err), img.Close())
 	}
 	if err := img.Close(); err != nil {
 		return fmt.Errorf("close image: %w", err)
@@ -28,7 +28,7 @@ func BuildExt4FromDir(imgPath string, dirPath string, sizeBytes uint64) error {
 	if err != nil {
 		return err
 	}
-	defer e2.Close()
+	defer func() { _ = e2.Close() }()
 
 	return populateFromDir(e2, dirPath)
 }

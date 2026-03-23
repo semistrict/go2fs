@@ -1,6 +1,7 @@
 package e2fs
 
 import (
+	"errors"
 	"fmt"
 	"os"
 	"runtime"
@@ -36,10 +37,11 @@ func Create(path string, sizeBytes uint64) (*FS, error) {
 			return nil, fmt.Errorf("create image: %w", err)
 		}
 		if err := f.Truncate(int64(sizeBytes)); err != nil {
-			f.Close()
-			return nil, fmt.Errorf("truncate image: %w", err)
+			return nil, errors.Join(fmt.Errorf("truncate image: %w", err), f.Close())
 		}
-		f.Close()
+		if err := f.Close(); err != nil {
+			return nil, fmt.Errorf("close image: %w", err)
+		}
 	}
 
 	tls := libc.NewTLS()

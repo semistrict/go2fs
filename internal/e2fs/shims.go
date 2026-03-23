@@ -3,7 +3,6 @@
 package e2fs
 
 import (
-	"math/rand"
 	"unsafe"
 
 	"modernc.org/libc"
@@ -21,16 +20,20 @@ func posix_memalign(tls *libc.TLS, memptr uintptr, alignment, size uint64) int32
 	if p == 0 {
 		return -1
 	}
+	// memptr is a C pointer (from ccgo TLS stack), write through it.
+	//nolint:govet // C pointer arithmetic via ccgo
 	*(*uintptr)(unsafe.Pointer(memptr)) = p
 	return 0
 }
 
 func srandom(tls *libc.TLS, seed uint32) {
-	rand.Seed(int64(seed))
+	// No-op: the seed is only used by uuid gen_uuid.c which we've
+	// patched to use e2fs_fill_random instead.
 }
 
 func getmntinfo(tls *libc.TLS, mntbufp uintptr, flags int32) int32 {
 	// Return 0 entries: nothing is mounted. Correct for image files.
+	//nolint:govet // C pointer arithmetic via ccgo
 	*(*uintptr)(unsafe.Pointer(mntbufp)) = 0
 	return 0
 }

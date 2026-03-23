@@ -4,6 +4,7 @@ import (
 	"archive/tar"
 	"bufio"
 	"compress/gzip"
+	"errors"
 	"fmt"
 	"io"
 	"log/slog"
@@ -22,8 +23,7 @@ func BuildExt4FromTar(imgPath string, tarPath string, sizeBytes uint64) error {
 		return fmt.Errorf("create image: %w", err)
 	}
 	if err := img.Truncate(int64(sizeBytes)); err != nil {
-		img.Close()
-		return fmt.Errorf("truncate image: %w", err)
+		return errors.Join(fmt.Errorf("truncate image: %w", err), img.Close())
 	}
 	if err := img.Close(); err != nil {
 		return fmt.Errorf("close image: %w", err)
@@ -34,7 +34,7 @@ func BuildExt4FromTar(imgPath string, tarPath string, sizeBytes uint64) error {
 	if err != nil {
 		return err
 	}
-	defer fs.Close()
+	defer func() { _ = fs.Close() }()
 
 	// Open tar (auto-detect gzip).
 	var r io.Reader
@@ -45,7 +45,7 @@ func BuildExt4FromTar(imgPath string, tarPath string, sizeBytes uint64) error {
 		if err != nil {
 			return fmt.Errorf("open tar: %w", err)
 		}
-		defer f.Close()
+		defer func() { _ = f.Close() }()
 		r = f
 	}
 
@@ -65,8 +65,7 @@ func BuildExt4FromTarReader(imgPath string, r io.Reader, sizeBytes uint64) error
 		return fmt.Errorf("create image: %w", err)
 	}
 	if err := img.Truncate(int64(sizeBytes)); err != nil {
-		img.Close()
-		return fmt.Errorf("truncate image: %w", err)
+		return errors.Join(fmt.Errorf("truncate image: %w", err), img.Close())
 	}
 	if err := img.Close(); err != nil {
 		return fmt.Errorf("close image: %w", err)
@@ -76,7 +75,7 @@ func BuildExt4FromTarReader(imgPath string, r io.Reader, sizeBytes uint64) error
 	if err != nil {
 		return err
 	}
-	defer fs.Close()
+	defer func() { _ = fs.Close() }()
 
 	r, err = maybeGunzip(r)
 	if err != nil {
@@ -137,7 +136,7 @@ func populateFromTar(fs *FS, tr *tar.Reader) error {
 			}
 			dirs++
 
-		case tar.TypeReg, tar.TypeRegA:
+		case tar.TypeReg:
 			data, err := io.ReadAll(tr)
 			if err != nil {
 				return fmt.Errorf("read %q: %w", name, err)
