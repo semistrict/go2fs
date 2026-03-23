@@ -1,5 +1,8 @@
 # go2fs
 
+[![CI](https://github.com/semistrict/go2fs/actions/workflows/ci.yml/badge.svg)](https://github.com/semistrict/go2fs/actions/workflows/ci.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/semistrict/go2fs.svg)](https://pkg.go.dev/github.com/semistrict/go2fs)
+
 Pure Go ext4 filesystem image creation and reading — no CGO required.
 
 Uses [e2fsprogs](https://github.com/tytso/e2fsprogs) libext2fs transpiled to Go
