@@ -27,5 +27,11 @@ var BuildExt4FromTarReader = e2fs.BuildExt4FromTarReader
 // the host directory at dirPath.
 var BuildExt4FromDir = e2fs.BuildExt4FromDir
 
+// ReadFS is a read-only fs.FS backed by an ext4 filesystem image.
+type ReadFS = e2fs.ReadFS
+
+// OpenFS opens an existing ext4 filesystem image for reading as an fs.FS.
+var OpenFS = e2fs.OpenFS
+
 // Ensure io import is used (for godoc linking).
 var _ io.Reader
