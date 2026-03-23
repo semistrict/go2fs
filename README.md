@@ -1,6 +1,6 @@
 # go2fs
 
-Pure Go ext4 filesystem image creation — no CGO required.
+Pure Go ext4 filesystem image creation and reading — no CGO required.
 
 Uses [e2fsprogs](https://github.com/tytso/e2fsprogs) libext2fs transpiled to Go
 via [ccgo](https://pkg.go.dev/modernc.org/ccgo/v4), with
@@ -8,22 +8,49 @@ via [ccgo](https://pkg.go.dev/modernc.org/ccgo/v4), with
 
 ## Usage
 
+### Create ext4 images from tarballs
+
 ```go
 import "github.com/semistrict/go2fs"
 
-// Create ext4 image from a tar (optionally gzipped)
+// From a tar reader (auto-detects gzip)
 err := go2fs.BuildExt4FromTarReader("rootfs.ext4", tarReader, 256*1024*1024)
 
-// Or build from a host directory
-err := go2fs.BuildExt4FromDir("rootfs.ext4", "/path/to/rootfs", 256*1024*1024)
+// From a tar file path
+err := go2fs.BuildExt4FromTar("rootfs.ext4", "rootfs.tar.gz", 256*1024*1024)
 
-// Or use the low-level API
+// From a host directory
+err := go2fs.BuildExt4FromDir("rootfs.ext4", "/path/to/rootfs", 256*1024*1024)
+```
+
+### Low-level write API
+
+```go
 fs, err := go2fs.Create("rootfs.ext4", 256*1024*1024)
 fs.Mkdir("/etc", 0755, 0, 0, time.Now().Unix())
 fs.WriteFile("/etc/hostname", 0644, 0, 0, time.Now().Unix(), []byte("myhost\n"))
 fs.Symlink("/etc/localtime", "/usr/share/zoneinfo/UTC", 0, 0, time.Now().Unix())
 fs.Close()
 ```
+
+### Read ext4 images via io/fs.FS
+
+```go
+fsys, err := go2fs.OpenFS("rootfs.ext4")
+defer fsys.Close()
+
+// Use standard fs.FS interfaces
+data, err := fs.ReadFile(fsys, "etc/hostname")
+
+// Walk the filesystem
+fs.WalkDir(fsys, ".", func(path string, d fs.DirEntry, err error) error {
+    fmt.Println(path)
+    return nil
+})
+```
+
+`ReadFS` implements `fs.FS`, `fs.StatFS`, `fs.ReadDirFS`, and `fs.ReadFileFS`.
+Passes [`testing/fstest.TestFS`](https://pkg.go.dev/testing/fstest#TestFS).
 
 ## Building
 
@@ -41,9 +68,10 @@ Requires [ccgo v4](https://pkg.go.dev/modernc.org/ccgo/v4) (`go install modernc.
 ## How it works
 
 1. A [Makefile](Makefile) compiles ~100 e2fsprogs C source files to Go using ccgo
-2. A thin [C wrapper](_e2fs_impl.c) provides the high-level API (create, mkdir, write, symlink, etc.)
-3. A [Go wrapper](internal/e2fs/wrapper.go) exposes an idiomatic Go API
-4. [Go shims](internal/e2fs/shims.go) fill in libc functions missing from modernc/libc on darwin/arm64
+2. A thin [C wrapper](_e2fs_impl.c) provides the high-level write API (create, mkdir, write, symlink, etc.)
+3. A [Go wrapper](internal/e2fs/wrapper.go) exposes an idiomatic Go write API
+4. A [Go reader](internal/e2fs/reader.go) implements `io/fs.FS` for reading images
+5. [Go shims](internal/e2fs/shims.go) fill in libc functions missing from modernc/libc on darwin/arm64
 
 The generated code (~120k lines) lives in `internal/e2fs/e2fs.go`.
 
