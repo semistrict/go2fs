@@ -48,7 +48,7 @@ jobs:
             --disable-e2initrd-helper --disable-uuidd --disable-fsck --disable-tls
       - name: Generate and build
         run: |
-          make generate
+          make clean generate
           CGO_ENABLED=0 go build ./...
       - name: Test
         run: CGO_ENABLED=0 go test -count=1 ./...
