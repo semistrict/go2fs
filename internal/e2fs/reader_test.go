@@ -8,6 +8,49 @@ import (
 	"time"
 )
 
+func TestSymlink(t *testing.T) {
+	imgPath := filepath.Join(t.TempDir(), "symlink.ext4")
+	now := time.Date(2025, 6, 1, 0, 0, 0, 0, time.UTC)
+
+	wfs, err := Create(imgPath, 64*1024*1024)
+	if err != nil {
+		t.Fatalf("Create: %v", err)
+	}
+	wfs.WriteFile("/target.txt", 0644, 0, 0, now.Unix(), []byte("hello"))
+	// Both slash-prefixed and relative paths must create the symlink at the
+	// right level. "bin" (no leading slash) is the OCI layer case that was
+	// broken: dirname("bin") returned "bin" instead of "." causing the
+	// symlink to land at bin/bin instead of bin.
+	wfs.Symlink("/link", "target.txt", 0, 0, now.Unix())
+	wfs.Symlink("link2", "target.txt", 0, 0, now.Unix())
+	if err := wfs.Close(); err != nil {
+		t.Fatalf("Close: %v", err)
+	}
+
+	rfs, err := OpenFS(imgPath)
+	if err != nil {
+		t.Fatalf("OpenFS: %v", err)
+	}
+	defer rfs.Close()
+
+	for _, name := range []string{"link", "link2"} {
+		info, err := rfs.Stat(name)
+		if err != nil {
+			t.Fatalf("Stat %s: %v", name, err)
+		}
+		if info.Mode()&fs.ModeType != fs.ModeSymlink {
+			t.Fatalf("%s mode = %v, want symlink", name, info.Mode())
+		}
+		target, err := rfs.ReadLink(name)
+		if err != nil {
+			t.Fatalf("ReadLink %s: %v", name, err)
+		}
+		if target != "target.txt" {
+			t.Fatalf("ReadLink %s = %q, want %q", name, target, "target.txt")
+		}
+	}
+}
+
 func TestFSTest(t *testing.T) {
 	imgPath := filepath.Join(t.TempDir(), "test.ext4")
 	now := time.Date(2025, 6, 1, 0, 0, 0, 0, time.UTC)

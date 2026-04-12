@@ -33,7 +33,7 @@ static void e2fs_fill_random(void *buf, size_t len) {
 // Minimal dirname/basename — avoids libgen.h which ccgo may not support.
 static char *_e2fs_dirname(char *path) {
 	char *last = strrchr(path, '/');
-	if (!last) return path;  // no slash -> "."
+	if (!last) return ".";  // no slash -> "."
 	if (last == path) return "/";
 	*last = '\0';
 	return path;
@@ -428,12 +428,37 @@ out:
 	return ret;
 }
 
+// fix_filetype_proc is a dir_iterate callback that patches the file_type byte
+// of a directory entry matching a specific name. Used to work around the ccgo
+// operator precedence bug in the transpiled ext2fs_dirent_set_file_type.
+static int fix_filetype_proc(ext2_ino_t dir, int entry,
+			     struct ext2_dir_entry *dirent, int offset,
+			     int blocksize, char *buf, void *priv)
+{
+	struct fix_filetype_ctx {
+		const char *name;
+		int namelen;
+		int filetype;
+	} *ctx = priv;
+
+	int name_len = dirent->name_len & 0xFF;
+	if (name_len == ctx->namelen &&
+	    memcmp(dirent->name, ctx->name, name_len) == 0) {
+		// Patch the file_type byte (high byte of name_len).
+		dirent->name_len = (dirent->name_len & 0xFF) |
+				   (ctx->filetype << 8);
+		return DIRENT_ABORT | DIRENT_CHANGED;
+	}
+	return 0;
+}
+
 errcode_t e2fs_symlink(e2fs_t handle, const char *path, const char *target,
 		       uint32_t uid, uint32_t gid, int64_t mtime)
 {
 	ext2_filsys fs = (ext2_filsys)handle;
 	errcode_t ret;
 	ext2_ino_t parent, ino;
+	unsigned int target_len = strlen(target);
 
 	char *dup1 = strdup(path);
 	char *dup2 = strdup(path);
@@ -449,27 +474,102 @@ errcode_t e2fs_symlink(e2fs_t handle, const char *path, const char *target,
 	if (ret)
 		goto out;
 
-	ret = ext2fs_symlink(fs, parent, 0, base, target);
+	// Manual symlink creation — the transpiled ext2fs_symlink has a
+	// bug where it creates directory inodes instead of symlink inodes.
+
+	// Allocate inode.
+	ret = ext2fs_new_inode(fs, parent, LINUX_S_IFLNK | 0755, 0, &ino);
 	if (ret)
 		goto out;
 
-	ret = ext2fs_lookup(fs, parent, base, strlen(base), 0, &ino);
-	if (ret)
-		goto out;
-
+	// Build the inode.
 	{
 		struct ext2_inode inode;
-		ret = ext2fs_read_inode(fs, ino, &inode);
-		if (ret)
-			goto out;
+		memset(&inode, 0, sizeof(inode));
+		inode.i_mode = LINUX_S_IFLNK | 0777;
 		inode.i_uid = uid;
 		ext2fs_set_i_uid_high(inode, uid >> 16);
 		inode.i_gid = gid;
 		ext2fs_set_i_gid_high(inode, gid >> 16);
+		inode.i_links_count = 1;
+		ext2fs_inode_size_set(fs, &inode, target_len);
 		ext2fs_inode_xtime_set(&inode, i_atime, mtime);
 		ext2fs_inode_xtime_set(&inode, i_ctime, mtime);
 		ext2fs_inode_xtime_set(&inode, i_mtime, mtime);
-		ret = ext2fs_write_inode(fs, ino, &inode);
+
+		// Fast symlink: store target in i_block if it fits.
+		if (target_len < sizeof(inode.i_block)) {
+			memcpy((char *)&inode.i_block, target, target_len + 1);
+		} else {
+			// Slow symlink: allocate a data block.
+			blk64_t blk;
+			char *block_buf;
+			ret = ext2fs_get_mem(fs->blocksize, &block_buf);
+			if (ret)
+				goto out;
+			memset(block_buf, 0, fs->blocksize);
+			strncpy(block_buf, target, fs->blocksize);
+
+			ret = ext2fs_new_block2(fs, 0, NULL, &blk);
+			if (ret) {
+				ext2fs_free_mem(&block_buf);
+				goto out;
+			}
+
+			ext2fs_iblk_set(fs, &inode, 1);
+			if (ext2fs_has_feature_extents(fs->super))
+				inode.i_flags |= EXT4_EXTENTS_FL;
+
+			ret = ext2fs_write_new_inode(fs, ino, &inode);
+			if (ret) {
+				ext2fs_free_mem(&block_buf);
+				goto out;
+			}
+
+			ret = ext2fs_bmap2(fs, ino, &inode, NULL, BMAP_SET,
+					   0, NULL, &blk);
+			if (ret) {
+				ext2fs_free_mem(&block_buf);
+				goto out;
+			}
+
+			ret = io_channel_write_blk64(fs->io, blk, 1, block_buf);
+			ext2fs_free_mem(&block_buf);
+			if (ret)
+				goto out;
+
+			ext2fs_block_alloc_stats2(fs, blk, +1);
+			goto link;
+		}
+
+		ret = ext2fs_write_new_inode(fs, ino, &inode);
+		if (ret)
+			goto out;
+	}
+
+link:
+	ext2fs_inode_alloc_stats2(fs, ino, +1, 0);
+
+	ret = ext2fs_link(fs, parent, base, ino, EXT2_FT_SYMLINK);
+	if (ret)
+		goto out;
+
+	// Workaround: the transpiled ext2fs_link has an operator precedence
+	// bug in the inlined ext2fs_dirent_set_file_type — it computes
+	// flags & (mask << 8) instead of (flags & mask) << 8, so the file
+	// type is always 0 (EXT2_FT_UNKNOWN). Fix by patching the directory
+	// entry's file_type byte via dir_iterate.
+	{
+		struct fix_filetype_ctx {
+			const char *name;
+			int namelen;
+			int filetype;
+		} fctx;
+		fctx.name = base;
+		fctx.namelen = strlen(base);
+		fctx.filetype = EXT2_FT_SYMLINK;
+		ext2fs_dir_iterate2(fs, parent, 0, 0,
+				    fix_filetype_proc, &fctx);
 	}
 
 out:

@@ -23,7 +23,7 @@ const mvBLOCK_FLAG_READ_ONLY = 8
 const mvBLOCK_INLINE_DATA_CHANGED = 8
 const mvBMAP_ALLOC = 0x0001
 const mvBMAP_RET_UNINIT = 0x0001
-const mvBMAP_SET = 0x0002
+const mvBMAP_SET = 2
 const mvBMAP_UNINIT = 0x0004
 const mvBMAP_ZERO = 0x0008
 const mvBUFSIZ = 1024
@@ -872,9 +872,11 @@ const mvIOPOL_ATIME_UPDATES_DEFAULT = 0
 const mvIOPOL_ATIME_UPDATES_OFF = 1
 const mvIOPOL_DEFAULT = 0
 const mvIOPOL_IMPORTANT = 1
+const mvIOPOL_MATERIALIZE_DATALESS_FILES_BASIC_MASK = 3
 const mvIOPOL_MATERIALIZE_DATALESS_FILES_DEFAULT = 0
 const mvIOPOL_MATERIALIZE_DATALESS_FILES_OFF = 1
 const mvIOPOL_MATERIALIZE_DATALESS_FILES_ON = 2
+const mvIOPOL_MATERIALIZE_DATALESS_FILES_ORIG = 4
 const mvIOPOL_NORMAL = "IOPOL_IMPORTANT"
 const mvIOPOL_PASSIVE = 2
 const mvIOPOL_SCOPE_DARWIN_BG = 2
@@ -926,7 +928,7 @@ const mvLINUX_S_IFBLK = 24576
 const mvLINUX_S_IFCHR = 8192
 const mvLINUX_S_IFDIR = 16384
 const mvLINUX_S_IFIFO = 4096
-const mvLINUX_S_IFLNK = 0120000
+const mvLINUX_S_IFLNK = 40960
 const mvLINUX_S_IFMT = 00170000
 const mvLINUX_S_IFREG = 32768
 const mvLINUX_S_IFSOCK = 49152
@@ -988,6 +990,10 @@ const mvMAC_OS_VERSION_15_5 = "__MAC_15_5"
 const mvMAC_OS_VERSION_15_6 = "__MAC_15_6"
 const mvMAC_OS_VERSION_16_0 = "__MAC_16_0"
 const mvMAC_OS_VERSION_26_0 = "__MAC_26_0"
+const mvMAC_OS_VERSION_26_1 = "__MAC_26_1"
+const mvMAC_OS_VERSION_26_2 = "__MAC_26_2"
+const mvMAC_OS_VERSION_26_3 = "__MAC_26_3"
+const mvMAC_OS_VERSION_26_4 = "__MAC_26_4"
 const mvMAC_OS_X_VERSION_10_0 = "__MAC_10_0"
 const mvMAC_OS_X_VERSION_10_1 = "__MAC_10_1"
 const mvMAC_OS_X_VERSION_10_10 = "__MAC_10_10"
@@ -1185,6 +1191,7 @@ const mvTARGET_OS_NANO = 0
 const mvTARGET_OS_OSX = 1
 const mvTARGET_OS_SIMULATOR = 0
 const mvTARGET_OS_TV = 0
+const mvTARGET_OS_UEFI = 0
 const mvTARGET_OS_UIKITFORMAC = 0
 const mvTARGET_OS_UNIX = 0
 const mvTARGET_OS_VISION = 0
@@ -1283,9 +1290,10 @@ const mv__APPLE_CC__ = 6000
 const mv__APPLE__ = 1
 const mv__ARM64_ARCH_8__ = 1
 const mv__ARM_64BIT_STATE = 1
-const mv__ARM_ACLE = 200
+const mv__ARM_ACLE = 202420
 const mv__ARM_ALIGN_MAX_STACK_PWR = 4
 const mv__ARM_ARCH = 8
+const mv__ARM_ARCH_8_2__ = 1
 const mv__ARM_ARCH_8_3__ = 1
 const mv__ARM_ARCH_8_4__ = 1
 const mv__ARM_ARCH_8_5__ = 1
@@ -1322,6 +1330,7 @@ const mv__ARM_FP16_ARGS = 1
 const mv__ARM_FP16_FORMAT_IEEE = 1
 const mv__ARM_NEON = 1
 const mv__ARM_NEON_FP = 0xE
+const mv__ARM_NEON_SVE_BRIDGE = 1
 const mv__ARM_NEON__ = 1
 const mv__ARM_PCS_AAPCS64 = 1
 const mv__ARM_SIZEOF_MINIMAL_ENUM = 4
@@ -1340,8 +1349,12 @@ const mv__AVAILABILITY_VERSIONS_VERSION_STRING = "Local"
 const mv__BIGGEST_ALIGNMENT__ = 8
 const mv__BITINT_MAXWIDTH__ = 128
 const mv__BLOCKS__ = 1
-const mv__BOOL_WIDTH__ = 8
+const mv__BOOL_WIDTH__ = 1
 const mv__BRIDGEOS_10_0 = 100000
+const mv__BRIDGEOS_10_1 = 100100
+const mv__BRIDGEOS_10_2 = 100200
+const mv__BRIDGEOS_10_3 = 100300
+const mv__BRIDGEOS_10_4 = 100400
 const mv__BRIDGEOS_2_0 = 20000
 const mv__BRIDGEOS_3_0 = 30000
 const mv__BRIDGEOS_3_1 = 30100
@@ -1449,6 +1462,10 @@ const mv__DRIVERKIT_24_4 = 240400
 const mv__DRIVERKIT_24_5 = 240500
 const mv__DRIVERKIT_24_6 = 240600
 const mv__DRIVERKIT_25_0 = 250000
+const mv__DRIVERKIT_25_1 = 250100
+const mv__DRIVERKIT_25_2 = 250200
+const mv__DRIVERKIT_25_3 = 250300
+const mv__DRIVERKIT_25_4 = 250400
 const mv__DTF_ATEND = 0x0020
 const mv__DTF_READALL = 0x0008
 const mv__DTF_SKIPREAD = 0x0010
@@ -1497,6 +1514,7 @@ const mv__FPCLASS_QNAN = 0x0002
 const mv__FPCLASS_SNAN = 0x0001
 const mv__FP_FAST_FMA = 1
 const mv__FP_FAST_FMAF = 1
+const mv__FUNCTION_MULTI_VERSIONING_SUPPORT_LEVEL = 202430
 const mv__FUNCTION__ = "__func__"
 const mv__GCC_ASM_FLAG_OUTPUTS__ = 1
 const mv__GCC_ATOMIC_BOOL_LOCK_FREE = 2
@@ -1511,7 +1529,7 @@ const mv__GCC_ATOMIC_SHORT_LOCK_FREE = 2
 const mv__GCC_ATOMIC_TEST_AND_SET_TRUEVAL = 1
 const mv__GCC_ATOMIC_WCHAR_T_LOCK_FREE = 2
 const mv__GCC_CONSTRUCTIVE_SIZE = 64
-const mv__GCC_DESTRUCTIVE_SIZE = 64
+const mv__GCC_DESTRUCTIVE_SIZE = 256
 const mv__GCC_HAVE_DWARF2_CFI_ASM = 1
 const mv__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 = 1
 const mv__GCC_HAVE_SYNC_COMPARE_AND_SWAP_16 = 1
@@ -1652,6 +1670,10 @@ const mv__IPHONE_18_5 = 180500
 const mv__IPHONE_18_6 = 180600
 const mv__IPHONE_19_0 = 190000
 const mv__IPHONE_26_0 = 260000
+const mv__IPHONE_26_1 = 260100
+const mv__IPHONE_26_2 = 260200
+const mv__IPHONE_26_3 = 260300
+const mv__IPHONE_26_4 = 260400
 const mv__IPHONE_2_0 = 20000
 const mv__IPHONE_2_1 = 20100
 const mv__IPHONE_2_2 = 20200
@@ -1770,7 +1792,11 @@ const mv__MAC_15_5 = 150500
 const mv__MAC_15_6 = 150600
 const mv__MAC_16_0 = 160000
 const mv__MAC_26_0 = 260000
-const mv__MAC_OS_X_VERSION_MAX_ALLOWED = "__MAC_26_0"
+const mv__MAC_26_1 = 260100
+const mv__MAC_26_2 = 260200
+const mv__MAC_26_3 = 260300
+const mv__MAC_26_4 = 260400
+const mv__MAC_OS_X_VERSION_MAX_ALLOWED = "__MAC_26_4"
 const mv__MAC_OS_X_VERSION_MIN_REQUIRED = "__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__"
 const mv__MEMORY_SCOPE_DEVICE = 1
 const mv__MEMORY_SCOPE_SINGLE = 4
@@ -1919,6 +1945,10 @@ const mv__TVOS_18_5 = 180500
 const mv__TVOS_18_6 = 180600
 const mv__TVOS_19_0 = 190000
 const mv__TVOS_26_0 = 260000
+const mv__TVOS_26_1 = 260100
+const mv__TVOS_26_2 = 260200
+const mv__TVOS_26_3 = 260300
+const mv__TVOS_26_4 = 260400
 const mv__TVOS_9_0 = 90000
 const mv__TVOS_9_1 = 90100
 const mv__TVOS_9_2 = 90200
@@ -1999,12 +2029,16 @@ const mv__UINT_LEAST8_FMTu__ = "hhu"
 const mv__UINT_LEAST8_FMTx__ = "hhx"
 const mv__UINT_LEAST8_MAX__ = 255
 const mv__USER_LABEL_PREFIX__ = "_"
-const mv__VERSION__ = "Apple LLVM 17.0.0 (clang-1700.3.19.1)"
+const mv__VERSION__ = "Apple LLVM 21.0.0 (clang-2100.0.123.102)"
 const mv__VISIONOS_1_0 = 10000
 const mv__VISIONOS_1_1 = 10100
 const mv__VISIONOS_1_2 = 10200
 const mv__VISIONOS_1_3 = 10300
 const mv__VISIONOS_26_0 = 260000
+const mv__VISIONOS_26_1 = 260100
+const mv__VISIONOS_26_2 = 260200
+const mv__VISIONOS_26_3 = 260300
+const mv__VISIONOS_26_4 = 260400
 const mv__VISIONOS_2_0 = 20000
 const mv__VISIONOS_2_1 = 20100
 const mv__VISIONOS_2_2 = 20200
@@ -2031,6 +2065,10 @@ const mv__WATCHOS_11_6 = 110600
 const mv__WATCHOS_12_0 = 120000
 const mv__WATCHOS_1_0 = 10000
 const mv__WATCHOS_26_0 = 260000
+const mv__WATCHOS_26_1 = 260100
+const mv__WATCHOS_26_2 = 260200
+const mv__WATCHOS_26_3 = 260300
+const mv__WATCHOS_26_4 = 260400
 const mv__WATCHOS_2_0 = 20000
 const mv__WATCHOS_2_1 = 20100
 const mv__WATCHOS_2_2 = 20200
@@ -2078,15 +2116,15 @@ const mv__WINT_MAX__ = 2147483647
 const mv__WINT_TYPE__ = "int"
 const mv__WINT_WIDTH__ = 32
 const mv__aarch64__ = 1
-const mv__apple_build_version__ = 17000319
+const mv__apple_build_version__ = 21000099
 const mv__arm64 = 1
 const mv__arm64__ = 1
 const mv__clang__ = 1
 const mv__clang_literal_encoding__ = "UTF-8"
-const mv__clang_major__ = 17
+const mv__clang_major__ = 21
 const mv__clang_minor__ = 0
 const mv__clang_patchlevel__ = 0
-const mv__clang_version__ = "17.0.0 (clang-1700.3.19.1)"
+const mv__clang_version__ = "21.0.0 (clang-2100.0.123.102)"
 const mv__clang_wide_literal_encoding__ = "UTF-32"
 const mv__const = "const"
 const mv__exported_hidden = "__private_extern__"
@@ -3837,8 +3875,8 @@ type tsdirent = struct {
 
 type tnDIR = struct {
 	fd__dd_fd    ppint32
-	fd__dd_loc   ppint64
-	fd__dd_size  ppint64
+	fd__dd_loc   tnsize_t
+	fd__dd_size  tnsize_t
 	fd__dd_buf   ppuintptr
 	fd__dd_len   ppint32
 	fd__dd_seek  ppint64
@@ -3911,7 +3949,7 @@ func si_e2fs_dirname(cgtls *iqlibc.ppTLS, aapath ppuintptr) (cgr ppuintptr) {
 	pp_ = aalast
 	aalast = Xstrrchr(cgtls, aapath, ppint32('/'))
 	if !(aalast != 0) {
-		return aapath
+		return ".\x00"
 	} // no slash -> "."
 	if aalast == aapath {
 		return "/\x00"
@@ -4563,21 +4601,66 @@ ppout:
 	return aaret
 }
 
-func Xe2fs_symlink(cgtls *iqlibc.ppTLS, aahandle tne2fs_t, aapath ppuintptr, aatarget ppuintptr, aauid tnuint32_t, aagid tnuint32_t, aamtime tnint64_t) (cgr tnerrcode_t) {
-	cgbp := cgtls.ppAlloc(144)
-	defer cgtls.ppFree(144)
+// C documentation
+//
+//	// fix_filetype_proc is a dir_iterate callback that patches the file_type byte
+//	// of a directory entry matching a specific name. Used to work around the ccgo
+//	// operator precedence bug in the transpiled ext2fs_dirent_set_file_type.
+func sifix_filetype_proc(cgtls *iqlibc.ppTLS, aadir tnext2_ino_t, aaentry ppint32, aadirent ppuintptr, aaoffset ppint32, aablocksize ppint32, aabuf ppuintptr, aapriv ppuintptr) (cgr ppint32) {
 
-	var aabase, aadir, aadup1, aadup2 ppuintptr
+	var aactx ppuintptr
+	var aaname_len ppint32
+	pp_, pp_ = aactx, aaname_len
+	aactx = aapriv
+
+	aaname_len = iqlibc.ppInt32FromUint16((*tsext2_dir_entry)(iqunsafe.ppPointer(aadirent)).fdname_len) & ppint32(0xFF)
+	if aaname_len == (*struct {
+		fdname     ppuintptr
+		fdnamelen  ppint32
+		fdfiletype ppint32
+	})(iqunsafe.ppPointer(aactx)).fdnamelen && Xmemcmp(cgtls, aadirent+8, (*struct {
+		fdname     ppuintptr
+		fdnamelen  ppint32
+		fdfiletype ppint32
+	})(iqunsafe.ppPointer(aactx)).fdname, iqlibc.ppUint64FromInt32(aaname_len)) == 0 {
+		// Patch the file_type byte (high byte of name_len).
+		(*tsext2_dir_entry)(iqunsafe.ppPointer(aadirent)).fdname_len = iqlibc.ppUint16FromInt32(iqlibc.ppInt32FromUint16((*tsext2_dir_entry)(iqunsafe.ppPointer(aadirent)).fdname_len)&ppint32(0xFF) | (*struct {
+			fdname     ppuintptr
+			fdnamelen  ppint32
+			fdfiletype ppint32
+		})(iqunsafe.ppPointer(aactx)).fdfiletype<<ppint32(8))
+		return iqlibc.ppInt32FromInt32(mvDIRENT_ABORT) | iqlibc.ppInt32FromInt32(mvDIRENT_CHANGED)
+	}
+	return 0
+}
+
+func Xe2fs_symlink(cgtls *iqlibc.ppTLS, aahandle tne2fs_t, aapath ppuintptr, aatarget ppuintptr, aauid tnuint32_t, aagid tnuint32_t, aamtime tnint64_t) (cgr tnerrcode_t) {
+	cgbp := cgtls.ppAlloc(192)
+	defer cgtls.ppFree(192)
+
+	var aabase, aadir, aadup1, aadup2, ccv18, ccv22, ccv24, ccv26 ppuintptr
 	var aaextra, ccv12, ccv2, ccv7 tn__u32
 	var aafs tnext2_filsys
-	var aaret tnerrcode_t
+	var aaret, ccv16 tnerrcode_t
+	var aatarget_len ppuint32
 	var ccv1, ccv11, ccv6 tntime_t
 	var ccv10, ccv14, ccv15, ccv4, ccv5, ccv9 ppint64
-	var pp_ /* ino at bp+4 */ tnext2_ino_t
-	var pp_ /* inode at bp+8 */ tsext2_inode
-	var pp_ /* parent at bp+0 */ tnext2_ino_t
-	pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_ = aabase, aadir, aadup1, aadup2, aaextra, aafs, aaret, ccv1, ccv10, ccv11, ccv12, ccv14, ccv15, ccv2, ccv4, ccv5, ccv6, ccv7, ccv9
+	var ccv20 ppint32
+	var pp_ /* blk at bp+152 */ tnblk64_t
+	var pp_ /* block_buf at bp+160 */ ppuintptr
+	var pp_ /* fctx at bp+168 */ struct {
+		fdname     ppuintptr
+		fdnamelen  ppint32
+		fdfiletype ppint32
+	}
+	var pp_ /* ino at bp+20 */ tnext2_ino_t
+	var pp_ /* inode at bp+24 */ tsext2_inode
+	var pp_ /* p at bp+8 */ ppuintptr
+	var pp_ /* parent at bp+16 */ tnext2_ino_t
+	var pp_ /* pp at bp+0 */ ppuintptr
+	pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_, pp_ = aabase, aadir, aadup1, aadup2, aaextra, aafs, aaret, aatarget_len, ccv1, ccv10, ccv11, ccv12, ccv14, ccv15, ccv16, ccv18, ccv2, ccv20, ccv22, ccv24, ccv26, ccv4, ccv5, ccv6, ccv7, ccv9
 	aafs = aahandle
+	aatarget_len = ppuint32(Xstrlen(cgtls, aatarget))
 
 	aadup1 = Xstrdup(cgtls, aapath)
 	aadup2 = Xstrdup(cgtls, aapath)
@@ -4589,38 +4672,39 @@ func Xe2fs_symlink(cgtls *iqlibc.ppTLS, aahandle tne2fs_t, aapath ppuintptr, aat
 	aadir = si_e2fs_dirname(cgtls, aadup1)
 	aabase = si_e2fs_basename(cgtls, aadup2)
 
-	aaret = sifind_or_mkdir_path(cgtls, aafs, ppuint32(mvEXT2_ROOT_INO), aadir, cgbp)
+	aaret = sifind_or_mkdir_path(cgtls, aafs, ppuint32(mvEXT2_ROOT_INO), aadir, cgbp+16)
 	if aaret != 0 {
 		goto ppout
 	}
 
-	aaret = Xext2fs_symlink(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp)), ppuint32(0), aabase, aatarget)
+	// Manual symlink creation — the transpiled ext2fs_symlink has a
+	// bug where it creates directory inodes instead of symlink inodes.
+
+	// Allocate inode.
+	aaret = Xext2fs_new_inode(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp + 16)), iqlibc.ppInt32FromInt32(mvLINUX_S_IFLNK)|iqlibc.ppInt32FromInt32(0755), ppuintptr(0), cgbp+20)
 	if aaret != 0 {
 		goto ppout
 	}
 
-	aaret = Xext2fs_lookup(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp)), aabase, iqlibc.ppInt32FromUint64(Xstrlen(cgtls, aabase)), ppuintptr(0), cgbp+4)
-	if aaret != 0 {
-		goto ppout
-	}
+	// Build the inode.
 
-	aaret = Xext2fs_read_inode(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp + 4)), cgbp+8)
-	if aaret != 0 {
-		goto ppout
-	}
-	(*(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 8))).fdi_uid = ppuint16(aauid)
-	*(*tn__u16)(iqunsafe.ppPointer(cgbp + 8 + 116 + 4)) = ppuint16(aauid >> iqlibc.ppInt32FromInt32(16))
-	(*(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 8))).fdi_gid = ppuint16(aagid)
-	*(*tn__u16)(iqunsafe.ppPointer(cgbp + 8 + 116 + 6)) = ppuint16(aagid >> iqlibc.ppInt32FromInt32(16))
+	Xmemset(cgtls, cgbp+24, 0, ppuint64(128))
+	(*(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 24))).fdi_mode = iqlibc.ppUint16FromInt32(iqlibc.ppInt32FromInt32(mvLINUX_S_IFLNK) | iqlibc.ppInt32FromInt32(0777))
+	(*(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 24))).fdi_uid = ppuint16(aauid)
+	*(*tn__u16)(iqunsafe.ppPointer(cgbp + 24 + 116 + 4)) = ppuint16(aauid >> iqlibc.ppInt32FromInt32(16))
+	(*(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 24))).fdi_gid = ppuint16(aagid)
+	*(*tn__u16)(iqunsafe.ppPointer(cgbp + 24 + 116 + 6)) = ppuint16(aagid >> iqlibc.ppInt32FromInt32(16))
+	(*(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 24))).fdi_links_count = ppuint16(1)
+	Xext2fs_inode_size_set(cgtls, aafs, cgbp+24, iqlibc.ppInt64FromUint32(aatarget_len))
 	if iqlibc.ppUint64FromInt32(iqlibc.ppInt32FromInt32(mvEXT2_GOOD_OLD_INODE_SIZE)+iqlibc.ppInt32FromInt32(0)) >= iqlibc.ppUint64FromInt64(4)+ppuint64(iqlibc.ppUintptrFromInt32(0)+140) {
-		(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 8)).fdi_atime = iqlibc.ppUint32FromInt64(aamtime & iqlibc.ppInt64FromInt32(0xfffffff))
+		(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 24)).fdi_atime = iqlibc.ppUint32FromInt64(aamtime & iqlibc.ppInt64FromInt32(0xfffffff))
 		ccv1 = ppint64(aamtime)
 		aaextra = ppuint32(0)
 		aaextra = iqlibc.ppUint32FromInt64((ccv1 - ppint64(ppint32(ccv1&iqlibc.ppInt64FromUint32(0xffffffff)))) >> ppint32(32) & ppint64(iqlibc.ppInt32FromInt32(1)<<iqlibc.ppInt32FromInt32(mvEXT4_EPOCH_BITS)-iqlibc.ppInt32FromInt32(1)))
 		ccv2 = aaextra | ppuint32(0)<<iqlibc.ppInt32FromInt32(mvEXT4_EPOCH_BITS)
 		goto cg_3
 	cg_3:
-		(*tsext2_inode_large)(iqunsafe.ppPointer(cgbp + 8)).fdi_atime_extra = ccv2
+		(*tsext2_inode_large)(iqunsafe.ppPointer(cgbp + 24)).fdi_atime_extra = ccv2
 	} else {
 		if aamtime < ppint64(-iqlibc.ppInt32FromInt32(2147483647)-iqlibc.ppInt32FromInt32(1)) {
 			ccv4 = ppint64(-iqlibc.ppInt32FromInt32(2147483647) - iqlibc.ppInt32FromInt32(1))
@@ -4632,17 +4716,17 @@ func Xe2fs_symlink(cgtls *iqlibc.ppTLS, aahandle tne2fs_t, aapath ppuintptr, aat
 			}
 			ccv4 = ccv5
 		}
-		(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 8)).fdi_atime = iqlibc.ppUint32FromInt64(ccv4)
+		(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 24)).fdi_atime = iqlibc.ppUint32FromInt64(ccv4)
 	}
 	if iqlibc.ppUint64FromInt32(iqlibc.ppInt32FromInt32(mvEXT2_GOOD_OLD_INODE_SIZE)+iqlibc.ppInt32FromInt32(0)) >= iqlibc.ppUint64FromInt64(4)+ppuint64(iqlibc.ppUintptrFromInt32(0)+132) {
-		(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 8)).fdi_ctime = iqlibc.ppUint32FromInt64(aamtime & iqlibc.ppInt64FromInt32(0xfffffff))
+		(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 24)).fdi_ctime = iqlibc.ppUint32FromInt64(aamtime & iqlibc.ppInt64FromInt32(0xfffffff))
 		ccv1 = ppint64(aamtime)
 		aaextra = ppuint32(0)
 		aaextra = iqlibc.ppUint32FromInt64((ccv1 - ppint64(ppint32(ccv1&iqlibc.ppInt64FromUint32(0xffffffff)))) >> ppint32(32) & ppint64(iqlibc.ppInt32FromInt32(1)<<iqlibc.ppInt32FromInt32(mvEXT4_EPOCH_BITS)-iqlibc.ppInt32FromInt32(1)))
 		ccv2 = aaextra | ppuint32(0)<<iqlibc.ppInt32FromInt32(mvEXT4_EPOCH_BITS)
 		goto cg_8
 	cg_8:
-		(*tsext2_inode_large)(iqunsafe.ppPointer(cgbp + 8)).fdi_ctime_extra = ccv2
+		(*tsext2_inode_large)(iqunsafe.ppPointer(cgbp + 24)).fdi_ctime_extra = ccv2
 	} else {
 		if aamtime < ppint64(-iqlibc.ppInt32FromInt32(2147483647)-iqlibc.ppInt32FromInt32(1)) {
 			ccv4 = ppint64(-iqlibc.ppInt32FromInt32(2147483647) - iqlibc.ppInt32FromInt32(1))
@@ -4654,17 +4738,17 @@ func Xe2fs_symlink(cgtls *iqlibc.ppTLS, aahandle tne2fs_t, aapath ppuintptr, aat
 			}
 			ccv4 = ccv5
 		}
-		(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 8)).fdi_ctime = iqlibc.ppUint32FromInt64(ccv4)
+		(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 24)).fdi_ctime = iqlibc.ppUint32FromInt64(ccv4)
 	}
 	if iqlibc.ppUint64FromInt32(iqlibc.ppInt32FromInt32(mvEXT2_GOOD_OLD_INODE_SIZE)+iqlibc.ppInt32FromInt32(0)) >= iqlibc.ppUint64FromInt64(4)+ppuint64(iqlibc.ppUintptrFromInt32(0)+136) {
-		(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 8)).fdi_mtime = iqlibc.ppUint32FromInt64(aamtime & iqlibc.ppInt64FromInt32(0xfffffff))
+		(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 24)).fdi_mtime = iqlibc.ppUint32FromInt64(aamtime & iqlibc.ppInt64FromInt32(0xfffffff))
 		ccv1 = ppint64(aamtime)
 		aaextra = ppuint32(0)
 		aaextra = iqlibc.ppUint32FromInt64((ccv1 - ppint64(ppint32(ccv1&iqlibc.ppInt64FromUint32(0xffffffff)))) >> ppint32(32) & ppint64(iqlibc.ppInt32FromInt32(1)<<iqlibc.ppInt32FromInt32(mvEXT4_EPOCH_BITS)-iqlibc.ppInt32FromInt32(1)))
 		ccv2 = aaextra | ppuint32(0)<<iqlibc.ppInt32FromInt32(mvEXT4_EPOCH_BITS)
 		goto cg_13
 	cg_13:
-		(*tsext2_inode_large)(iqunsafe.ppPointer(cgbp + 8)).fdi_mtime_extra = ccv2
+		(*tsext2_inode_large)(iqunsafe.ppPointer(cgbp + 24)).fdi_mtime_extra = ccv2
 	} else {
 		if aamtime < ppint64(-iqlibc.ppInt32FromInt32(2147483647)-iqlibc.ppInt32FromInt32(1)) {
 			ccv4 = ppint64(-iqlibc.ppInt32FromInt32(2147483647) - iqlibc.ppInt32FromInt32(1))
@@ -4676,9 +4760,135 @@ func Xe2fs_symlink(cgtls *iqlibc.ppTLS, aahandle tne2fs_t, aapath ppuintptr, aat
 			}
 			ccv4 = ccv5
 		}
-		(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 8)).fdi_mtime = iqlibc.ppUint32FromInt64(ccv4)
+		(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 24)).fdi_mtime = iqlibc.ppUint32FromInt64(ccv4)
 	}
-	aaret = Xext2fs_write_inode(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp + 4)), cgbp+8)
+
+	// Fast symlink: store target in i_block if it fits.
+	if ppuint64(aatarget_len) < ppuint64(60) {
+		Xmemcpy(cgtls, cgbp+24+40, aatarget, ppuint64(aatarget_len+ppuint32(1)))
+	} else {
+		*(*ppuintptr)(iqunsafe.ppPointer(cgbp)) = Xmalloc(cgtls, ppuint64((*tsstruct_ext2_filsys)(iqunsafe.ppPointer(aafs)).fdblocksize))
+		if !(*(*ppuintptr)(iqunsafe.ppPointer(cgbp)) != 0) {
+			ccv16 = iqlibc.ppInt64FromInt64(2133571398)
+			goto cg_17
+		}
+		Xmemcpy(cgtls, cgbp+160, cgbp, ppuint64(8))
+		ccv16 = 0
+		goto cg_17
+	cg_17:
+		aaret = ccv16
+		if aaret != 0 {
+			goto ppout
+		}
+		Xmemset(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(cgbp + 160)), 0, ppuint64((*tsstruct_ext2_filsys)(iqunsafe.ppPointer(aafs)).fdblocksize))
+		Xstrncpy(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(cgbp + 160)), aatarget, ppuint64((*tsstruct_ext2_filsys)(iqunsafe.ppPointer(aafs)).fdblocksize))
+
+		aaret = Xext2fs_new_block2(cgtls, aafs, ppuint64(0), iqlibc.ppUintptrFromInt32(0), cgbp+152)
+		if aaret != 0 {
+			ccv18 = cgbp + 160
+			Xmemcpy(cgtls, cgbp+8, ccv18, ppuint64(8))
+			Xfree(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)))
+			*(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)) = ppuintptr(0)
+			Xmemcpy(cgtls, ccv18, cgbp+8, ppuint64(8))
+			pp_ = 0
+			goto cg_19
+		cg_19:
+			;
+			goto ppout
+		}
+
+		Xext2fs_iblk_set(cgtls, aafs, cgbp+24, ppuint64(1))
+		ccv20 = iqlibc.ppBoolInt32((*tsext2_super_block)(iqunsafe.ppPointer((*tsstruct_ext2_filsys)(iqunsafe.ppPointer(aafs)).fdsuper)).fds_feature_incompat&ppuint32(mvEXT3_FEATURE_INCOMPAT_EXTENTS) != ppuint32(0))
+		goto cg_21
+	cg_21:
+		if ccv20 != 0 {
+
+			(*(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 24))).fdi_flags |= ppuint32(mvEXT4_EXTENTS_FL)
+		}
+
+		aaret = Xext2fs_write_new_inode(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp + 20)), cgbp+24)
+		if aaret != 0 {
+			ccv18 = cgbp + 160
+			Xmemcpy(cgtls, cgbp+8, ccv18, ppuint64(8))
+			Xfree(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)))
+			*(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)) = ppuintptr(0)
+			Xmemcpy(cgtls, ccv18, cgbp+8, ppuint64(8))
+			pp_ = 0
+			goto cg_23
+		cg_23:
+			;
+			goto ppout
+		}
+
+		aaret = Xext2fs_bmap2(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp + 20)), cgbp+24, iqlibc.ppUintptrFromInt32(0), ppint32(mvBMAP_SET), ppuint64(0), iqlibc.ppUintptrFromInt32(0), cgbp+152)
+		if aaret != 0 {
+			ccv18 = cgbp + 160
+			Xmemcpy(cgtls, cgbp+8, ccv18, ppuint64(8))
+			Xfree(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)))
+			*(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)) = ppuintptr(0)
+			Xmemcpy(cgtls, ccv18, cgbp+8, ppuint64(8))
+			pp_ = 0
+			goto cg_25
+		cg_25:
+			;
+			goto ppout
+		}
+
+		aaret = Xio_channel_write_blk64(cgtls, (*tsstruct_ext2_filsys)(iqunsafe.ppPointer(aafs)).fdio, *(*tnblk64_t)(iqunsafe.ppPointer(cgbp + 152)), ppint32(1), *(*ppuintptr)(iqunsafe.ppPointer(cgbp + 160)))
+		ccv18 = cgbp + 160
+		Xmemcpy(cgtls, cgbp+8, ccv18, ppuint64(8))
+		Xfree(cgtls, *(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)))
+		*(*ppuintptr)(iqunsafe.ppPointer(cgbp + 8)) = ppuintptr(0)
+		Xmemcpy(cgtls, ccv18, cgbp+8, ppuint64(8))
+		pp_ = 0
+		goto cg_27
+	cg_27:
+		;
+		if aaret != 0 {
+			goto ppout
+		}
+
+		Xext2fs_block_alloc_stats2(cgtls, aafs, *(*tnblk64_t)(iqunsafe.ppPointer(cgbp + 152)), +iqlibc.ppInt32FromInt32(1))
+		goto pplink
+	}
+
+	aaret = Xext2fs_write_new_inode(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp + 20)), cgbp+24)
+	if aaret != 0 {
+		goto ppout
+	}
+
+	goto pplink
+pplink:
+	;
+	Xext2fs_inode_alloc_stats2(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp + 20)), +iqlibc.ppInt32FromInt32(1), 0)
+
+	aaret = Xext2fs_link(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp + 16)), aabase, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp + 20)), ppint32(mvEXT2_FT_SYMLINK))
+	if aaret != 0 {
+		goto ppout
+	}
+
+	// Workaround: the transpiled ext2fs_link has an operator precedence
+	// bug in the inlined ext2fs_dirent_set_file_type — it computes
+	// flags & (mask << 8) instead of (flags & mask) << 8, so the file
+	// type is always 0 (EXT2_FT_UNKNOWN). Fix by patching the directory
+	// entry's file_type byte via dir_iterate.
+
+	(*(*struct {
+		fdname     ppuintptr
+		fdnamelen  ppint32
+		fdfiletype ppint32
+	})(iqunsafe.ppPointer(cgbp + 168))).fdname = aabase
+	(*(*struct {
+		fdname     ppuintptr
+		fdnamelen  ppint32
+		fdfiletype ppint32
+	})(iqunsafe.ppPointer(cgbp + 168))).fdnamelen = iqlibc.ppInt32FromUint64(Xstrlen(cgtls, aabase))
+	(*(*struct {
+		fdname     ppuintptr
+		fdnamelen  ppint32
+		fdfiletype ppint32
+	})(iqunsafe.ppPointer(cgbp + 168))).fdfiletype = ppint32(mvEXT2_FT_SYMLINK)
+	Xext2fs_dir_iterate2(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp + 16)), 0, ppuintptr(0), pp__ccgo_fp(sifix_filetype_proc), cgbp+168)
 
 	goto ppout
 ppout:
@@ -4923,7 +5133,11 @@ func _ext2fs_allocate_tables(*iqlibc.ppTLS, ppuintptr) ppint64
 
 func _ext2fs_bg_flags_set(*iqlibc.ppTLS, ppuintptr, ppuint32, ppuint16)
 
+func _ext2fs_block_alloc_stats2(*iqlibc.ppTLS, ppuintptr, ppuint64, ppint32)
+
 func _ext2fs_blocks_count(*iqlibc.ppTLS, ppuintptr) ppuint64
+
+func _ext2fs_bmap2(*iqlibc.ppTLS, ppuintptr, ppuint32, ppuintptr, ppuintptr, ppint32, ppuint64, ppuintptr, ppuintptr) ppint64
 
 func _ext2fs_close_free(*iqlibc.ppTLS, ppuintptr) ppint64
 
@@ -4932,6 +5146,8 @@ func _ext2fs_crc32c_le(*iqlibc.ppTLS, ppuint32, ppuintptr, ppuint64) ppuint32
 func _ext2fs_create_resize_inode(*iqlibc.ppTLS, ppuintptr) ppint64
 
 func _ext2fs_default_journal_size(*iqlibc.ppTLS, ppuint64) ppint32
+
+func _ext2fs_dir_iterate2(*iqlibc.ppTLS, ppuintptr, ppuint32, ppint32, ppuintptr, ppuintptr, ppuintptr) ppint64
 
 func _ext2fs_expand_dir(*iqlibc.ppTLS, ppuintptr, ppuint32) ppint64
 
@@ -4946,6 +5162,8 @@ func _ext2fs_file_open(*iqlibc.ppTLS, ppuintptr, ppuint32, ppint32, ppuintptr) p
 func _ext2fs_file_write(*iqlibc.ppTLS, ppuintptr, ppuintptr, ppuint32, ppuintptr) ppint64
 
 func _ext2fs_group_desc_csum_set(*iqlibc.ppTLS, ppuintptr, ppuint32)
+
+func _ext2fs_iblk_set(*iqlibc.ppTLS, ppuintptr, ppuintptr, ppuint64) ppint64
 
 func _ext2fs_init_csum_seed(*iqlibc.ppTLS, ppuintptr)
 
@@ -4965,11 +5183,11 @@ func _ext2fs_mkdir(*iqlibc.ppTLS, ppuintptr, ppuint32, ppuint32, ppuintptr) ppin
 
 func _ext2fs_namei(*iqlibc.ppTLS, ppuintptr, ppuint32, ppuint32, ppuintptr, ppuintptr) ppint64
 
+func _ext2fs_new_block2(*iqlibc.ppTLS, ppuintptr, ppuint64, ppuintptr, ppuintptr) ppint64
+
 func _ext2fs_new_inode(*iqlibc.ppTLS, ppuintptr, ppuint32, ppint32, ppuintptr, ppuintptr) ppint64
 
 func _ext2fs_read_inode(*iqlibc.ppTLS, ppuintptr, ppuint32, ppuintptr) ppint64
-
-func _ext2fs_symlink(*iqlibc.ppTLS, ppuintptr, ppuint32, ppuint32, ppuintptr, ppuintptr) ppint64
 
 func _ext2fs_update_bb_inode(*iqlibc.ppTLS, ppuintptr, ppuintptr) ppint64
 
@@ -4979,6 +5197,14 @@ func _ext2fs_write_new_inode(*iqlibc.ppTLS, ppuintptr, ppuint32, ppuintptr) ppin
 
 func _free(*iqlibc.ppTLS, ppuintptr)
 
+func _io_channel_write_blk64(*iqlibc.ppTLS, ppuintptr, ppuint64, ppint32, ppuintptr) ppint64
+
+func _malloc(*iqlibc.ppTLS, ppuint64) ppuintptr
+
+func _memcmp(*iqlibc.ppTLS, ppuintptr, ppuintptr, ppuint64) ppint32
+
+func _memcpy(*iqlibc.ppTLS, ppuintptr, ppuintptr, ppuint64) ppuintptr
+
 func _memset(*iqlibc.ppTLS, ppuintptr, ppint32, ppuint64) ppuintptr
 
 func _strchr(*iqlibc.ppTLS, ppuintptr, ppint32) ppuintptr
@@ -4986,6 +5212,8 @@ func _strchr(*iqlibc.ppTLS, ppuintptr, ppint32) ppuintptr
 func _strdup(*iqlibc.ppTLS, ppuintptr) ppuintptr
 
 func _strlen(*iqlibc.ppTLS, ppuintptr) ppuint64
+
+func _strncpy(*iqlibc.ppTLS, ppuintptr, ppuintptr, ppuint64) ppuintptr
 
 func _strrchr(*iqlibc.ppTLS, ppuintptr, ppint32) ppuintptr
 
