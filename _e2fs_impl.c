@@ -110,6 +110,38 @@ static errcode_t find_or_mkdir_path(ext2_filsys fs, ext2_ino_t root,
 	return 0;
 }
 
+// Unlink a directory entry if it exists (for overwrite semantics).
+// Also frees the inode if its link count drops to zero.
+static errcode_t unlink_if_exists(ext2_filsys fs, ext2_ino_t parent,
+				  const char *name)
+{
+	ext2_ino_t ino;
+	errcode_t ret = ext2fs_lookup(fs, parent, name, strlen(name), 0, &ino);
+	if (ret == EXT2_ET_FILE_NOT_FOUND)
+		return 0; // nothing to remove
+	if (ret)
+		return ret;
+
+	ret = ext2fs_unlink(fs, parent, name, ino, 0);
+	if (ret)
+		return ret;
+
+	// Decrement link count; free inode if it reaches zero.
+	struct ext2_inode inode;
+	ret = ext2fs_read_inode(fs, ino, &inode);
+	if (ret)
+		return 0; // best effort
+	if (inode.i_links_count > 0)
+		inode.i_links_count--;
+	if (inode.i_links_count == 0) {
+		inode.i_dtime = (int32_t)time(NULL);
+		ext2fs_inode_alloc_stats2(fs, ino, -1,
+					  LINUX_S_ISDIR(inode.i_mode));
+	}
+	ext2fs_write_inode(fs, ino, &inode);
+	return 0;
+}
+
 // ---- public API ----
 
 errcode_t e2fs_create(const char *path, uint64_t size_bytes, e2fs_t *out)
@@ -263,6 +295,26 @@ errcode_t e2fs_create(const char *path, uint64_t size_bytes, e2fs_t *out)
 	return 0;
 }
 
+errcode_t e2fs_open(const char *path, e2fs_t *out)
+{
+	errcode_t ret;
+	ext2_filsys fs = NULL;
+
+	ret = ext2fs_open(path, EXT2_FLAG_RW | EXT2_FLAG_64BITS,
+			  0, 0, unix_io_manager, &fs);
+	if (ret)
+		return ret;
+
+	ret = ext2fs_read_bitmaps(fs);
+	if (ret) {
+		ext2fs_close_free(&fs);
+		return ret;
+	}
+
+	*out = (e2fs_t)fs;
+	return 0;
+}
+
 errcode_t e2fs_close(e2fs_t handle)
 {
 	ext2_filsys fs = (ext2_filsys)handle;
@@ -349,6 +401,11 @@ errcode_t e2fs_write_file(e2fs_t handle, const char *path, uint32_t mode,
 	char *base = basename(dup2);
 
 	ret = find_or_mkdir_path(fs, EXT2_ROOT_INO, dir, &parent);
+	if (ret)
+		goto out;
+
+	// Remove any existing entry so layers can overwrite files.
+	ret = unlink_if_exists(fs, parent, base);
 	if (ret)
 		goto out;
 
@@ -474,6 +531,11 @@ errcode_t e2fs_symlink(e2fs_t handle, const char *path, const char *target,
 	if (ret)
 		goto out;
 
+	// Remove any existing entry so layers can overwrite symlinks.
+	ret = unlink_if_exists(fs, parent, base);
+	if (ret)
+		goto out;
+
 	// Manual symlink creation — the transpiled ext2fs_symlink has a
 	// bug where it creates directory inodes instead of symlink inodes.
 
@@ -550,7 +612,8 @@ errcode_t e2fs_symlink(e2fs_t handle, const char *path, const char *target,
 link:
 	ext2fs_inode_alloc_stats2(fs, ino, +1, 0);
 
-	ret = ext2fs_link(fs, parent, base, ino, EXT2_FT_SYMLINK);
+	ret = ext2fs_link(fs, parent, base, ino,
+			  EXT2_FT_SYMLINK | EXT2FS_LINK_EXPAND);
 	if (ret)
 		goto out;
 
@@ -597,6 +660,11 @@ errcode_t e2fs_mknod(e2fs_t handle, const char *path, uint32_t mode,
 	char *base = basename(dup2);
 
 	ret = find_or_mkdir_path(fs, EXT2_ROOT_INO, dir, &parent);
+	if (ret)
+		goto out;
+
+	// Remove any existing entry so layers can overwrite nodes.
+	ret = unlink_if_exists(fs, parent, base);
 	if (ret)
 		goto out;
 
@@ -687,6 +755,11 @@ errcode_t e2fs_hardlink(e2fs_t handle, const char *path, const char *target)
 		goto out;
 
 	ret = find_or_mkdir_path(fs, EXT2_ROOT_INO, dir, &parent);
+	if (ret)
+		goto out;
+
+	// Remove any existing entry so layers can overwrite hardlinks.
+	ret = unlink_if_exists(fs, parent, base);
 	if (ret)
 		goto out;
 

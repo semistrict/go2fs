@@ -15,6 +15,9 @@ type FS = e2fs.FS
 // The file is created and truncated automatically if it doesn't exist.
 var Create = e2fs.Create
 
+// Open opens an existing ext4 filesystem image for read-write modification.
+var Open = e2fs.Open
+
 // BuildExt4FromTar creates an ext4 filesystem image at imgPath populated from
 // the tar archive at tarPath. If tarPath is "-", reads from stdin.
 var BuildExt4FromTar = e2fs.BuildExt4FromTar

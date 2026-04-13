@@ -507,7 +507,7 @@ const mvEXT2_FLAGS_IS_SNAPSHOT = 0x0010
 const mvEXT2_FLAGS_SIGNED_HASH = 0x0001
 const mvEXT2_FLAGS_TEST_FILESYS = 0x0004
 const mvEXT2_FLAGS_UNSIGNED_HASH = 0x0002
-const mvEXT2_FLAG_64BITS = 0x20000
+const mvEXT2_FLAG_64BITS = 131072
 const mvEXT2_FLAG_BBITMAP_TAIL_PROBLEM = 0x1000000
 const mvEXT2_FLAG_BB_DIRTY = 32
 const mvEXT2_FLAG_CHANGED = 2
@@ -526,7 +526,7 @@ const mvEXT2_FLAG_JOURNAL_DEV_OK = 0x1000
 const mvEXT2_FLAG_MASTER_SB_ONLY = 0x200
 const mvEXT2_FLAG_NOFREE_ON_ERROR = 0x10000
 const mvEXT2_FLAG_PRINT_PROGRESS = 0x40000
-const mvEXT2_FLAG_RW = 0x01
+const mvEXT2_FLAG_RW = 1
 const mvEXT2_FLAG_SHARE_DUP = 0x400000
 const mvEXT2_FLAG_SKIP_MMP = 0x100000
 const mvEXT2_FLAG_SOFTSUPP_FEATURES = 0x8000
@@ -929,7 +929,7 @@ const mvLINUX_S_IFCHR = 8192
 const mvLINUX_S_IFDIR = 16384
 const mvLINUX_S_IFIFO = 4096
 const mvLINUX_S_IFLNK = 40960
-const mvLINUX_S_IFMT = 00170000
+const mvLINUX_S_IFMT = 61440
 const mvLINUX_S_IFREG = 32768
 const mvLINUX_S_IFSOCK = 49152
 const mvLINUX_S_IRGRP = 00040
@@ -4043,6 +4043,45 @@ func sifind_or_mkdir_path(cgtls *iqlibc.ppTLS, aafs tnext2_filsys, aaroot tnext2
 	return 0
 }
 
+// C documentation
+//
+//	// Unlink a directory entry if it exists (for overwrite semantics).
+//	// Also frees the inode if its link count drops to zero.
+func siunlink_if_exists(cgtls *iqlibc.ppTLS, aafs tnext2_filsys, aaparent tnext2_ino_t, aaname ppuintptr) (cgr tnerrcode_t) {
+	cgbp := cgtls.ppAlloc(144)
+	defer cgtls.ppFree(144)
+
+	var aaret tnerrcode_t
+	var pp_ /* ino at bp+0 */ tnext2_ino_t
+	var pp_ /* inode at bp+4 */ tsext2_inode
+	pp_ = aaret
+	aaret = Xext2fs_lookup(cgtls, aafs, aaparent, aaname, iqlibc.ppInt32FromUint64(Xstrlen(cgtls, aaname)), ppuintptr(0), cgbp)
+	if aaret == ppint64(2133571404) {
+		return 0
+	} // nothing to remove
+	if aaret != 0 {
+		return aaret
+	}
+
+	aaret = Xext2fs_unlink(cgtls, aafs, aaparent, aaname, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp)), 0)
+	if aaret != 0 {
+		return aaret
+	}
+	aaret = Xext2fs_read_inode(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp)), cgbp+4)
+	if aaret != 0 {
+		return 0
+	} // best effort
+	if iqlibc.ppInt32FromUint16((*(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 4))).fdi_links_count) > 0 {
+		(*(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 4))).fdi_links_count = (*(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 4))).fdi_links_count - 1
+	}
+	if iqlibc.ppInt32FromUint16((*(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 4))).fdi_links_count) == 0 {
+		(*(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 4))).fdi_dtime = iqlibc.ppUint32FromInt32(ppint32(Xtime(cgtls, iqlibc.ppUintptrFromInt32(0))))
+		Xext2fs_inode_alloc_stats2(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp)), -ppint32(1), iqlibc.ppBoolInt32(iqlibc.ppInt32FromUint16((*(*tsext2_inode)(iqunsafe.ppPointer(cgbp + 4))).fdi_mode)&ppint32(mvLINUX_S_IFMT) == ppint32(mvLINUX_S_IFDIR)))
+	}
+	Xext2fs_write_inode(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp)), cgbp+4)
+	return 0
+}
+
 // ---- public API ----
 
 func Xe2fs_create(cgtls *iqlibc.ppTLS, aapath ppuintptr, aasize_bytes tnuint64_t, aaout ppuintptr) (cgr tnerrcode_t) {
@@ -4266,6 +4305,30 @@ cg_17:
 	return 0
 }
 
+func Xe2fs_open(cgtls *iqlibc.ppTLS, aapath ppuintptr, aaout ppuintptr) (cgr tnerrcode_t) {
+	cgbp := cgtls.ppAlloc(16)
+	defer cgtls.ppFree(16)
+
+	var aaret tnerrcode_t
+	var pp_ /* fs at bp+0 */ tnext2_filsys
+	pp_ = aaret
+	*(*tnext2_filsys)(iqunsafe.ppPointer(cgbp)) = iqlibc.ppUintptrFromInt32(0)
+
+	aaret = Xext2fs_open(cgtls, aapath, iqlibc.ppInt32FromInt32(mvEXT2_FLAG_RW)|iqlibc.ppInt32FromInt32(mvEXT2_FLAG_64BITS), 0, ppuint32(0), Xunix_io_manager, cgbp)
+	if aaret != 0 {
+		return aaret
+	}
+
+	aaret = Xext2fs_read_bitmaps(cgtls, *(*tnext2_filsys)(iqunsafe.ppPointer(cgbp)))
+	if aaret != 0 {
+		Xext2fs_close_free(cgtls, cgbp)
+		return aaret
+	}
+
+	*(*tne2fs_t)(iqunsafe.ppPointer(aaout)) = *(*tnext2_filsys)(iqunsafe.ppPointer(cgbp))
+	return 0
+}
+
 func Xe2fs_close(cgtls *iqlibc.ppTLS, aahandle tne2fs_t) (cgr tnerrcode_t) {
 	cgbp := cgtls.ppAlloc(16)
 	defer cgtls.ppFree(16)
@@ -4447,6 +4510,12 @@ func Xe2fs_write_file(cgtls *iqlibc.ppTLS, aahandle tne2fs_t, aapath ppuintptr, 
 	aabase = si_e2fs_basename(cgtls, aadup2)
 
 	aaret = sifind_or_mkdir_path(cgtls, aafs, ppuint32(mvEXT2_ROOT_INO), aadir, cgbp)
+	if aaret != 0 {
+		goto ppout
+	}
+
+	// Remove any existing entry so layers can overwrite files.
+	aaret = siunlink_if_exists(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp)), aabase)
 	if aaret != 0 {
 		goto ppout
 	}
@@ -4677,6 +4746,12 @@ func Xe2fs_symlink(cgtls *iqlibc.ppTLS, aahandle tne2fs_t, aapath ppuintptr, aat
 		goto ppout
 	}
 
+	// Remove any existing entry so layers can overwrite symlinks.
+	aaret = siunlink_if_exists(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp + 16)), aabase)
+	if aaret != 0 {
+		goto ppout
+	}
+
 	// Manual symlink creation — the transpiled ext2fs_symlink has a
 	// bug where it creates directory inodes instead of symlink inodes.
 
@@ -4862,7 +4937,7 @@ pplink:
 	;
 	Xext2fs_inode_alloc_stats2(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp + 20)), +iqlibc.ppInt32FromInt32(1), 0)
 
-	aaret = Xext2fs_link(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp + 16)), aabase, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp + 20)), ppint32(mvEXT2_FT_SYMLINK))
+	aaret = Xext2fs_link(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp + 16)), aabase, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp + 20)), iqlibc.ppInt32FromInt32(mvEXT2_FT_SYMLINK)|iqlibc.ppInt32FromInt32(mvEXT2FS_LINK_EXPAND))
 	if aaret != 0 {
 		goto ppout
 	}
@@ -4927,6 +5002,12 @@ func Xe2fs_mknod(cgtls *iqlibc.ppTLS, aahandle tne2fs_t, aapath ppuintptr, aamod
 	aabase = si_e2fs_basename(cgtls, aadup2)
 
 	aaret = sifind_or_mkdir_path(cgtls, aafs, ppuint32(mvEXT2_ROOT_INO), aadir, cgbp)
+	if aaret != 0 {
+		goto ppout
+	}
+
+	// Remove any existing entry so layers can overwrite nodes.
+	aaret = siunlink_if_exists(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp)), aabase)
 	if aaret != 0 {
 		goto ppout
 	}
@@ -5103,6 +5184,12 @@ func Xe2fs_hardlink(cgtls *iqlibc.ppTLS, aahandle tne2fs_t, aapath ppuintptr, aa
 		goto ppout
 	}
 
+	// Remove any existing entry so layers can overwrite hardlinks.
+	aaret = siunlink_if_exists(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp)), aabase)
+	if aaret != 0 {
+		goto ppout
+	}
+
 	aaret = Xext2fs_link(cgtls, aafs, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp)), aabase, *(*tnext2_ino_t)(iqunsafe.ppPointer(cgbp + 4)), iqlibc.ppInt32FromInt32(mvEXT2_FT_UNKNOWN)|iqlibc.ppInt32FromInt32(mvEXT2FS_LINK_EXPAND))
 	if aaret != 0 {
 		goto ppout
@@ -5187,7 +5274,13 @@ func _ext2fs_new_block2(*iqlibc.ppTLS, ppuintptr, ppuint64, ppuintptr, ppuintptr
 
 func _ext2fs_new_inode(*iqlibc.ppTLS, ppuintptr, ppuint32, ppint32, ppuintptr, ppuintptr) ppint64
 
+func _ext2fs_open(*iqlibc.ppTLS, ppuintptr, ppint32, ppint32, ppuint32, ppuintptr, ppuintptr) ppint64
+
+func _ext2fs_read_bitmaps(*iqlibc.ppTLS, ppuintptr) ppint64
+
 func _ext2fs_read_inode(*iqlibc.ppTLS, ppuintptr, ppuint32, ppuintptr) ppint64
+
+func _ext2fs_unlink(*iqlibc.ppTLS, ppuintptr, ppuint32, ppuintptr, ppuint32, ppint32) ppint64
 
 func _ext2fs_update_bb_inode(*iqlibc.ppTLS, ppuintptr, ppuintptr) ppint64
 

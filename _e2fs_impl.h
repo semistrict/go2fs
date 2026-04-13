@@ -14,6 +14,9 @@ typedef void *e2fs_t;
 // On success, *out is set to the filesystem handle.
 errcode_t e2fs_create(const char *path, uint64_t size_bytes, e2fs_t *out);
 
+// Open an existing ext4 filesystem image for read-write access.
+errcode_t e2fs_open(const char *path, e2fs_t *out);
+
 // Flush and close the filesystem.
 errcode_t e2fs_close(e2fs_t fs);
 

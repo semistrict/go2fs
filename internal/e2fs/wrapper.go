@@ -71,6 +71,35 @@ func Create(path string, sizeBytes uint64) (*FS, error) {
 	return &FS{tls: tls, h: h}, nil
 }
 
+// Open opens an existing ext4 filesystem image for read-write access.
+func Open(path string) (*FS, error) {
+	tls := libc.NewTLS()
+
+	cpath, err := libc.CString(path)
+	if err != nil {
+		tls.Close()
+		return nil, fmt.Errorf("alloc path: %w", err)
+	}
+	defer libc.Xfree(tls, cpath)
+
+	var h uintptr
+	var pinner runtime.Pinner
+	pinner.Pin(&h)
+	defer pinner.Unpin()
+
+	ret := e2fs_open(tls, cpath, uintptr(unsafe.Pointer(&h)))
+	if ret != 0 {
+		tls.Close()
+		return nil, e2err(tls, ret, "e2fs_open")
+	}
+	if h == 0 {
+		tls.Close()
+		return nil, fmt.Errorf("e2fs_open returned nil handle")
+	}
+
+	return &FS{tls: tls, h: h}, nil
+}
+
 // Close flushes and closes the filesystem.
 func (fs *FS) Close() error {
 	if fs.h == 0 {

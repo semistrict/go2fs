@@ -271,6 +271,167 @@ func TestManyFiles(t *testing.T) {
 	}
 }
 
+func TestOpenExisting(t *testing.T) {
+	imgPath := filepath.Join(t.TempDir(), "test.ext4")
+
+	// Create a filesystem and write a file.
+	fs, err := Create(imgPath, 64*1024*1024)
+	if err != nil {
+		t.Fatalf("Create: %v", err)
+	}
+	if err := fs.WriteFile("hello.txt", 0644, 0, 0, 0, []byte("hello")); err != nil {
+		t.Fatalf("WriteFile: %v", err)
+	}
+	if err := fs.Close(); err != nil {
+		t.Fatalf("Close: %v", err)
+	}
+
+	// Re-open and write another file.
+	fs2, err := Open(imgPath)
+	if err != nil {
+		t.Fatalf("Open: %v", err)
+	}
+	if err := fs2.WriteFile("world.txt", 0644, 0, 0, 0, []byte("world")); err != nil {
+		t.Fatalf("WriteFile after Open: %v", err)
+	}
+	if err := fs2.Close(); err != nil {
+		t.Fatalf("Close after Open: %v", err)
+	}
+
+	// Verify both files exist via ReadFS.
+	rfs, err := OpenFS(imgPath)
+	if err != nil {
+		t.Fatalf("OpenFS: %v", err)
+	}
+	defer rfs.Close()
+	for _, name := range []string{"hello.txt", "world.txt"} {
+		f, err := rfs.Open(name)
+		if err != nil {
+			t.Errorf("Open(%q): %v", name, err)
+			continue
+		}
+		f.Close()
+	}
+}
+
+func TestOverwriteFile(t *testing.T) {
+	imgPath := filepath.Join(t.TempDir(), "test.ext4")
+
+	fs, err := Create(imgPath, 64*1024*1024)
+	if err != nil {
+		t.Fatalf("Create: %v", err)
+	}
+	if err := fs.WriteFile("data.txt", 0644, 0, 0, 0, []byte("original")); err != nil {
+		t.Fatalf("WriteFile: %v", err)
+	}
+	if err := fs.Close(); err != nil {
+		t.Fatalf("Close: %v", err)
+	}
+
+	// Open and overwrite the same file.
+	fs2, err := Open(imgPath)
+	if err != nil {
+		t.Fatalf("Open: %v", err)
+	}
+	if err := fs2.WriteFile("data.txt", 0644, 0, 0, 0, []byte("replaced")); err != nil {
+		t.Fatalf("WriteFile overwrite: %v", err)
+	}
+	if err := fs2.Close(); err != nil {
+		t.Fatalf("Close: %v", err)
+	}
+
+	// Verify content was replaced.
+	rfs, err := OpenFS(imgPath)
+	if err != nil {
+		t.Fatalf("OpenFS: %v", err)
+	}
+	defer rfs.Close()
+	f, err := rfs.Open("data.txt")
+	if err != nil {
+		t.Fatalf("Open data.txt: %v", err)
+	}
+	got, err := io.ReadAll(f)
+	f.Close()
+	if err != nil {
+		t.Fatalf("ReadAll: %v", err)
+	}
+	if string(got) != "replaced" {
+		t.Errorf("content = %q, want %q", got, "replaced")
+	}
+}
+
+func TestOverwriteSymlink(t *testing.T) {
+	imgPath := filepath.Join(t.TempDir(), "test.ext4")
+
+	fs, err := Create(imgPath, 64*1024*1024)
+	if err != nil {
+		t.Fatalf("Create: %v", err)
+	}
+	if err := fs.Symlink("mylink", "/target1", 0, 0, 0); err != nil {
+		t.Fatalf("Symlink: %v", err)
+	}
+	// Overwrite with different target.
+	if err := fs.Symlink("mylink", "/target2", 0, 0, 0); err != nil {
+		t.Fatalf("Symlink overwrite: %v", err)
+	}
+	if err := fs.Close(); err != nil {
+		t.Fatalf("Close: %v", err)
+	}
+}
+
+func TestManySymlinksExpandDir(t *testing.T) {
+	// Create enough symlinks in a single directory to force directory expansion.
+	imgPath := filepath.Join(t.TempDir(), "test.ext4")
+
+	fs, err := Create(imgPath, 64*1024*1024)
+	if err != nil {
+		t.Fatalf("Create: %v", err)
+	}
+	if err := fs.Mkdir("certs", 0755, 0, 0, 0); err != nil {
+		t.Fatalf("Mkdir: %v", err)
+	}
+	for i := 0; i < 200; i++ {
+		name := fmt.Sprintf("certs/ca-cert-%03d.pem", i)
+		target := fmt.Sprintf("/usr/share/ca-certificates/cert-%03d.crt", i)
+		if err := fs.Symlink(name, target, 0, 0, 0); err != nil {
+			t.Fatalf("Symlink %d: %v", i, err)
+		}
+	}
+	if err := fs.Close(); err != nil {
+		t.Fatalf("Close: %v", err)
+	}
+}
+
+func TestOverwriteHardlink(t *testing.T) {
+	imgPath := filepath.Join(t.TempDir(), "test.ext4")
+
+	fs, err := Create(imgPath, 64*1024*1024)
+	if err != nil {
+		t.Fatalf("Create: %v", err)
+	}
+	if err := fs.WriteFile("src.txt", 0644, 0, 0, 0, []byte("data")); err != nil {
+		t.Fatalf("WriteFile: %v", err)
+	}
+	if err := fs.Hardlink("link.txt", "src.txt"); err != nil {
+		t.Fatalf("Hardlink: %v", err)
+	}
+	if err := fs.Close(); err != nil {
+		t.Fatalf("Close: %v", err)
+	}
+
+	// Open and overwrite the hardlink with a regular file.
+	fs2, err := Open(imgPath)
+	if err != nil {
+		t.Fatalf("Open: %v", err)
+	}
+	if err := fs2.WriteFile("link.txt", 0644, 0, 0, 0, []byte("new")); err != nil {
+		t.Fatalf("WriteFile overwrite hardlink: %v", err)
+	}
+	if err := fs2.Close(); err != nil {
+		t.Fatalf("Close: %v", err)
+	}
+}
+
 func TestLargeSparseFile(t *testing.T) {
 	data := make([]byte, 4*1024*1024)
 	copy(data[:4096], bytes.Repeat([]byte("HEAD"), 1024))
